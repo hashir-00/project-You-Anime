@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+body{
+  background-image: url("/src/components/images/background.jpg");
+
+  background-position: center; /* Adjust as needed */
+  background-repeat: no-repeat;
+  background-size: cover; /* Adjust as needed */
+
+  background-color: aqua;
+  font-family: 'Inter';
+  font-size: 1.5rem;
+  text-transform: uppercase;
+
+ 
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+   
+  }
+  
+  .dashboard-item {
+    width: 15rem;
+    height: 30rem;
+  
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: auto;
+    margin: 1rem;
+    border-radius: 1rem;
+    
+  
+  }
+  
+ 
+   
+  .dashboard-item:hover {
+    background-color: #2980b9;
+  }
+
+  
