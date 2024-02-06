@@ -1,24 +1,39 @@
-#Quiz{
-  
-    background-image: url("/src/components/images/satoru-gojo-jujutsu-kaisen-4k_1695936977.jpg.webp");
-    
+#chatbot{
+    background-image: url("/src/components/images/chatbot.jpg");
     background-size: cover; /* Adjust as needed */
-    background-position: center; /* Adjust as needed */
+    background-position: 85%; /* Adjust as needed */
     background-repeat: no-repeat;
    
     -webkit-text-stroke: 1px #F8F8F8;
-    text-shadow: 0px 1px 2px #D29436;
+	text-shadow: 0px 1px 2px #2E14D2;
     letter-spacing: .5rem;
     font-weight: bold;
-  }
-  #Quiz:hover{
+    
+      width: 15rem;
+      height: 100%;
+    padding-top: 1rem;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: auto;
+      
+      border-radius: 1rem;
+      
+    
+  
+}
+#chatbot:hover{
     text-shadow: 0px 1px 2px black;
     font-size: 2rem;
     filter: brightness(70%);
-  transform: scale(1.1); /* Add a pop-up effect on hover */
-  }
-  #Quiz:hover::before {
-    content: "Take our perfectly crafted quiz to decide on the next step of your Anime journey"; /* Add your description text */
+ transform: scale(1.1); /* Add a pop-up effect on hover */
+ }
+
+ 
+#chatbot:hover::before {
+    content: "Chat with our own bot about your feelings and get recommended anime music to ease yourself"; /* Add your description text */
     position: absolute;
     top: 70%;
     left: 50%;
@@ -27,7 +42,7 @@
     color: #fff;
     padding: 10px;
     border-radius: 5px;
-   
+    font-size: 1rem;
     z-index: 2;
     width: 200px; /* Adjust the width of the description box as needed */
     text-align: center;
@@ -39,7 +54,12 @@
     font-weight: normal;
   }
   
-  #Quiz:hover::before {
+  #chatbot:hover::before {
     display: block; /* Show the description on hover */
   }
+  Link{
+    text-decoration: none;
+  }
+  
+ 
   

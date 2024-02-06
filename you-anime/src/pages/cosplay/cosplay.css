@@ -10,6 +10,22 @@
     
     letter-spacing: .5rem;
     font-weight: bolder;
+   
+    
+      width: 15rem;
+      height: 100%;
+    padding-top: 1rem;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: auto;
+      
+      border-radius: 1rem;
+      
+    
+   
    }
    #cosplay:hover{
     text-shadow: 0px 1px 2px black;
@@ -19,7 +35,7 @@
    }
 
    #cosplay:hover::before {
-    content: "Your description goes here"; /* Add your description text */
+    content: "Find your dream anime character to be cosplayed"; /* Add your description text */
     position: absolute;
     top: 70%;
     left: 50%;

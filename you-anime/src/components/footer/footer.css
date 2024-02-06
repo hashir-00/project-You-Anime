@@ -1,0 +1,35 @@
+.footerComponent {
+  
+   
+    text-align: center; /* Center the links */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0); /* Add a subtle shadow for depth */
+    border-radius: 1rem; /* Round the corners of the navbar */
+    width: 100%;
+    position: fixed ;
+    bottom: 0;
+  
+  }
+  
+  
+  .footerComponent ul {
+    list-style-type: none; /* Remove bullet points from the list */
+ 
+  }
+  
+  .footerComponent li {
+    display: inline; /* Display list items horizontally */
+    margin: 0 15px; /* Margin between list items */
+  }
+  
+  .footerComponent a {
+    color: #fff; /* Text color of the links */
+    text-decoration: none; /* Remove underline from the links */
+    font-size: 18px; /* Increase font size */
+    font-weight: bold; /* Make the font bold */
+    transition: color 0.3s ease; /* Add smooth transition for color change */
+  }
+  
+  .footerComponent a:hover {
+    color: #ffd700; /* Change text color on hover */
+  }
+  
