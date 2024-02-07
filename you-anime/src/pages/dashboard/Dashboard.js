@@ -1,13 +1,10 @@
 // src/components/Dashboard.js
 import React, { useEffect, useState } from 'react';
-import Quiz from '../quiz/Quiz';
-import Chatbot from '../chatbot/Chatbot';
-import Cosplay from '../cosplay/cosplay';
+import Quiz from '../../components/quiz_item/Quiz';
+import Chatbot from '../../components/chat_bot_item/Chatbot';
+import Cosplay from '../../components/cosplay_item/cosplay';
 import './Dashboard.css';
-import { Helmet } from 'react-helmet';
 import { Route, Routes } from 'react-router-dom';
-import ChatbotApp from '../chatbot/ChatbotApp';
-import NavBar from '../../components/navbar/navbar';
 
 
 

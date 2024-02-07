@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/dashboard/Dashboard";
-import ChatbotApp from "./pages/chatbot/ChatbotApp";
-import Quiz from './pages/quiz/Quiz';
-import Cosplay from './pages/cosplay/cosplay';
+import Quiz from './components/quiz_item/Quiz';
+import Cosplay from './components/cosplay_item/cosplay';
 import ChatbotPage from './pages/chatbot/ChatbotPage';
 import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
@@ -16,9 +15,9 @@ export default function App() {
             <NavBar/>
                 <Routes>
                     <Route path="/" element={<Dashboard />} />
-                    <Route path="/chatbotPage" element={<ChatbotPage/>} />    
-                    <Route path="/quiz" element={<Quiz/>} />   
-                    <Route path="/cosplay" element={<Cosplay />} />       
+                    <Route path="/chatbotPage" element={<ChatbotPage/>} />{/* chatbot page */}  
+                    <Route path="/quizPage" element={<Quiz/>} />   {/* quiz page */} 
+                    <Route path="/cosplayPage" element={<Cosplay />} />  {/* cosplay page */}      
                 </Routes>
                 <Footer/>
             </BrowserRouter>
