@@ -14,7 +14,7 @@ const NavBar= ()=>{
                         <Link to="/chatbotPage">Chatbot</Link>
                     </li>
                     <li>
-                        <Link to="/quiz">Quiz</Link>
+                        <Link to="/dash">Dash</Link>
                     </li>
                     <li>
                         <Link to="/cosplay">Cosplay</Link>
