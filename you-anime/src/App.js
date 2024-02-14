@@ -7,6 +7,7 @@ import ChatbotPage from './pages/chatbot/ChatbotPage';
 import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import './App.css';
+import Dash from './pages/dash/Dash';
 
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
             <NavBar/>
                 <Routes>
                     <Route path="/" element={<Dashboard />} />
+                    <Route path="/dash" element={<Dash />} /> {/* dashboard page */}
                     <Route path="/chatbotPage" element={<ChatbotPage/>} />{/* chatbot page */}  
                     <Route path="/quizPage" element={<Quiz/>} />   {/* quiz page */} 
                     <Route path="/cosplayPage" element={<Cosplay />} />  {/* cosplay page */}      

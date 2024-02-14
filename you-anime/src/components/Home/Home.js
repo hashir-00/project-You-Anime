@@ -5,30 +5,10 @@ import Signup from "../../SignUp/SignUp";
 
 function Home(props) {
   return (
-    <Link to='/home' style={{textDecoration:"none"}}>
-        <div>
-      <div>
-        <h1>
-          <Link to="/login" element={<Login/>}>Login</Link>
-        </h1>
-        <br />
-        <h1>
-          <Link to="/signup" element={<Signup/>}>Signup</Link>
-        </h1>
-      </div>
+    <>    <Login />
+    <Signup />    
+    </>
 
-      <br />
-      <br />
-      <br />
-
-      <h2>{props.name ? `Welcome - ${props.name}` : "Login please"}</h2>
-    </div>
-    <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-    </Routes>
-    </Link>
-    
   );
 }
 
