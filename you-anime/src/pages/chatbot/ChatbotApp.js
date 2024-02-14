@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './ChatbotApp.css';  // Import the CSS file
 
 const ChatbotApp = () => {
   const [inputText, setInputText] = useState('');
@@ -14,12 +15,12 @@ const ChatbotApp = () => {
 
     try {
       // Make a request to the chatbot API
-      const response = await axios.post('/https://your-chatbot-api-url.com', {
-        input: inputText
+      const response = await axios.post('http://localhost:7860', {  // Update the URL according to your API
+        inputText
       });
 
       // Update the output text with the response from the API
-      setOutputText(response.data.output);
+      setOutputText(response.data.outputText);
     } catch (error) {
       console.error('Error fetching data from chatbot API:', error);
     }
@@ -37,11 +38,11 @@ const ChatbotApp = () => {
         />
         <button type="submit">Send</button>
       </form>
-      {outputText && (
+      
         <div className="output">
           <p>{outputText}</p>
         </div>
-      )}
+    
     </div>
   );
 };

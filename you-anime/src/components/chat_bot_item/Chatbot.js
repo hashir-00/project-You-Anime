@@ -4,7 +4,7 @@ import './Chatbot.css';
 
 const Chatbot = () => {
   return (
-    <Link to="/chatbotPage" style={{textDecoration:"none"}}>
+    <Link to="/ChatbotPage" style={{textDecoration:"none"}}>
     <div className="dashboard-item" id="chatbot">
     Chatbot
       

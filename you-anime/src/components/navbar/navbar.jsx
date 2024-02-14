@@ -8,13 +8,13 @@ const NavBar= ()=>{
              <nav>
                 <ul>
                     <li>
-                        <Link to="/">Dashboard</Link>
+                        <Link to="">Dashboard</Link>
                     </li>
                     <li>
-                        <Link to="/chatbotPage">Chatbot</Link>
+                        <Link to="/Chatbotpage">Chatbot</Link>
                     </li>
                     <li>
-                        <Link to="/quiz">Quiz</Link>
+                        <Link to="/dash">Dash</Link>
                     </li>
                     <li>
                         <Link to="/cosplay">Cosplay</Link>

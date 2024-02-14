@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   return (
     <>
-    <div id="dashboard-header">
+    <div id="dashboard-username">
       <p>Welcome , {user} </p>
         </div>
        
@@ -34,6 +34,7 @@ const Dashboard = () => {
             <Routes>
             <Route index element={<Cosplay/>} ></Route>
             </Routes>
+            
             </div>
             </>
    

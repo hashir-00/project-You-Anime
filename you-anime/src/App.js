@@ -8,6 +8,7 @@ import NavBar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import './App.css';
 
+
 export default function App() {
     return (
         <div>

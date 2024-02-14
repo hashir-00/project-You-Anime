@@ -10,10 +10,7 @@ const ChatbotPage = () => {
         <title>YouAnime-Chatbot</title>
         <meta name="description" content="Chatbot" />
       </Helmet>
-  
-      <h1>Chatbot Page</h1>
-      <ChatbotApp />
-      
+      <ChatbotApp />      
     </div>
   );
 };

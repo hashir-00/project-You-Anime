@@ -10,16 +10,15 @@
     min-height:50vh;
   }
   
-  #dashboard-header {
+  #dashboard-username {
     
    padding: 1rem 0 1rem 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #fff;
     letter-spacing: .3rem;
     padding-left: 1rem;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Dark outline */
-    
-
+    text-shadow: 0 0 5px rgba(123, 6, 232, 1); /* Dark outline */
+    text-align: center;
   }
 
 
