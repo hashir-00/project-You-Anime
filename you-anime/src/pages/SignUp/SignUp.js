@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile,} from "firebase/auth";
 
-import InputControl from "../components/InputControl/InputControl"
-import { auth } from "../firebase/firebase";
+import InputControl from "../../components/InputControl/InputControl";
+
+import { auth } from "../../firebase/firebase";
 
 import styles from "./SignUp.module.css";
 

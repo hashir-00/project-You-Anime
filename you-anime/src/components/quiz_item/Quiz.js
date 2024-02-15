@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Quiz = () => {
  
   return (
-    <Link to="/quiz" style={{textDecoration:"none"}}>
+    <Link to="/QuizPage" style={{textDecoration:"none"}}>
     <div className="dashboard-item" id="Quiz" >
       QUIZ
     </div>

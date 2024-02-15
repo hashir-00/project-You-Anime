@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Cosplay = () => {
  
   return (
-    <Link to="/cosplay" style={{textDecoration:"none"}}>
+    <Link to="/CosplayPage" style={{textDecoration:"none"}}>
     <div className="dashboard-item"  id="cosplay" >
    cosplay
     </div>

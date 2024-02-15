@@ -2,9 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import Quiz from '../../components/quiz_item/Quiz';
 import Chatbot from '../../components/chat_bot_item/Chatbot';
-import Cosplay from '../../components/cosplay_item/cosplay';
+import Cosplay from '../../components/cosplay_item/Cosplay';
 import './Dashboard.css';
 import { Route, Routes } from 'react-router-dom';
+import { auth } from '../../firebase/firebase';
 
 
 
@@ -13,9 +14,18 @@ const Dashboard = () => {
   useEffect(() => {
     document.title = 'YouAnime';
     document.description = 'YouAnime';
-    setUser("user");
-    // Fetch user information after login
-    
+
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      if (currentUser) {
+        setUser(currentUser.displayName || currentUser.email);
+      } else {
+        setUser(""); // No user signed in
+      }
+    });
+
+    return () => {
+      unsubscribe(); // Unsubscribe when component unmounts
+    };
   }, []);
 
   return (

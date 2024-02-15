@@ -11,13 +11,16 @@ const NavBar= ()=>{
                         <Link to="">Dashboard</Link>
                     </li>
                     <li>
-                        <Link to="/Chatbotpage">Chatbot</Link>
+                        <Link to="/QuizPage">Quiz</Link>
+                    </li>
+                    <li>
+                        <Link to="/ChatbotPage">Chatbot</Link>
                     </li>
                     <li>
                         <Link to="/dash">Dash</Link>
                     </li>
                     <li>
-                        <Link to="/cosplay">Cosplay</Link>
+                        <Link to="/CosplayPage">Cosplay</Link>
                     </li>
                 </ul>
             </nav>
