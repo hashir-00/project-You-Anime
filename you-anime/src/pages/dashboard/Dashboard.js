@@ -4,17 +4,16 @@ import Quiz from '../../components/quiz_item/Quiz';
 import Chatbot from '../../components/chat_bot_item/Chatbot';
 import Cosplay from '../../components/cosplay_item/Cosplay';
 import './Dashboard.css';
-import { Route, Routes } from 'react-router-dom';
 import { auth } from '../../firebase/firebase';
+import { Helmet } from 'react-helmet';
+import NavBar from '../../components/navbar/navbar';
 
 
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
-  useEffect(() => {
-    document.title = 'YouAnime';
-    document.description = 'YouAnime';
 
+  useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       if (currentUser) {
         setUser(currentUser.displayName || currentUser.email);
@@ -28,25 +27,28 @@ const Dashboard = () => {
     };
   }, []);
 
+
   return (
-    <>
+    <div className='contain-dashboard'>
+     <Helmet>
+          <title>YouAnime-Dashboard</title>
+          <meta name="description" content="dashboard" />
+        </Helmet>
+        
+
+        <NavBar/>
     <div id="dashboard-username">
       <p>Welcome , {user} </p>
         </div>
        
     <div className="dashboard-container">
-            <Routes>
-            <Route index element={<Quiz/>} ></Route>
-            </Routes>
-            <Routes>
-            <Route index element={<Chatbot/>} ></Route>           
-            </Routes>
-            <Routes>
-            <Route index element={<Cosplay/>} ></Route>
-            </Routes>
-            
+
+     
+      <Quiz/>
+      <Chatbot/>  
+      <Cosplay/>
             </div>
-            </>
+       </div>
    
   );
 };

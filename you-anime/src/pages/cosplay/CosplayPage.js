@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import CosplayApp from "./CosplayApp";
+import NavBar from "../../components/navbar/navbar";
 
 const CosplayPage = () => {
     return (
@@ -7,7 +8,7 @@ const CosplayPage = () => {
         <Helmet>
           <title>YouAnime-Cosplay</title>
           <meta name="description" content="cosplay" />
-        </Helmet>
+        </Helmet>      <NavBar/>
         <CosplayApp/>
       </div>
     );

@@ -1,25 +1,44 @@
 .container {
-    height: 100%;
-    min-height: 100vh;
-    width: 100%;
-    background: linear-gradient(to right, #9900ff, #cc80ff);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .innerBox {
-    min-width: 480px;
-    height: fit-content;
-    width: fit-content;
-    background-color: #fff;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
+  min-height: fit-content;
+
+padding-top: 3rem;
+  justify-content: center;
+  border-radius: 1rem;
+  display: flex;
+}
+
+.innerBoxWrapper {
+  display: flex; /* Add display flex to make inner boxes appear next to each other */
+  justify-content: center; /* Center the inner boxes horizontally */
+ 
+}
+
+.innerBoxOne{
+
+  width: fit-content;
+  background-color: #fff;
+  width: 30rem;
+  padding: 3rem;
+  border-radius: 1rem 0 0 1rem;
+  display: inline-block; /* Change display to inline-block */
+
+}
+.innerBoxTwo {
+  background-image: url('/src/components/images/chatbot.jpg');
+  background-size: cover; /* Display the image fully while maintaining aspect ratio */
+  width: 30rem;
+  background-color: #fff;
+
+  padding: 3rem;
+  border-radius:  0 1rem 1rem 0;
+  display: inline-block; /* Change display to inline-block */
+}
+
+h3{
+  text-align: center;
+  letter-spacing: 0.5rem;
+}
+
   
   .footer {
     display: flex;
@@ -29,7 +48,7 @@
   
   .footer .error {
     font-weight: bold;
-    font-size: 0.875rem;
+
     color: #ff3300;
     text-align: center;
   }
@@ -37,16 +56,17 @@
   .footer button {
     outline: none;
     border: none;
-    background-color: #9900ff;
+    background-color: #c579c5;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 1rem;
     font-weight: bold;
-    font-size: 1rem;
-    padding: 10px 16px;
-    width: 100%;
     transition: 100ms;
     cursor: pointer;
-  }
+    width: 20%;
+    font-size: medium;
+    padding: 1rem;
+    margin: auto;}
+  
   
   .footer button:disabled {
     background-color: gray !important;
@@ -59,13 +79,15 @@
   .footer p {
     font-weight: 700;
     color: #000;
+    text-align: center;
+    font-size: large;
   }
   
   .footer p span a {
     font-weight: bold;
-    color: #9900ff;
+    color: #b663be;
     letter-spacing: 1px;
-    font-size: 1rem;
+    font-size: large;
     text-decoration: none;
   }
   
