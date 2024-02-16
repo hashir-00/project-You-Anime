@@ -37,22 +37,23 @@ function Login() {
   };
   return (
     <div className={styles.container}>
-      <div className={styles.innerBox}>
-        <h1 className={styles.heading}>Login</h1>
+      <div className={styles.innerBoxWrapper}>
+      <div className={styles.innerBoxOne}>
+        <h3 className={styles.heading}>Login</h3>
 
         <InputControl
-          label="Email"
+         
           onChange={(event) =>
             setValues((prev) => ({ ...prev, email: event.target.value }))
           }
-          placeholder="Enter email address"
+          placeholder=" email address"
         />
         <InputControl
-          label="Password"
+          
           onChange={(event) =>
             setValues((prev) => ({ ...prev, pass: event.target.value }))
           }
-          placeholder="Enter Password"
+          placeholder="Password"
         />
 
         <div className={styles.footer}>
@@ -67,6 +68,8 @@ function Login() {
             </span>
           </p>
         </div>
+      </div>
+      <div className={styles.innerBoxTwo}></div>
       </div>
     </div>
   );

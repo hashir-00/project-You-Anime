@@ -9,6 +9,8 @@ import Login from './pages/Login/Login.js';
 import QuizPage from './pages/quiz/QuizPage.js';
 import Home from './pages/Home/Home.js';
 import './App.css';
+import SignupPage from './pages/SignUp/SignUpPage.js';
+import LoginPage from './pages/Login/LoginPage.js';
 
 export default function App() {
     return (
@@ -20,8 +22,8 @@ export default function App() {
                     <Route path="/ChatbotPage" element={<ChatbotPage/>} />{/* chatbot page */}  
                     <Route path="/quizPage" element={<QuizPage/>} />   {/* quiz page */} 
                     <Route path="/CosplayPage" element={<CosplayPage/>} />  {/* cosplay page */} 
-                    <Route path='signup' element={<Signup/>} />  {/* signup page */}
-                   < Route path="/Login" element={<Login />} /> {/* cosplay item */}
+                    <Route path='signup' element={<SignupPage/>} />  {/* signup page */}
+                   < Route path="/Login" element={<LoginPage />} /> {/* cosplay item */}
                 </Routes>
                 <Footer/>
             </BrowserRouter>
