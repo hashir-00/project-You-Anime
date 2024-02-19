@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.7",
     "firebase": "^10.8.0",
+    "firebaseui": "^6.1.0",
     "openai": "^4.27.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -41,6 +42,6 @@
     ]
   },
   "devDependencies": {
-    "@gradio/client": "^0.12.0"
+    "@gradio/client": "^0.12.1"
   }
 }

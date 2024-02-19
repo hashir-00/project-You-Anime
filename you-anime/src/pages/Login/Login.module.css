@@ -17,16 +17,17 @@ padding-top: 3rem;
 
   width: fit-content;
   background-color: #fff;
-  width: 30rem;
+  width: 20rem;
   padding: 3rem;
   border-radius: 1rem 0 0 1rem;
   display: inline-block; /* Change display to inline-block */
 
 }
 .innerBoxTwo {
-  background-image: url('/src/components/images/chatbot.jpg');
+  background-image: url('/src/components/images/login.jpg') ;
   background-size: cover; /* Display the image fully while maintaining aspect ratio */
-  width: 30rem;
+  background-position: 50%; /* Adjust as needed */
+   width: 20rem;
   background-color: #fff;
 
   padding: 3rem;
@@ -60,9 +61,9 @@ h3{
     font-weight: bold;
     transition: 100ms;
     cursor: pointer;
-    width: 20%;
+    width: auto;
     font-size: medium;
-    padding: 1rem;
+    padding: 0.8rem;
     margin: auto;}
   
   
@@ -73,6 +74,7 @@ h3{
   
   .footer button:hover {
     background-color: #aa2aff;
+   
   }
   
   .footer p {

@@ -1,6 +1,6 @@
 import { client } from "@gradio/client";
 
-const app = await client("http://127.0.0.1:7860");
+const app = await client("http://127.0.0.1:7860/");
 const result = await app.predict("/chat", [		
 				"Hello!!", // string  in 'Message' Textbox component		
 				"Hello!!", // string  in 'System Prompt' Textbox component		
@@ -10,4 +10,6 @@ const result = await app.predict("/chat", [
 				1, // number (numeric value between 1.0 and 2.0) in 'Repetition penalty' Slider component
 	]);
 
-console.log(result.data);
+
+	
+console.log(result.data); // Adjust response handling based on actual response structure

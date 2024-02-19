@@ -7,7 +7,7 @@ const QuizPage = () => {
       <div className="Quiz-page">
         <Helmet>
           <title>YouAnime-Quiz</title>
-          <meta name="description" content="Chatbot" />
+          <meta name="description" content="Quiz" />
         </Helmet>      <NavBar/>
     <QuizApp/>    
       </div>

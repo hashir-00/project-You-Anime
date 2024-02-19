@@ -7,7 +7,6 @@ const SignUp = () => {
         <Helmet>
           <title>YouAnime-Sign Up </title>
           <meta name="description" content="Sign up" />
-
         </Helmet>
       <SignupPage />
     </div>

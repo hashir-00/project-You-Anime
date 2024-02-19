@@ -15,12 +15,12 @@ const ChatbotApp = () => {
 
     try {
       // Make a request to the chatbot API
-      const response = await axios.post('http://localhost:7860', {  // Update the URL according to your API
-        inputText
+      const response = await axios.post('http://127.0.0.1:7860/', {  // Update the URL according to your API
+        message: inputText
       });
 
       // Update the output text with the response from the API
-      setOutputText(response.data.outputText);
+      setOutputText(response.data.outputText); // Adjust response handling based on actual response structure
     } catch (error) {
       console.error('Error fetching data from chatbot API:', error);
     }
@@ -39,10 +39,9 @@ const ChatbotApp = () => {
         <button type="submit">Send</button>
       </form>
       
-        <div className="output">
-          <p>{outputText}</p>
-        </div>
-    
+      <div className="output">
+        <p>{outputText}</p>
+      </div>
     </div>
   );
 };
