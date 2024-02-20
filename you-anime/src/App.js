@@ -11,6 +11,9 @@ import './App.css';
 
 import LoginPage from './pages/Login/LoginPage.js';
 import SignUp from './pages/SignUp/SignUp.js';
+import Test from './pages/test/test.js';
+import EntertainmentPage from './pages/Entertainment/entertainmentPage.js';
+
 
 export default function App() {
     return (
@@ -24,7 +27,9 @@ export default function App() {
                     <Route path="/CosplayPage" element={<CosplayPage/>} />  {/* cosplay page */} 
                     <Route path='signup' element={<SignUp/>} />  {/* signup page */}
                    < Route path="/Login" element={<LoginPage />} /> {/* cosplay item */}
-                </Routes>
+                   < Route path="/about" element={<Test/>} />
+                   < Route path="/entertainment" element={<EntertainmentPage/>} />
+                 </Routes>
                 <Footer/>
             </BrowserRouter>
         </div>

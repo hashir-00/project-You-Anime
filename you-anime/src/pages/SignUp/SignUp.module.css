@@ -27,6 +27,7 @@ padding-top: 3rem;
   background-image: url('/src/components/images/signup.jpg');
   background-size: cover; /* Display the image fully while maintaining aspect ratio */
   width: 20rem;
+  background-position: 50%; /* Adjust as needed */
   background-color: #fff;
 
   padding: 3rem;

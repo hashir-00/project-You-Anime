@@ -20,7 +20,10 @@ const NavBarHome= ()=>{
                         <Link to="/Contact">Contact us</Link>
                     </li>
                     <li>
-                        <Link to="/About">About us</Link>   
+                        <Link to="/about">About us</Link>   
+                    </li>
+                    <li>
+                        <Link to="/entertainment">entertainment</Link>   
                     </li>
                     <li>
                         <Link to="https://github.com/hashir-00/SDGP-CS38.git" target="_blank">Github Repositary</Link>
