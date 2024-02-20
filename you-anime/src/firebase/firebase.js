@@ -1,13 +1,19 @@
-import firebase from 'firebase/app';
-import 'firebase/auth'; // Import the authentication module if you're using authentication
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDTMML-fs7VF__bm8vescWmNsFdAff0Cuw",
+  authDomain: "auth-a541a.firebaseapp.com",
+  projectId: "auth-a541a",
+  storageBucket: "auth-a541a.appspot.com",
+  messagingSenderId: "251389327083",
+  appId: "1:251389327083:web:da1f576f9908fda425f0ae",
+  measurementId: "G-WCPNHY3140"
 };
 
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth();
+
+
+export { app, auth };
