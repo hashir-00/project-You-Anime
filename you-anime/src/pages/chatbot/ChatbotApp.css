@@ -1,2 +1,42 @@
-.chatbot{
-    text-align: center;}
+.chat-container {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.messages {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.bot-message {
+    background-color: #f0f0f0;
+}
+
+.user-input {
+    width: calc(100% - 70px); /* Adjust according to your design */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+}
+
+.send-button {
+    width: 70px; /* Adjust according to your design */
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+}
