@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import styles from './Quiz.module.css';
+import { useNavigate } from 'react-router-dom'; 
 const QuizApp = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -12,6 +13,22 @@ const QuizApp = () => {
   const [usedQuestionIndices, setUsedQuestionIndices] = useState([]);
   const [progressPercentage, setProgressPercentage] = useState(0);
   const [questionsCompleted, setQuestionsCompleted] = useState(false);
+  const [level, setLevel] = useState(null);
+  const navigate = useNavigate();
+  useEffect(() => {
+    // Determine the level based on totalMarks
+    const determineLevel = () => {
+      if (totalMarks <= 5) {
+        setLevel('Beginner');
+      } else if (totalMarks <= 10) {
+        setLevel('Intermediate');
+      } else {
+        setLevel('Expert');
+      }
+    };
+
+    determineLevel();
+  }, [totalMarks]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,7 +69,6 @@ const QuizApp = () => {
       return shuffledArray;
     };
 
-
     fetchData();
   }, []);
 
@@ -64,7 +80,6 @@ const QuizApp = () => {
   useEffect(() => {
     updateProgressBar();
   }, [updateProgressBar]);
-
 
   const generateQuestionnaire = (question) => {
     if (!question) {
@@ -102,10 +117,9 @@ const QuizApp = () => {
     const messageBox = document.querySelector(`.${styles.messageBox}`);
     const message = document.querySelector(`.${styles.message}`);
 
-    message.innerHTML = `Total Marks: ${totalMarks}<br>
-                           Beginner Total: ${categoryTotals.beginner}<br>
-                           Intermediary Total: ${categoryTotals.intermediary}<br>
-                           Expert Total: ${categoryTotals.expert}`;
+    message.innerHTML = `Your Level <br /> ${level}<br />
+                          Your Total Marks: ${totalMarks}<br />
+                          Your new Anime Recommendation awaits`;
 
     messageBox.style.display = "block";
   };
@@ -142,8 +156,13 @@ const QuizApp = () => {
     }[category];
   };
 
+  const RetrunToDescription = () => {
+    navigate('/QuizDescription');
+  }
+
   return (
     <>
+      <p className={styles.progressLabel}>Progress</p>
       <div className={styles.progressBar}>
         <div style={{ '--progressPercentage': `${progressPercentage}%` }} className={styles.progressIndicator}></div>
       </div>
@@ -151,15 +170,17 @@ const QuizApp = () => {
       <div className={styles.questionnaireContainer}>
         {generateQuestionnaire(questions[currentQuestionIndex])}
       </div>
-
-      <button className={styles.submitBtn} onClick={submitAnswers} disabled={questionsCompleted}>
+      <button className={styles.submtBtn} onClick={submitAnswers} disabled={questionsCompleted}>
         Submit
       </button>
-
+       <button className={styles.canclBtn} onClick={RetrunToDescription}>
+        Cancel
+      </button>
       <div className={styles.messageBox}>
         <p className={styles.message}></p>
       </div>
     </>
   );
 };
+
 export default QuizApp;
