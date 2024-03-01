@@ -1,24 +1,46 @@
 /* HomePage.css */
 
-
+.contain-HomePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 
 .content {
     text-align: center;
+    margin-top: 20px; /* Adjust margin top as needed */
 }
 
 .title {
     font-size: 2rem;
     color: #333;
-    margin-top: 20px;
 }
 
 .swipe-container {
     position: relative;
-
-    
+    width: 100%; /* Adjust the width as needed */
+    max-width: 80%; /* Set a maximum width if necessary */
     height: auto;
     overflow: hidden;
-    margin: 0 auto;
+    margin: 0 auto; /* Center horizontally */
+}
+
+.anime-list {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    /* HomePage.css */
+}
+.swipe-container {
+    position: relative;
+   background-color: rgba(81, 152, 227, 0.2);
+   border-radius: 3rem;
+    border: 1px solid rgba(75, 17, 222, 1);
+    max-width: 50%; /* Set a maximum width if desired */
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto; /* Center the swipe container horizontally */
 }
 
 .anime-list {
@@ -28,13 +50,13 @@
 
 .anime-card {
     flex: 0 0 auto;
-    width: 100%;
-    background-color: transparent;
+    width: fit-content; /* Set the width of the anime card to occupy the entire swipe container */
+
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
     text-align: center;
-    opacity: 0.5; /* Set default opacity for items */
+    opacity: 0; /* Set default opacity for items */
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -44,9 +66,9 @@
 
 .anime-card h2 {
     margin-bottom: 10px;
-    color: #333;
+    color: #31037b;
 }
 
 .anime-card p {
-    color: #666;
+    color: #2a0945;
 }
