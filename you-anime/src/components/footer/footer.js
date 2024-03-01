@@ -7,11 +7,12 @@ export default function Footer() {
         <div className="footerComponent">
             <footer>   <ul>
                 <li>
-                <Link> about</Link>
+                <Link to= "/AboutUs"> About us</Link>
                 </li>
+               
                 <li>
-                <Link> about</Link>
-                </li>
+                        <Link to="https://github.com/hashir-00/SDGP-CS38.git" target="_blank">Github Repositary</Link>
+                    </li>
             </ul></footer>
          
         </div>

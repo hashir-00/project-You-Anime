@@ -1,0 +1,52 @@
+/* HomePage.css */
+
+
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 20px;
+}
+
+.swipe-container {
+    position: relative;
+
+    
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.anime-list {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.anime-card {
+    flex: 0 0 auto;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0.5; /* Set default opacity for items */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.anime-card.active {
+    opacity: 1; /* Active item has full opacity */
+}
+
+.anime-card h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.anime-card p {
+    color: #666;
+}

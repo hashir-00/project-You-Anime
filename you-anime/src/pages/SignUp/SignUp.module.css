@@ -49,7 +49,7 @@ h3{
   
   .footer .error {
     font-weight: bold;
-
+    font-size: small;
     color: #ff3300;
     text-align: center;
   }
@@ -90,5 +90,29 @@ h3{
     letter-spacing: 1px;
     font-size: large;
     text-decoration: none;
+  }
+  .Homebutton{
+    outline: none;
+    border: none;
+    position: relative;
+    right: 10%;
+    background-color: #c579c5;
+    color: #fff;
+    border-radius: 1rem;
+    font-weight: bold;
+    transition: 100ms;
+    cursor: pointer;
+    width: auto;
+    font-size: medium;
+    padding: 1rem;
+    margin: auto;}
+  
+  
+  .Homebutton:disabled {
+    background-color: gray !important;
+  }
+  
+  .Homebutton:hover {
+    background-color: #aa2aff;
   }
   
