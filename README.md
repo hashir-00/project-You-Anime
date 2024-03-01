@@ -36,9 +36,19 @@ after installation run the react app
 
 ### Prerequisites
 
-What things you need to install the software and how to install them:
+#ML model to be run
 
-### Contributions
+for the ml models to be run locally install these packages
+
+``` pip install torch```
+``` pip install flask```
+```pip install flask-cors```
+``` pip install transformers```
+
+if pip  is not recognized use 
+``` python -m pip``` instead of ```pip```
+
+## Contributing
 
 always do a git pull for any recent changes 
 ``` git pull origin master```
