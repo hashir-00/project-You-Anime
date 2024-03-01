@@ -63,7 +63,7 @@ after each change
 ``` git add filename.ext``` -for the specifi files
 
 after addition commit the changes
-``` git commit -m "commit message"``` (include a simple message about the task done
+``` git commit -m "commit message"``` (include a simple message about the task done)
 
 push to the branch 
 
