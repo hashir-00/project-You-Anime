@@ -1,8 +1,13 @@
+//import ChatBot from "../../components/chatbot-Mistral/chat";
 
-export default function AboutUsApp(){
+
+
+export default function AboutUsApp() {
+
     return(
-            <div>
-                <h1>About Us</h1>
+        <div>
+            <h1>ABout us</h1>
+           {/* <ChatBot/> */}
             </div>
-    );
+    )
 }
