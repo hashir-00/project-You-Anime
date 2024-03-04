@@ -3,6 +3,7 @@ import './chatbot.css'; // Import CSS file
 
 function Chatbot() {
     const [inputText, setInputText] = useState('');
+    const[ output, setOutput] = useState(''); // Add state for chat history
     const [chatHistory, setChatHistory] = useState([]);
     
     const sendMessage = async () => {
@@ -13,7 +14,7 @@ function Chatbot() {
     
         try {
             // Send input text to Flask server
-            const response = await fetch('http://127.0.0.1:5000/chatbot', {
+            const response = await fetch('http://127.0.0.1:5000/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -22,6 +23,7 @@ function Chatbot() {
             });
             const data = await response.json();
             // Update chat history with chatbot response
+            setOutput(data.response);
             setChatHistory(prevChatHistory => [...prevChatHistory, { sender: 'Chatbot', message: data.response }]);
         } catch (error) {
             console.error('Error:', error);
@@ -37,6 +39,10 @@ function Chatbot() {
                         <strong>{message.sender}: </strong>{message.message}
                     </p>
                 ))}
+            </div>
+            <div>
+                {output && <p className="message chatbotMessage"><strong>Chatbot: </strong>{output}</p>
+                }
             </div>
             <div style={{ display: 'flex' }}>
                 <input

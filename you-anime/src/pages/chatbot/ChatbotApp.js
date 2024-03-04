@@ -2,12 +2,13 @@
 import React, { useState } from 'react';
 
 import './ChatbotApp.css';
+import ChatBot from '../../components/chatbot-Mistral/chat';
 
 
 
 
 
-function ChatbotApp() {
+function ChatbotAp() {
     const [userInput, setUserInput] = useState('');
     const [chatMessages, setChatMessages] = useState([]);
 
@@ -64,4 +65,11 @@ function ChatbotApp() {
   );
 }
 
+function ChatbotApp(){
+    return(
+        <div>
+            <ChatBot/>
+        </div>
+    )
+}
 export default ChatbotApp;

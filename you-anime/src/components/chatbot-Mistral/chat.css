@@ -1,20 +1,26 @@
 .container {
-    max-height: 40%;
     width: 40%;
-    padding: 1rem;
+    min-height: 40%;
+    padding: 2rem;
     margin: 0 auto;
-    margin-top: 5rem; 
-    background-color: #f9f9f9;
+    margin-top: 2rem; 
+    background-color: #6384e4;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: small;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   .chat-container {
-    max-height: 50vh; /* Adjust height as needed */
-    overflow-y: scroll;
- 
+    min-height: 50vh; /* Adjust height as needed */
+    overflow-y: visible;
+    border-radius: 0.5rem;
+    border: 1px solid #000;
+    margin-top: 1rem;
+    padding:.5rem;
+    font-size: small;
   }
-  
+
   .message {
     padding: 10px;
     margin: 5px;
@@ -23,15 +29,17 @@
   }
   
   .user-message {
-    background-color: #007bff;
+    background-color: #975df5;
     color: #fff;
     align-self: flex-end;
   }
   
   .bot-message {
-    background-color: #4caf50;
+    background-color: #ec2f87;
     color: #fff;
-    width: fit-content;
+    width: "auto";
+    font-style: italic;
+    font-weight: lighter;
   }
   
   .input-container {
@@ -45,80 +53,20 @@
     margin-right: 10px;
     border: none;
     border-radius: 8px;
+    
   }
   
   button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #910291;
     color: #fff;
     border: none;
-    border-radius: 8px;
+    border-radius: 1rem;
     cursor: pointer;
+    margin: .2rem;
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #47047b;
   }
-  .container {
-    max-height: 40%;
-    width: 40%;
-    padding: 1rem;
-    margin: 0 auto;
-    margin-top: 5rem; 
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .chat-container {
-    max-height: 50vh; /* Adjust height as needed */
-    overflow-y: scroll;
  
-  }
-  
-  .message {
-    padding: 10px;
-    margin: 5px;
-    border-radius: 8px;
-    max-width: 70%;
-  }
-  
-  .user-message {
-    background-color: #007bff;
-    color: #fff;
-    align-self: flex-end;
-  }
-  
-  .bot-message {
-    background-color: #4caf50;
-    color: #fff;
-    width: fit-content;
-  }
-  
-  .input-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 8px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 0.5rem;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
