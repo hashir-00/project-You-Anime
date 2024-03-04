@@ -106,3 +106,19 @@ def chat():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+#note
+    #this is the main file for the chatbot. It uses the 
+    #huggingface_hub to generate the response for the user input.
+    #The response is then analyzed for sentiment using the textblob library.
+    #The response is then returned to a music recommendation system.
+
+
+ 
+    #     message = data.get("message") - this is the user input
+    #     history = data.get("history", []) - this is the conversation history
+    #     system_prompt = data.get("system_prompt") - this is the system prompt(can modify to give context to the chat(such as act like a profession etc))
+    #     temperature = data.get("temperature", 0.9) - this is the temperature for the response
+    #     max_new_tokens = data.get("max_new_tokens", 64) - this is the maximum number of tokens for the response(number of words)
+    
+

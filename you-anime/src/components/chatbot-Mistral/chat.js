@@ -65,7 +65,7 @@ function ChatBot() {
         //try changing these values
         system_prompt: "You are an emotional supporter. Act like one. You can start by asking how the user is doing. E.g. 'Hi, how are you?'and in the end recommend a music",
         temperature: 0.9,
-        max_new_tokens: 64,
+        max_new_tokens: 64, // Max number of tokens to generate from the bot
         top_p: 0.95,
         repetition_penalty: 1.0
       };
