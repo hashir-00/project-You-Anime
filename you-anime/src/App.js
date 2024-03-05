@@ -24,7 +24,7 @@ export default function App() {
         <div>
             <BrowserRouter basename='/project-You-Anime/'>
                 <Routes>         
-                    <Route path="/" element={<Home/>} />{/* home page  */}
+                    <Route path="/*" element={<Home/>} />{/* home page  */}
                     <Route path="/Dashboard" element={<Dashboard/>} />{/* dashboard page */}
                     <Route path="/ChatbotPage" element={<ChatbotPage/>} />{/* chatbot page */}  
                     <Route path="/quizPage" element={<QuizPage/>} />   {/* quiz page */} 
