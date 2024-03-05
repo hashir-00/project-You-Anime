@@ -22,7 +22,7 @@ import ContactUsPage from './pages/contactUs/contactUsPage.js';
 export default function App() {
     return (
         <div>
-            <BrowserRouter>
+            <BrowserRouter basename='/project-You-Anime'>
                 <Routes>         
                     <Route path="/" element={<Home/>} />{/* home page  */}
                     <Route path="/Dashboard" element={<Dashboard/>} />{/* dashboard page */}
