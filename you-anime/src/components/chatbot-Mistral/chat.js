@@ -63,15 +63,15 @@ function ChatBot() {
         message: message,
         history: chatHistory, // Pass chat history with the request
         //try changing these values
-        system_prompt: "You are an emotional supporter. Act like one. You can start by asking how the user is doing. E.g. 'Hi, how are you?'and in the end recommend a music",
+        system_prompt: "You are an emotional supporter. Act like one",
         temperature: 0.9,
-        max_new_tokens: 64, // Max number of tokens to generate from the bot
+        max_new_tokens: 256, // Max number of tokens to generate from the bot
         top_p: 0.95,
         repetition_penalty: 1.0
       };
   
       // eslint-disable-next-line no-unused-vars
-      const response = await fetch('https://www.pythonanywhere.com/user/hashir00/files/home/hashir00/app.py/chat', {
+      const response = await fetch('https://hashir00.pythonanywhere.com/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
