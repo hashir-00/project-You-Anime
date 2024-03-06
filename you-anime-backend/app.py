@@ -71,6 +71,7 @@ def analyze_sentiment(text):
 
 
 @cross_origin()
+
 @app.route("/chat", methods=["POST"])
 def chat():
     try:

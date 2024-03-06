@@ -1,36 +1,34 @@
 .container {
-  min-height: fit-content;
-
 padding-top: 3rem;
   justify-content: center;
   border-radius: 1rem;
   display: flex;
+  height: 100%;
 }
 
 .innerBoxWrapper {
   display: flex; /* Add display flex to make inner boxes appear next to each other */
   justify-content: center; /* Center the inner boxes horizontally */
- 
+  width: calc(50% - 2rem); /* Adjust width for smaller screens */
 }
 
 .innerBoxOne{
-
   width: fit-content;
   background-color: #fff;
-  width: 20rem;
-  padding: 3rem;
+  width: 25rem;
+  padding: 1rem;
   border-radius: 1rem 0 0 1rem;
   display: inline-block; /* Change display to inline-block */
 
 }
 .innerBoxTwo {
+  width: fit-content;
   background-image: url('/src/components/images/signup.jpg');
   background-size: cover; /* Display the image fully while maintaining aspect ratio */
-  width: 20rem;
+  width: 25rem;
   background-position: 50%; /* Adjust as needed */
   background-color: #fff;
-
-  padding: 3rem;
+  padding: 1rem;
   border-radius:  0 1rem 1rem 0;
   display: inline-block; /* Change display to inline-block */
 }
@@ -38,6 +36,7 @@ padding-top: 3rem;
 h3{
   text-align: center;
   letter-spacing: 0.5rem;
+  padding: 1rem;
 }
 
   

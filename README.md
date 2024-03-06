@@ -11,6 +11,7 @@ You-anime brings personalized excitement to every anime enthusiast's screen."
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [About Technology](#about-tech)
+- [About Deployment](#about-Deployment)
 - [License](#license)
 
 ## Getting Started
@@ -89,6 +90,11 @@ firebase has been utilised as the database for the user to store his own collect
 react is being used as the front end for the project and a flask server is used as the backend for the project.
 
 
+## about-Deployment
 
+this page is deployed in github pages for  hosting services.
+
+# issue with page refresh giving a 404 
+the issue has been corrected with introducing a 404.html page in public folder and few tweeks in index.html. look at them yo get an idea
 
 

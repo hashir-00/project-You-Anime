@@ -71,7 +71,7 @@ function ChatBot() {
       };
   
       // eslint-disable-next-line no-unused-vars
-      const response = await fetch('http://127.0.0.1:5000/chat', {
+      const response = await fetch('https://www.pythonanywhere.com/user/hashir00/files/home/hashir00/app.py/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
