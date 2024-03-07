@@ -22,7 +22,7 @@ import ContactUsPage from './pages/contactUs/contactUsPage.js';
 export default function App() {
     return (
         <div>{/* when it comes to deployment need to have the basename as the project repo name(/project-you-anime/)*/}
-            <BrowserRouter >
+            <BrowserRouter basename='/project-you-anime/'>
                 <Routes>         
                     <Route path="/*" element={<Home/>} />{/* home page  */}
                     <Route path="/Dashboard" element={<Dashboard/>} />{/* dashboard page */}
