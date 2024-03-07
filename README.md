@@ -94,7 +94,22 @@ react is being used as the front end for the project and a flask server is used 
 
 this page is deployed in github pages for  hosting services.
 
-# issue with page refresh giving a 404 
+### steps
+- Add a homepage property in this format*: https://{username}.github.io/{repo-name}
+    inside the react projects package.json right above the name of the project
+- add the relevant deployment scripts
+    
+    "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",} 
+- build the build folder
+    use ```npm run build`` to build the deploying folder
+- deploy the project 
+    use ```npm run deploy``` to publish the project
+
+## issue with page refresh giving a 404 
 the issue has been corrected with introducing a 404.html page in public folder and few tweeks in index.html. look at them yo get an idea
 
 
