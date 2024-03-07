@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-
-import InputControl from "../../components/InputControl/InputControl";
+import InputControl, { InputControlPassword } from "../../components/InputControl/InputControl";
 import { auth } from "../../firebase/firebase";
 
 import styles from "./Login.module.css";
@@ -13,6 +12,7 @@ function Login() {
     email: "",
     pass: "",
   });
+   const [showPassword, setShowPassword] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
@@ -51,13 +51,23 @@ function Login() {
           }
           placeholder=" email address"
         />
-        <InputControl
-          
+        <InputControlPassword        
           onChange={(event) =>
             setValues((prev) => ({ ...prev, pass: event.target.value }))
           }
           placeholder="Password"
+        type={showPassword ? "text" : "password"}
         />
+        <div className={styles.showPassword}>
+        <input
+          type="checkbox"
+          id="showPassword"
+          onChange={() => setShowPassword((prev) => !prev)}
+        />
+        <label htmlFor="showPassword">Show Password</label>
+      </div>
+        
+       
 
         <div className={styles.footer}>
           <b className={styles.error}>{errorMsg}</b>

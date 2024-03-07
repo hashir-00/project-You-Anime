@@ -13,15 +13,10 @@ const NavBarHome= ()=>{
                   
                     <li>
                         <Link to="/login">Login</Link>
-                    </li>
+                    </li>         
+                    
                     <li>
-                        <Link to="/ContactUs">Contact us</Link>
-                    </li>
-                    <li>
-                        <Link to="/AboutUs">About us</Link>   
-                    </li>
-                    <li>
-                        <Link to="/entertainment">entertainment</Link>   
+                        <Link to="/memegallery">Meme gallery</Link>   
                     </li>
                    
 

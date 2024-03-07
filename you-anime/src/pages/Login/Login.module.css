@@ -112,3 +112,10 @@ h3{
   .Homebutton:hover {
     background-color: #aa2aff;
   }
+  .showPassword{
+    display: flex;
+    justify-content: center;
+    font-size: small;
+    color: #b663be;
+
+  }

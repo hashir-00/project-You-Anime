@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './chat.css'; // Import CSS file
+import SpotifyPlayerComponent from '../spotify_player/spotify_player';
 
 function ChatBot() {
   const [message, setMessage] = useState('');
@@ -93,10 +94,9 @@ function ChatBot() {
   }
 
   return (
+
     <div className='container'>
-  
       <div ref={chatContainerRef} className='chat-container'>
-       
         {chatHistory.map((item, index) => (
           <React.Fragment key={index}>
             <div className='message user-message'>{item.userMessage}</div>

@@ -34,7 +34,7 @@ export default function App() {
                    < Route path="/about" element={<Test/>} />
                    < Route path="/AboutUs" element={<AboutUsPage/>} />
                    < Route path="/ContactUs" element={<ContactUsPage/>} />
-                   < Route path="/entertainment" element={<EntertainmentPage/>} />
+                   < Route path="/memegallery" element={<EntertainmentPage/>} />
                  </Routes>
                 <Footer/>
             </BrowserRouter>

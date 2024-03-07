@@ -72,6 +72,7 @@ function SignupPage() {
             setValues((prev) => ({ ...prev, pass: event.target.value }))
           }
         />
+        
 
         <div className={styles.footer}>
           <b className={styles.error}>{errorMsg}</b>

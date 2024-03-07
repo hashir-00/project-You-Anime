@@ -9,7 +9,7 @@ padding-top: 3rem;
 .innerBoxWrapper {
   display: flex; /* Add display flex to make inner boxes appear next to each other */
   justify-content: center; /* Center the inner boxes horizontally */
-  width: calc(50% - 2rem); /* Adjust width for smaller screens */
+  
 }
 
 .innerBoxOne{
