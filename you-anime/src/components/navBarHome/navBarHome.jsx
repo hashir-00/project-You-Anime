@@ -10,24 +10,20 @@ const NavBarHome= ()=>{
                      <li>
                          <Link to="/Dashboard">Dashboard</Link>
                     </li>{/* will remove after testing*/}
-                    <li>
-                         <Link to="/signup">SignUp</Link>
-                    </li>
+                  
                     <li>
                         <Link to="/login">Login</Link>
                     </li>
                     <li>
-                        <Link to="/Contact">Contact us</Link>
+                        <Link to="/ContactUs">Contact us</Link>
                     </li>
                     <li>
-                        <Link to="/about">About us</Link>   
+                        <Link to="/AboutUs">About us</Link>   
                     </li>
                     <li>
                         <Link to="/entertainment">entertainment</Link>   
                     </li>
-                    <li>
-                        <Link to="https://github.com/hashir-00/SDGP-CS38.git" target="_blank">Github Repositary</Link>
-                    </li>
+                   
 
                 </ul>
             </nav>

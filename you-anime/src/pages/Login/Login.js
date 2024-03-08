@@ -37,6 +37,9 @@ function Login() {
   };
   return (
     <div className={styles.container}>
+      <Link to="/Home">
+      <button className={styles.Homebutton}>Back to Home</button>
+      </Link>
       <div className={styles.innerBoxWrapper}>
       <div className={styles.innerBoxOne}>
         <h3 className={styles.heading}>Login</h3>
@@ -62,7 +65,7 @@ function Login() {
             Login
           </button>
           <p>
-            Already have an account?{" "}
+           Dont have an account?{<br/>}
             <span>
               <Link to="/signup">Sign up</Link>
             </span>

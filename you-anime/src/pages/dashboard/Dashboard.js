@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Quiz from '../../components/quiz_item/Quiz';
 import Chatbot from '../../components/chat_bot_item/Chatbot';
-import Cosplay from '../../components/cosplay_item/Cosplay';
+import Cosplay from '../../components/cosplay_item/cosplay';
 import './Dashboard.css';
 import { auth } from '../../firebase/firebase';
 import { Helmet } from 'react-helmet';
