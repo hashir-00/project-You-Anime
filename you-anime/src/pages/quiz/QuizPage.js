@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import QuizApp from "./QuizApp";
 import NavBar from "../../components/navbar/navbar";
+import QuizDescription from "./QuizDescription";
 
 const QuizPage = () => {
     return (
@@ -9,7 +10,7 @@ const QuizPage = () => {
           <title>YouAnime-Quiz</title>
           <meta name="description" content="Quiz" />
         </Helmet>      <NavBar/>
-    <QuizApp/>    
+    <QuizDescription/>    
       </div>
     );
   };
