@@ -1,0 +1,53 @@
+[
+    {
+      "question": "In the anime 'Made in Abyss,' what is the central theme as a young girl named Riko descends into a mysterious and dangerous abyss?",
+      "options": ["Time Travel", "Space Exploration", "Cave Exploration", "Underwater Adventure"],
+      "correct_answer": "Cave Exploration"
+    },
+    {
+      "question": "What anime follows the story of Mob, a powerful esper who tries to live a normal life while dealing with supernatural occurrences?",
+      "options": ["Mob Psycho 100", "Paranoia Agent", "Serial Experiments Lain", "The Tatami Galaxy"],
+      "correct_answer": "Mob Psycho 100"
+    },
+    {
+      "question": "In the anime 'Dorohedoro,' the main character, Caiman, seeks to regain his memories and find the sorcerer who transformed him into a lizard. What is the setting of the series?",
+      "options": ["Cyberpunk City", "Fantasy Kingdom", "Post-Apocalyptic World", "Modern-day Tokyo"],
+      "correct_answer": "Post-Apocalyptic World"
+    },
+    {
+      "question": "What is the central theme of the anime 'Land of the Lustrous,' where gemstone humanoid beings defend themselves against mysterious invaders?",
+      "options": ["Space Exploration", "Gemstone Creatures", "Time Travel", "Apocalyptic War"],
+      "correct_answer": "Gemstone Creatures"
+    },
+    {
+      "question": "In 'The Promised Neverland,' a group of orphans discovers a dark secret about their orphanage. What is the main challenge they face?",
+      "options": ["Escaping from Demons", "Mastering Magic Abilities", "Solving a Mystery", "Time Travel Conundrum"],
+      "correct_answer": "Escaping from Demons"
+    },
+    {
+      "question": "In the anime 'March Comes in Like a Lion,' the protagonist, Rei Kiriyama, is a young professional shogi player. What challenges does he face?",
+      "options": ["Sports Competition", "Chess Tournaments", "Psychological Struggles", "Time Travel Adventures"],
+      "correct_answer": "Psychological Struggles"
+    },
+    {
+      "question": "What is the primary focus of the anime 'Barakamon,' where a calligrapher named Seishuu Handa moves to a rural island for self-discovery?",
+      "options": ["Romance", "Supernatural Events", "Slice of Life", "Mecha Battles"],
+      "correct_answer": "Slice of Life"
+    },
+    {
+      "question": "In 'Banished from the Heroes' Party,' the protagonist, Red, chooses a life of simplicity after leaving the hero's party. What is his new occupation?",
+      "options": ["Baker", "Blacksmith", "Innkeeper", "Alchemist"],
+      "correct_answer": "Innkeeper"
+    },
+    {
+      "question": "What anime follows the story of a group of musicians striving to make it big in the competitive music industry?",
+      "options": ["Your Lie in April", "Beck: Mongolian Chop Squad", "Nana", "Kids on the Slope"],
+      "correct_answer": "Beck: Mongolian Chop Squad"
+    },
+    {
+      "question": "In the anime 'A Place Further than the Universe,' a group of high school girls embarks on a journey to Antarctica. What motivates them to take on this adventure?",
+      "options": ["Treasure Hunt", "School Expedition", "Fulfilling a Friend's Dream", "Time Travel Mission"],
+      "correct_answer": "Fulfilling a Friend's Dream"
+    }
+  ]
+  
