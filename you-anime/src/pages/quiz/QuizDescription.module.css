@@ -8,7 +8,7 @@
     margin-top: 1rem;
     cursor: pointer;
     font-size: medium;
-    background-color:rgba(77, 67, 67, 0.6);
+    background-color:rgba(225, 21, 198, 0.3);
   }
   .backBtn {
     position:relative;
@@ -17,7 +17,7 @@
     cursor: pointer;
     font-size: medium;
 
-    background-color:rgba(77, 67, 67, 0.7);
+    background-color:rgba(225, 21, 198, 0.3);
   }
   .messageBox {
     font-size: medium;
