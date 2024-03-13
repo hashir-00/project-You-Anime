@@ -7,6 +7,8 @@ body{
     font-family: 'Inter';
     font-size: 1.5rem;
     text-transform: uppercase;
-    min-height: 100vh;
+    min-height: 120vh;
     overflow-y: hidden;
+    overflow-x: hidden;
+    width: auto;
   }

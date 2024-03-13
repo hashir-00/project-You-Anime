@@ -18,14 +18,7 @@
     color: #333;
 }
 
-.swipe-container {
-    position: relative;
-    width: 100%; /* Adjust the width as needed */
-    max-width: 80%; /* Set a maximum width if necessary */
-    height: auto;
-    overflow: hidden;
-    margin: 0 auto; /* Center horizontally */
-}
+
 
 .anime-list {
     display: flex;
@@ -34,12 +27,14 @@
 }
 .swipe-container {
     position: relative;
+    height: 40vh;
    background-color: rgba(81, 152, 227, 0.2);
    border-radius: 3rem;
-    border: 1px solid rgba(75, 17, 222, 1);
+    border: 1px solid rgb(98, 76, 154);
     max-width: 50%; /* Set a maximum width if desired */
     overflow: hidden;
     margin: 0 auto; /* Center the swipe container horizontally */
+    margin-bottom: 1rem;
 }
 
 .anime-list {
@@ -64,11 +59,11 @@
 
 .anime-card h2 {
     margin-bottom: 10px;
-    color: #31037b;
+    color: #127368;
 }
 
 .anime-card p {
-    color: #2a0945;
+    color: #0d4ee5;
 }
 
 @media screen and (max-width: 768px) {

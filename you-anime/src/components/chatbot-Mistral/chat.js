@@ -51,7 +51,7 @@ function ChatBot() {
         message: message,
         history: chatHistory, // Pass chat history with the request
         //try changing these values
-        system_prompt: "You are an emotional supporter. Act like one",
+        system_prompt: "sad,happy,demotivated.disgust.determine the users emotion and respond the right word only",
         temperature: 0.9,
         max_new_tokens: 256, // Max number of tokens to generate from the bot
         top_p: 0.95,
@@ -59,7 +59,7 @@ function ChatBot() {
       };
   
       // eslint-disable-next-line no-unused-vars
-      const response = await fetch('https://hashir00.pythonanywhere.com/chat', {
+      const response = await fetch('http://127.0.0.1:5000/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

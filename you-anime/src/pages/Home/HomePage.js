@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import "./HomePage.css";
 import NavBarHome from "../../components/navBarHome/navBarHome";
 import LoadingPage from "../loadingPage/LoadingPage";
+import SpotifyPlayerComponent from "../../components/spotify_player/spotify_player";
+import Footer from "../../components/footer/footer";
 
 
 const animeList = [
@@ -22,6 +24,8 @@ const animeList = [
     { id: 13, title: "Your Lie in April", description: "Follows a piano prodigy named Kousei Arima, who loses his ability to hear the sound of his piano after his mother's death, and his journey back to music with the help of a free-spirited violinist named Kaori Miyazono." },
 
 ];
+
+
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -43,6 +47,7 @@ const HomePage = () => {
     return (
         <div >
             <NavBarHome />
+            
             <div className="content">
                
                 {isLoading ? (
@@ -57,9 +62,14 @@ const HomePage = () => {
                                 </div>
                             ))}
                         </div>
+                       
                     </div>
-                )}
+                    
+                )} <SpotifyPlayerComponent source="3CYfCp9XAHc69wtCKTwMaj" />
+               
             </div>
+            
+        
         </div>
     );
 };

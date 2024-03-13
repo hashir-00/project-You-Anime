@@ -41,7 +41,7 @@ export default function App() {
                    < Route path="/ContactUs" element={<ContactUsPage/>} />
                    < Route path="/memegallery" element={<EntertainmentPage/>} />
                  </Routes>
-                <Footer/>
+                 <Footer />
             </BrowserRouter>
         </div>
     );
