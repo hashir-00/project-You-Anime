@@ -38,7 +38,6 @@
    border-radius: 3rem;
     border: 1px solid rgba(75, 17, 222, 1);
     max-width: 50%; /* Set a maximum width if desired */
-    height: auto;
     overflow: hidden;
     margin: 0 auto; /* Center the swipe container horizontally */
 }
@@ -51,10 +50,9 @@
 .anime-card {
     flex: 0 0 auto;
     width: fit-content; /* Set the width of the anime card to occupy the entire swipe container */
-
     border-radius: 8px;
     padding: 20px;
-
+    max-height: fit-content;
     text-align: center;
     opacity: 0; /* Set default opacity for items */
     transition: opacity 0.5s ease-in-out;
@@ -71,4 +69,11 @@
 
 .anime-card p {
     color: #2a0945;
+}
+
+@media screen and (max-width: 768px) {
+    .swipe-container {
+        max-width: 100%; /* Set a maximum width if desired */
+    }
+    
 }
