@@ -4,10 +4,12 @@
     text-align: center; /* Center the links */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0); /* Add a subtle shadow for depth */
     border-radius: 1rem; /* Round the corners of the navbar */
-    width: 100%;
-    position: fixed ;
+    width: 95%; /* Full width */
+    margin: 0 auto; /* Center the navbar */
+    position: absolute;
     bottom: 0;
   
+
   }
   
   

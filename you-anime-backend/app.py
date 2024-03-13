@@ -71,6 +71,7 @@ def analyze_sentiment(text):
 
 
 @cross_origin()
+
 @app.route("/chat", methods=["POST"])
 def chat():
     try:
@@ -80,7 +81,7 @@ def chat():
         history = data.get("history", [])
         system_prompt = data.get("system_prompt")
         temperature = data.get("temperature", 0.9)
-        max_new_tokens = data.get("max_new_tokens", 64)
+        max_new_tokens = data.get("max_new_tokens", 256)
         top_p = data.get("top_p", 0.95)
         repetition_penalty = data.get("repetition_penalty", 1.0)
 

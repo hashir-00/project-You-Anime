@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 0.6rem;
  
   }
   
@@ -16,14 +16,14 @@
     border-radius: 5px;
     border: none;
     outline: none;
-    padding: 10px 15px;
+    padding: 0.5rem;
     color: #000;
     border-bottom: 2px solid #ccc; 
 
   }
   
   .container input:hover {
-    border-color: #ccc;
+    border-color: #ba3ee7;
   }
   
   .container input:focus {

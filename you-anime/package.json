@@ -1,4 +1,5 @@
 {
+  "homepage": "https://hashir-00.github.io/project-You-Anime",
   "name": "you-anime",
   "version": "0.1.0",
   "private": true,
@@ -21,6 +22,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -45,6 +48,7 @@
     ]
   },
   "devDependencies": {
-    "@gradio/client": "^0.12.1"
+    "@gradio/client": "^0.12.1",
+    "gh-pages": "^6.1.1"
   }
 }
