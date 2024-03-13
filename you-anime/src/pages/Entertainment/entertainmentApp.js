@@ -1,7 +1,8 @@
 import "./Entertainment.css";
 import { useState, useEffect } from "react";
 import {ref,uploadBytes,getDownloadURL,listAll,deleteObject,updateMetadata,getMetadata,} from "firebase/storage";
-import { app } from "../../firebase/firebase";
+import { app, storage } from "../../firebase/firebase";
+
 import { v4 } from "uuid";
 import Modal from "./Modal";
 
@@ -16,25 +17,13 @@ export default function EntertainmentApp() {
     const [openViewModal, setOpenViewModal] = useState(false);
     const [selectedImg, setSelectedImg] = useState(null);
   
-    const imagesListRef = ref(app, "images/");
+    const imagesListRef = ref(storage, "images/");//path error due to not having storage import and no images folder in firebase
   
-    // const uploadFile = () => {
-    //   if (imageUpload == null) return;
-    //   const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-    //   uploadBytes(imageRef, imageUpload).then((snapshot) => {
-    //     setImageUploadName("");
-    //     setImageUpload(null);
-    //     setOpenUploadModal(false);
-    //     getDownloadURL(snapshot.ref).then((url) => {
-    //       setImageUrls((prev) => [url, ...prev]);
-    //     });
-    //   });
-    // };
-  
+
     const uploadFile = () => {
       if (imageUpload == null) return; // Ensure there's an image to upload
   
-      const imageRef = ref(app, `images/${imageUpload.name + v4()}`);
+      const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
       uploadBytes(imageRef, imageUpload).then((snapshot) => {
         // Upon successful upload, update the metadata with the description
         const metadata = {
@@ -102,6 +91,7 @@ export default function EntertainmentApp() {
           console.error("Error retrieving images:", error);
         });
     }, []);
+    
     return (
         <div className="App">
       <div className="main-container">
