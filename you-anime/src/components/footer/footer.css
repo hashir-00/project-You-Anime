@@ -22,13 +22,16 @@
   @media screen and (max-width: 420px){
     .footerComponent ul {
       flex-direction: column;
+      width: 20rem;
+      text-align: center;
     }
+  
     
   }
   
   .footerComponent li {
     display: inline; /* Display list items horizontally */
-    margin: 0 15px; /* Margin between list items */
+    margin: 0 1rem; /* Add space between the list items */
   }
   
   .footerComponent a {
