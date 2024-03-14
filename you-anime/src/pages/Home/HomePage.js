@@ -35,7 +35,7 @@ const HomePage = () => {
         // Simulating loading data
         setTimeout(() => {
             setIsLoading(false);
-        }, 2000); // Simulating 2 seconds loading time
+        }, 1500); // Simulating 2 seconds loading time
 
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % animeList.length);
