@@ -55,11 +55,11 @@ export default function EntertainmentApp() {
   
     const removeFile = () => {
       if (selectedImg == null) return;
-      const httpsReference = ref(app, selectedImg.url);
+      const httpsReference = ref(storage, selectedImg.url);
       // Then you do whatever you want with the ref
       deleteObject(httpsReference)
         .then(() => {
-          setImageUrls(imageUrls.filter((img) => img.url != selectedImg.url));
+          setImageUrls(imageUrls.filter((img) => img.url !== selectedImg.url));
           setOpenViewModal(false);
           setSelectedImg(null);
           console.log("File deleted successfully");
@@ -90,7 +90,7 @@ export default function EntertainmentApp() {
         .catch((error) => {
           console.error("Error retrieving images:", error);
         });
-    }, []);
+    }, [imagesListRef]);
     
     return (
         <div className="App">
@@ -117,7 +117,7 @@ export default function EntertainmentApp() {
                 value={imageUploadName}
               />
             </button>
-            {imageUpload && <img src={URL.createObjectURL(imageUpload)} />}
+            {imageUpload && <img src={URL.createObjectURL(imageUpload)} alt="meme" />}
             <input
               type="text"
               placeholder="description..."
@@ -140,7 +140,8 @@ export default function EntertainmentApp() {
                 onClick={() => {
                   setSelectedImg(image);
                   setOpenViewModal(true);
-                }}
+                }} 
+                alt="meme"
               />
             );
           })}
@@ -154,7 +155,7 @@ export default function EntertainmentApp() {
             }}
           >
             <div className="vertical-stack">
-              <img src={selectedImg.url} />
+              <img src={selectedImg.url} alt="" />
               <label>{selectedImg.description}</label>
               <button className="btn" onClick={() => removeFile()}>
                 Delete
