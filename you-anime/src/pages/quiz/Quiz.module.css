@@ -46,19 +46,21 @@
   padding: 10px;
   margin-top: 20px;
   border: none;
-  color: white;
   border-radius: 15px;
   width: 10%;
 }
 
 .submtBtn {
-  background-color: green;
   margin-left: 30%;
+  cursor: pointer;
+  font-size: medium;
+  background-color:rgba(236, 15, 207, 0.4);
 }
 
 .canclBtn {
-  background-color: red;
   margin-left: 20%;
+  font-size: medium;
+  background-color:rgba(0, 0, 0, 0.6);
 }
 
 .messageBox {
@@ -80,4 +82,9 @@
 .message {
   text-align: center;
   align-content: center;
+}
+
+.RcmdBtn{
+  display: flex;
+  margin: 0 auto;
 }

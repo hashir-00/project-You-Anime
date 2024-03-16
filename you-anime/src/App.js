@@ -8,6 +8,7 @@ import Footer from './components/footer/footer';
 import CosplayPage from './pages/cosplay/CosplayPage.js';
 
 import QuizPage from './pages/quiz/QuizPage.js';
+import Recommendations from './pages/quiz/Recommendations.js';
 import Home from './pages/Home/Home.js';
 import './App.css';
 
@@ -32,7 +33,8 @@ export default function App() {
                     <Route path="/ChatbotPage" element={<ChatbotPage/>} />{/* chatbot page */}  
                     <Route path="/quizPage" element={<QuizPage/>} />   {/* quiz page */} 
                     <Route path="/QuizApp" element={<QuizApp/>} />   {/* quiz page */} 
-                    <Route path="/QuizDescription" element={<QuizDescription/>} />   {/* quiz page */} 
+                    <Route path="/QuizDescription" element={<QuizDescription/>} />   {/* quiz page */}
+                    <Route path="/Recommendations" element={<Recommendations/>} />   {/* quiz page */} 
                     <Route path="/CosplayPage" element={<CosplayPage/>} />  {/* cosplay page */} 
                     <Route path='signup' element={<SignUp/>} />  {/* signup page */}
                    < Route path="/Login" element={<LoginPage />} /> {/* cosplay item */}

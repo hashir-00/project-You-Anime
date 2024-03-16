@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import styles from './Quiz.module.css';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 const QuizApp = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -169,6 +169,10 @@ const QuizApp = () => {
     navigate('/QuizPage');
   }
 
+  const TaketoRecommendations = () => {
+    navigate('/Recommendations', { state: { level } });
+  }
+
   return (
     <>
       <p className={styles.progressLabel}>Progress</p>
@@ -187,6 +191,9 @@ const QuizApp = () => {
       </button>
       <div className={styles.messageBox}>
         <p className={styles.message}></p>
+        <button className={styles.RcmdBtn} onClick={TaketoRecommendations}>
+        Check out my Recommendations
+      </button>
       </div>
     </>
   );
