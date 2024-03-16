@@ -14,7 +14,9 @@ const QuizApp = () => {
   const [progressPercentage, setProgressPercentage] = useState(0);
   const [questionsCompleted, setQuestionsCompleted] = useState(false);
   const [level, setLevel] = useState(null);
+  const [choices,setChoice]=useState(false);
   const navigate = useNavigate();
+  
   useEffect(() => {
     // Determine the level based on totalMarks
     const determineLevel = () => {
@@ -92,8 +94,9 @@ const QuizApp = () => {
         {question.choices.map((choice, choiceIndex) => (
           <React.Fragment key={choiceIndex}>
             <label>
-              <input type="radio" name={`question${currentQuestionIndex}`} value={choice} />
+              <input type="radio" name={`question${currentQuestionIndex}`}   />
               {choice}
+              
             </label><br />
           </React.Fragment>
         ))}
@@ -107,6 +110,7 @@ const QuizApp = () => {
     if (currentQuestionIndex < questions.length - 1 && usedQuestionIndices.length < questions.length) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       updateProgressBar();
+      setChoice(false);
     } else {
       setQuestionsCompleted(true);
       showResults();
@@ -139,6 +143,10 @@ const QuizApp = () => {
         });
       }
     }
+    const radioInputs = document.querySelectorAll(`[name="question${currentQuestionIndex}"]`);
+    radioInputs.forEach(input => {
+      input.checked = false;
+    })
 
     if (usedQuestionIndices.length >= questions.length) {
       setQuestionsCompleted(true);
@@ -147,6 +155,7 @@ const QuizApp = () => {
       showNextQuestion();
     }
   };
+
 
   const getCategoryMarks = (category) => {
     return {
@@ -157,7 +166,7 @@ const QuizApp = () => {
   };
 
   const RetrunToDescription = () => {
-    navigate('/QuizDescription');
+    navigate('/QuizPage');
   }
 
   return (

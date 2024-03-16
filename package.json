@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "firebase": "^10.7.2",
-    "react-awesome-loaders": "^0.1.37"
-  },
-  "devDependencies": {
-    "@gradio/client": "^0.12.1"
-  }
-}

@@ -5,8 +5,8 @@ export default function EntertainmentPage() {
     return (
         <div>
             <Helmet>
-                <title>YouAnime-Entertainment</title>
-                <meta name="description" content="Entertainment Page" />
+                <title>YouAnime-Meme-gallery</title>
+                <meta name="description" content="Meme gallery Page" />
             </Helmet>
             <EntertainmentApp />
         </div>

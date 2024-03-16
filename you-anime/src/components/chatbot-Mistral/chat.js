@@ -1,47 +1,34 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './chat.css'; // Import CSS file
 
+
 function ChatBot() {
   const [message, setMessage] = useState('');
   const [output, setOutput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
   const chatContainerRef = useRef(null); // Ref for chat container
+  const [loading, setLoading] = useState(false);
+  const [dots, setDots] = useState('');
 
-  // useEffect(() => {
-  //   // Send the first prompt when the component mounts
-  //   // sendFirstPrompt();
-    
-  // }, []); // Empty dependency array ensures this effect runs only once, similar to componentDidMount
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Add a dot to the loading animation
+      setDots(prevDots => prevDots === '...' ? '' : prevDots + '.');
+    }, 500); // Change the duration of each dot here (in milliseconds)
 
-  const sendFirstPrompt = async () => {
-    const firstPrompt = "Act like you are an emotional supporter"; // Your first prompt
-    const requestData = {
-      message: firstPrompt,
-      history: [],
-      system_prompt: "", // No system prompt for the first prompt
-      temperature: 0.9,
-      max_new_tokens: 256,
-      top_p: 0.95,
-      repetition_penalty: .0
-    };
+    return () => clearInterval(interval);
+  }, []); // Run effect only once on component mount
 
-    // eslint-disable-next-line no-unused-vars
-    const response = await fetch('http://127.0.0.1:5000/chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestData)
-    })
-    .then(response => response.json())
-    .then(data => {
-      setOutput(data.output);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-    
-  }
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      // Scroll to the bottom of the chat container
+      scrollToBottom();
+      setDots(''); // Clear the dots when the message is received
+    }, 2000); // Adjust the time delay as needed
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   const scrollToBottom = () => {
     const chatContainer = document.querySelector('.chat-container');
     if (chatContainer) {
@@ -58,20 +45,20 @@ function ChatBot() {
        return setMessage("Please enter a valid message");
       }
       else{ 
-        setMessage(""); // Clear the input field
+        setLoading(true);
         const requestData = {
         message: message,
         history: chatHistory, // Pass chat history with the request
         //try changing these values
-        system_prompt: "You are an emotional supporter. Act like one. You can start by asking how the user is doing. E.g. 'Hi, how are you?'and in the end recommend a music",
+        system_prompt: "You are an emotional supporter. Act like one",
         temperature: 0.9,
-        max_new_tokens: 64, // Max number of tokens to generate from the bot
+        max_new_tokens: 256, // Max number of tokens to generate from the bot
         top_p: 0.95,
         repetition_penalty: 1.0
       };
   
       // eslint-disable-next-line no-unused-vars
-      const response = await fetch('http://127.0.0.1:5000/chat', {
+      const response = await fetch('https://hashir00.pythonanywhere.com/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -87,22 +74,35 @@ function ChatBot() {
       })
       .catch(error => {
         console.error('Error:', error);
-      });}
+      }).finally(() => {
+        setLoading(false);
+      });
+    
+    }
     
    
   }
 
   return (
+
     <div className='container'>
-  
       <div ref={chatContainerRef} className='chat-container'>
-       
+     
         {chatHistory.map((item, index) => (
           <React.Fragment key={index}>
             <div className='message user-message'>{item.userMessage}</div>
             <div className='message bot-message'>{item.botMessage}</div>
           </React.Fragment>
         ))}
+           {loading && 
+        <>
+        <div className='message user-message'>{message}</div>
+        <div className='message bot-message'>typing{dots}</div>
+  
+                     
+
+        </>
+        }
         
       </div>
       <div className='input-container'>
