@@ -62,22 +62,36 @@
 }
 
 .messageBox {
-  display: none;
-  padding: 20px;
-  width: 700px;
-  height: 250px;
-  background-color: #f1f1f1;
-  border: 1px solid #ddd;
-  border-radius: 25px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+
 
 }
 
 .message {
+ 
+
+  background-color:rgba(99, 121, 245, 0.178);
+  border: 0.1rem solid #386bf7;
+  border-radius:3rem;
+  margin: 10rem auto auto auto;
+  width: 40%;
+  height: fit-content;
   text-align: center;
-  align-content: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;  
+  
 }
+.message p{
+  color: rgb(153, 30, 153);
+}
+.message h4{
+ color: rgba(2, 6, 236, 0.5);
+}
+.backbutton {
+ text-align: center;
+ display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

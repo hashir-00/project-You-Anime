@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const QuizApp = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [totalMarks, setTotalMarks] = useState(0);
+  var [totalMarks, setTotalMarks] = useState(0);
   const [categoryTotals, setCategoryTotals] = useState({
     beginner: 0,
     intermediary: 0,
@@ -14,6 +14,7 @@ const QuizApp = () => {
   const [progressPercentage, setProgressPercentage] = useState(0);
   const [questionsCompleted, setQuestionsCompleted] = useState(false);
   const [level, setLevel] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [choices,setChoice]=useState(false);
   const navigate = useNavigate();
   
@@ -83,6 +84,11 @@ const QuizApp = () => {
     updateProgressBar();
   }, [updateProgressBar]);
 
+  const handleChoiceChange = (event) => {
+    const selectedChoice = event.target.value;
+    console.log('Selected Choice:', selectedChoice);
+  };
+
   const generateQuestionnaire = (question) => {
     if (!question) {
       return null;
@@ -94,7 +100,7 @@ const QuizApp = () => {
         {question.choices.map((choice, choiceIndex) => (
           <React.Fragment key={choiceIndex}>
             <label>
-              <input type="radio" name={`question${currentQuestionIndex}`}   />
+              <input type="radio" name={`question${currentQuestionIndex}`}  value={choice}  onChange={handleChoiceChange} />
               {choice}
               
             </label><br />
@@ -118,14 +124,21 @@ const QuizApp = () => {
   };
 
   const showResults = () => {
-    const messageBox = document.querySelector(`.${styles.messageBox}`);
-    const message = document.querySelector(`.${styles.message}`);
 
-    message.innerHTML = `Your Level <br /> ${level}<br />
-                          Your Total Marks: ${totalMarks}<br />
-                          Your new Anime Recommendation awaits`;
+  return (<>
+  <div className={styles.message}><p>
+  <h4>Results</h4>
+  <p>Level: {level}</p>
+  <p>Total Marks: {totalMarks}</p>
+</p>
+</div>
+<div  className={styles.backbutton}>
+  <button onClick={RetrunToHome}>
+        Back to home
+      </button></div>
 
-    messageBox.style.display = "block";
+</>
+      );
   };
 
   const submitAnswers = () => {
@@ -133,10 +146,13 @@ const QuizApp = () => {
 
     if (selectedChoice) {
       const selectedValue = selectedChoice.value;
-
-      if (selectedValue === questions[currentQuestionIndex].correctAnswer) {
+      const correctAnswer = questions[currentQuestionIndex].correctAnswer;
+      
+      if (selectedValue === correctAnswer) {
         const category = questions[currentQuestionIndex].category;
-        setTotalMarks(totalMarks + getCategoryMarks(category));
+        setTotalMarks(totalMarks  + 1  );
+
+       
         setCategoryTotals({
           ...categoryTotals,
           [category]: categoryTotals[category] + getCategoryMarks(category),
@@ -150,7 +166,7 @@ const QuizApp = () => {
 
     if (usedQuestionIndices.length >= questions.length) {
       setQuestionsCompleted(true);
-      showResults();
+      
     } else {
       showNextQuestion();
     }
@@ -168,16 +184,23 @@ const QuizApp = () => {
   const RetrunToDescription = () => {
     navigate('/QuizPage');
   }
+  const RetrunToHome = () => {
+    navigate('/Dashboard');
+  }
+
 
   return (
     <>
-      <p className={styles.progressLabel}>Progress</p>
+    {!questionsCompleted && ( 
+      <>
+       <p className={styles.progressLabel}>Progress</p>
       <div className={styles.progressBar}>
         <div style={{ '--progressPercentage': `${progressPercentage}%` }} className={styles.progressIndicator}></div>
       </div>
 
       <div className={styles.questionnaireContainer}>
         {generateQuestionnaire(questions[currentQuestionIndex])}
+     
       </div>
       <button className={styles.submtBtn} onClick={submitAnswers} disabled={questionsCompleted}>
         Submit
@@ -185,9 +208,10 @@ const QuizApp = () => {
        <button className={styles.canclBtn} onClick={RetrunToDescription}>
         Cancel
       </button>
-      <div className={styles.messageBox}>
-        <p className={styles.message}></p>
-      </div>
+    
+      </>
+      )}
+    {questionsCompleted && showResults()}
     </>
   );
 };
