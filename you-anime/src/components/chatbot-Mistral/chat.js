@@ -4,6 +4,7 @@ import './chat.css'; // Import CSS file
 
 function ChatBot() {
   const [message, setMessage] = useState('');
+  // eslint-disable-next-line no-unused-vars
   const [output, setOutput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
   const chatContainerRef = useRef(null); // Ref for chat container
