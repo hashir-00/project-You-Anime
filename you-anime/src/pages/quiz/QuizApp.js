@@ -134,7 +134,7 @@ const QuizApp = () => {
 </div>
 <div  className={styles.backbutton}>
   <button onClick={RetrunToHome}>
-        Back to home
+        Back to Dashboard
       </button></div>
 
 </>
