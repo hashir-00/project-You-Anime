@@ -170,8 +170,9 @@ const QuizApp = () => {
   }
 
   const TaketoRecommendations = () => {
-    navigate('/Recommendations', { state: { level } });
-  }
+    localStorage.setItem('level', level);
+    navigate('/Recommendations');
+  };
 
   return (
     <>

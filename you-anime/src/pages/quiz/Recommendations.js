@@ -1,40 +1,44 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import styles from './Quiz.module.css';
-import { useNavigate } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
 const Recommendations = () => {
-  const location = useLocation();
-  const { level } = location.state || {};
-  const jsonFiles = [
-    { url: './Recommendations/beginer.json', category: 'beginner' },
-    { url: './Recommendations/expert.json', category: 'expert' },
-    { url: './Recommendations/inter.json', category: 'intermediary' }
-  ];
-
-  // State to hold the data from the JSON file
-  const [jsonData, setJsonData] = useState([]);
-
+  const [level, setLevel] = useState('');
+  const [recommendations, setRecommendations] = useState([]);
   useEffect(() => {
-    // Find the JSON file corresponding to the level
-    const selectedJsonFile = jsonFiles.find(file => file.category === level);
-    if (selectedJsonFile) {
-      // Fetch data from the selected JSON file
-      fetch(selectedJsonFile.url)
-        .then(response => response.json())
-        .then(data => setJsonData(data))
-        .catch(error => console.error('Error fetching data:', error));
+    const storedLevel = localStorage.getItem('level');
+    if (storedLevel) {
+      setLevel(storedLevel);
     }
-  }, [level, jsonFiles]);
+  }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const jsonFiles = [
+          { url: './Recommendations/beginer.json', category: 'Beginner' },
+          { url: './Recommendations/inter.json', category: 'Intermediate' },
+          { url: './Recommendations/expert.json', category: 'Expert' }
+        ];
+
+        const data = await Promise.all(jsonFiles.map(file => fetch(file.url).then(response => response.json())));
+        const matchingCategoryData = data.find((item, index) => level === jsonFiles[index].category);
+        if (matchingCategoryData) {
+          setRecommendations(matchingCategoryData);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, [level]);
 
   return (
     <div>
-      {/* Displaying the level for testing */}
-      <div>Level: {level}</div>
-      {/* Rendering the data as a list */}
+      <h2>{level} Recommendations</h2>
       <ul>
-        {jsonData.map((name, url) => (
-          <li key={name}>{url}</li>
+        {recommendations.map((recommendation, index) => (
+          <li key={index}>
+            {recommendation.name} : <a href={recommendation.url}>MAL URLS</a>
+          </li>
         ))}
       </ul>
     </div>
