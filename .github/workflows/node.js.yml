@@ -2,7 +2,7 @@ name: Build and Deploy
 on:
   push :
     branches:
-      - master
+      - hashir-104
 permissions:
   contents: write
 jobs:
