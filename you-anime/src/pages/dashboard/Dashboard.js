@@ -43,10 +43,13 @@ const Dashboard = () => {
        
     <div className="dashboard-container">
 
+    <div className='quiz'>  <Quiz/></div>
+    <div  className='Chatbot'> <Chatbot/>  </div>
+    <div  className='Cosplay'>  <Cosplay/></div>
+    
      
-      <Quiz/>
-      <Chatbot/>  
-      <Cosplay/>
+    
+
             </div>
        </div>
    

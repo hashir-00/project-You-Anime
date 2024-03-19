@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './chat.css'; // Import CSS file
+import styles from './chat.module.css'; // Import CSS file
+import SideBar from '../sidebar_chatbot/sidebar';
 
 
 function ChatBot() {
@@ -51,13 +52,15 @@ function ChatBot() {
         message: message,
         history: chatHistory, // Pass chat history with the request
         //try changing these values
-        system_prompt: "You are an emotional supporter. Act like one",
+        system_prompt: "sad,happy,demotivated.disgust.determine the users emotion and respond the right word only",
         temperature: 0.9,
         max_new_tokens: 256, // Max number of tokens to generate from the bot
         top_p: 0.95,
         repetition_penalty: 1.0
       };
   
+      // eslint-disable-next-line no-unused-vars
+      //https://hashir00.pythonanywhere.com/chat
       // eslint-disable-next-line no-unused-vars
       const response = await fetch('https://hashir00.pythonanywhere.com/chat', {
         method: 'POST',
@@ -85,28 +88,30 @@ function ChatBot() {
   }
 
   return (
-
-    <div className='container'>
-      <div ref={chatContainerRef} className='chat-container'>
+    <>
+    <div >  </div>
+    
+   
+    <div className={styles.container}>
+    <SideBar/>
+      <div ref={chatContainerRef} className={styles.chatContainer}>
      
         {chatHistory.map((item, index) => (
           <React.Fragment key={index}>
-            <div className='message user-message'>{item.userMessage}</div>
-            <div className='message bot-message'>{item.botMessage}</div>
+            <div className={styles.userMessage}>{item.userMessage}ff</div>
+            <div className={styles.botMessage} >{item.botMessage}</div>
           </React.Fragment>
         ))}
-           {loading && 
-        <>
-        <div className='message user-message'>{message}</div>
-        <div className='message bot-message'>typing{dots}</div>
-  
-                     
 
+      {loading && 
+        <>
+        <div className={styles.userMessage}>{message}</div>
+        <div className={styles.botMessage}>typing{dots}</div>
         </>
         }
         
       </div>
-      <div className='input-container'>
+      <div className={styles.inputContainer}>
         <input
           type="text"
           placeholder="Enter your message"
@@ -118,6 +123,7 @@ function ChatBot() {
         <button onClick={clearChatHistory}>Clear Chat</button>
       </div>
     </div>
+    </>
   );
 }
 

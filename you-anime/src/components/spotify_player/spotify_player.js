@@ -1,10 +1,11 @@
 // SpotifyPlayer.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./spotifyPlayer.css"
 
-const SpotifyPlayerComponent = (Source) => {
+const SpotifyPlayerComponent = (source) => {
   const [token, setToken] = useState(null);
-
+  const spotifySource = JSON.stringify(source).split('"')[3];
   useEffect(() => {
     // Your Spotify API authentication code here
     // Follow Spotify API authentication documentation to obtain access token
@@ -35,13 +36,13 @@ const SpotifyPlayerComponent = (Source) => {
   }, []);
 
   return (
-    <div>
+    <div className='musicPlayer'>
       {token && (
         <iframe
           title="Spotify Player"
-          src={Source}
-          width="300"
-          height="380"
+          src={`https://open.spotify.com/embed/track/https://api.spotify.com/v1/tracks/5MVjxslIF7mVtYo75Nk445?uri=spotify:track:${spotifySource}`}
+          width= "auto"
+          height="auto"
           frameBorder="0"
           allowtransparency="true"
           allow="encrypted-media"

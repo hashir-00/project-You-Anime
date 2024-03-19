@@ -1,12 +1,7 @@
-// Live Link: https://you-anime.netlify.app/chatbot
 import React from 'react';
 
 import './ChatbotApp.css';
 import ChatBot from '../../components/chatbot-Mistral/chat';
-
-
-
-
 
 // function ChatbotApp() {
 //     const [userInput, setUserInput] = useState('');

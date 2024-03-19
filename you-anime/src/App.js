@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Dashboard from "./pages/dashboard/Dashboard";
-import ChatbotPage from './pages/chatbot/ChatbotPage';
-import Footer from './components/footer/footer';
+import Dashboard from "./pages/dashboard/Dashboard.js";
+import ChatbotPage from './pages/chatbot/ChatbotPage.js';
+import Footer from './components/footer/footer.js';
 import CosplayPage from './pages/cosplay/CosplayPage.js';
 
 import QuizPage from './pages/quiz/QuizPage.js';
@@ -41,7 +41,7 @@ export default function App() {
                    < Route path="/ContactUs" element={<ContactUsPage/>} />
                    < Route path="/memegallery" element={<EntertainmentPage/>} />
                  </Routes>
-                <Footer/>
+                 <Footer />
             </BrowserRouter>
         </div>
     );

@@ -42,10 +42,13 @@ function SignupPage() {
   };
 
   return (
-    <div className={styles.container}>
-      <Link to="/Home">
+    <>
+    <Link to="/Home">
       <button className={styles.Homebutton}>Back to Home</button>
       </Link>
+    <div className={styles.container}>
+      
+      
       <div className={styles.innerBoxWrapper}>
       <div className={styles.innerBoxOne}>
         <h3 className={styles.heading}>Sign Up</h3>
@@ -92,6 +95,7 @@ function SignupPage() {
       </div>
     
     </div>
+    </>
   );
 }
 
