@@ -37,7 +37,7 @@ const Recommendations = () => {
       <ul>
         {recommendations.map((recommendation, index) => (
           <li key={index}>
-            {recommendation.name} : <a href={recommendation.url}>MAL URLS</a>
+             <a href={recommendation.url}>{recommendation.name} </a>
           </li>
         ))}
       </ul>
