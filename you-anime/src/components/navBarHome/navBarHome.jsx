@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
 import React from "react"
-import "./navBarHome.css"
+import styles from "./navBarHome.module.css"
 
 const NavBarHome= ()=>{
     return(
-        <div className="navbarstart">
+        <div className={styles.navbarstart}>
              <nav>
                 <ul>
                      <li>

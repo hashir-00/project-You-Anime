@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './chat.css'; // Import CSS file
+import styles from './chat.module.css'; // Import CSS file
+import SideBar from '../sidebar_chatbot/sidebar';
 
 
 function ChatBot() {
@@ -59,7 +60,9 @@ function ChatBot() {
       };
   
       // eslint-disable-next-line no-unused-vars
-      const response = await fetch('http://127.0.0.1:5000/chat', {
+      //https://hashir00.pythonanywhere.com/chat
+      // eslint-disable-next-line no-unused-vars
+      const response = await fetch('https://hashir00.pythonanywhere.com/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -85,28 +88,30 @@ function ChatBot() {
   }
 
   return (
-
-    <div className='container'>
-      <div ref={chatContainerRef} className='chat-container'>
+    <>
+    <div >  </div>
+    
+   
+    <div className={styles.container}>
+    <SideBar/>
+      <div ref={chatContainerRef} className={styles.chatContainer}>
      
         {chatHistory.map((item, index) => (
           <React.Fragment key={index}>
-            <div className='message user-message'>{item.userMessage}</div>
-            <div className='message bot-message'>{item.botMessage}</div>
+            <div className={styles.userMessage}>{item.userMessage}ff</div>
+            <div className={styles.botMessage} >{item.botMessage}</div>
           </React.Fragment>
         ))}
-           {loading && 
-        <>
-        <div className='message user-message'>{message}</div>
-        <div className='message bot-message'>typing{dots}</div>
-  
-                     
 
+      {loading && 
+        <>
+        <div className={styles.userMessage}>{message}</div>
+        <div className={styles.botMessage}>typing{dots}</div>
         </>
         }
         
       </div>
-      <div className='input-container'>
+      <div className={styles.inputContainer}>
         <input
           type="text"
           placeholder="Enter your message"
@@ -118,6 +123,7 @@ function ChatBot() {
         <button onClick={clearChatHistory}>Clear Chat</button>
       </div>
     </div>
+    </>
   );
 }
 

@@ -41,7 +41,6 @@ const SpotifyPlayerComponent = (source) => {
         <iframe
           title="Spotify Player"
           src={`https://open.spotify.com/embed/track/https://api.spotify.com/v1/tracks/5MVjxslIF7mVtYo75Nk445?uri=spotify:track:${spotifySource}`}
-          // v1/tracks/3CYfCp9XAHc69wtCKTwMaj
           width= "auto"
           height="auto"
           frameBorder="0"

@@ -5,7 +5,7 @@ import "./HomePage.css";
 import NavBarHome from "../../components/navBarHome/navBarHome";
 import LoadingPage from "../loadingPage/LoadingPage";
 import SpotifyPlayerComponent from "../../components/spotify_player/spotify_player";
-import Footer from "../../components/footer/footer";
+
 
 
 const animeList = [
