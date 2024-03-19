@@ -1,15 +1,15 @@
 .container {
-padding-top: 3rem;
-  justify-content: center;
+padding: 2rem;
   border-radius: 1rem;
+  margin: 0 auto ;
   display: flex;
-  height: 100%;
+  width: fit-content;
 }
 
 .innerBoxWrapper {
-  display: flex; /* Add display flex to make inner boxes appear next to each other */
-  justify-content: center; /* Center the inner boxes horizontally */
-  
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
 }
 
 .innerBoxOne{
@@ -18,7 +18,7 @@ padding-top: 3rem;
   width: 25rem;
   padding: 1rem;
   border-radius: 1rem 0 0 1rem;
-  display: inline-block; /* Change display to inline-block */
+ 
 
 }
 .innerBoxTwo {
@@ -30,7 +30,7 @@ padding-top: 3rem;
   background-color: #fff;
   padding: 1rem;
   border-radius:  0 1rem 1rem 0;
-  display: inline-block; /* Change display to inline-block */
+ 
 }
 
 h3{
@@ -93,18 +93,18 @@ h3{
   .Homebutton{
     outline: none;
     border: none;
-    position: relative;
-    right: 10%;
+    
     background-color: #c579c5;
     color: #fff;
     border-radius: 1rem;
     font-weight: bold;
     transition: 100ms;
     cursor: pointer;
-    width: auto;
+
     font-size: medium;
     padding: 1rem;
-    margin: auto;}
+    margin: 1rem;
+  }
   
   
   .Homebutton:disabled {
