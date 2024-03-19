@@ -22,4 +22,4 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: /.you-anime/build # The folder the action should deploy.
+          folder: ./you-anime/build # The folder the action should deploy.
