@@ -38,9 +38,7 @@ function Login() {
   };
   return (
     <div className={styles.container}>
-      <Link to="/Home">
-      <button className={styles.Homebutton}>Back to Home</button>
-      </Link>
+      
       <div className={styles.innerBoxWrapper}>
       <div className={styles.innerBoxOne}>
         <h3 className={styles.heading}>Login</h3>
@@ -81,6 +79,11 @@ function Login() {
             </span>
           </p>
         </div>
+        <div className={styles.Homebutton}>     
+        <Link to="/Home">
+         Back to Home
+      </Link></div>
+   
       </div>
       <div className={styles.innerBoxTwo}></div>
       </div>
