@@ -20,8 +20,7 @@ jobs:
     - name: find the directories
       working-directory: you-anime
       run : dir
-    - name: Install dependencies
-      run: npm install
+           npm install
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
