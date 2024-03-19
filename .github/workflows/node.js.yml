@@ -15,12 +15,11 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+   
     - uses: actions/checkout@v3
     - name: find the directories
+      working-directory: you-anime
       run : dir
-    - name: directory change
-      run: cd you-anime
-    - run : dir
     - name: Install dependencies
       run: npm install
     - name: Use Node.js ${{ matrix.node-version }}
