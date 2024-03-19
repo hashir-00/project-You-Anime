@@ -1,0 +1,103 @@
+[
+    {
+      "question": "Which anime features a world where giant humanoid creatures known as Titans threaten humanity?",
+      "options": ["Black Clover", "Attack on Titan", "My Hero Academia", "Demon Slayer"],
+      "correct_answer": "Attack on Titan"
+    },
+    {
+      "question": "What anime follows the adventures of a young ninja with dreams of becoming the Hokage?",
+      "options": ["One Piece", "Bleach", "Naruto", "Fairy Tail"],
+      "correct_answer": "Naruto"
+    },
+    {
+      "question": "In which anime does the main character search for the elusive 'One Piece' treasure?",
+      "options": ["Dragon Ball", "One Punch Man", "One Piece", "Fullmetal Alchemist"],
+      "correct_answer": "One Piece"
+    },
+    {
+      "question": "What anime tells the story of a young alchemist searching for the Philosopher's Stone?",
+      "options": ["Code Geass", "Neon Genesis Evangelion", "Fullmetal Alchemist", "Death Note"],
+      "correct_answer": "Fullmetal Alchemist"
+    },
+    {
+      "question": "Which anime features a group of heroes with unique quirks attending U.A. High School?",
+      "options": ["Bleach", "My Hero Academia", "Sword Art Online", "Hunter x Hunter"],
+      "correct_answer": "My Hero Academia"
+    },
+    {
+      "question": "In which anime does a character named 'Gon' embark on a journey to become a Hunter?",
+      "options": ["Hunter x Hunter", "Demon Slayer", "JoJo's Bizarre Adventure", "Cowboy Bebop"],
+      "correct_answer": "Hunter x Hunter"
+    },
+    {
+      "question": "What is the name of the anime set in a virtual reality MMORPG where players face life-threatening consequences?",
+      "options": ["Re:Zero", "Sword Art Online", "Steins;Gate", "Death Parade"],
+      "correct_answer": "Sword Art Online"
+    },
+    {
+      "question": "In which anime does a group of soldiers fight against humanoid creatures known as Titans threatening humanity?",
+      "options": ["Neon Genesis Evangelion", "Death Parade", "Attack on Titan", "Tokyo Ghoul"],
+      "correct_answer": "Attack on Titan"
+    },
+    {
+      "question": "What anime follows the adventures of two brothers, Edward and Alphonse Elric?",
+      "options": ["Fullmetal Alchemist", "Tokyo Ghoul", "Black Clover", "One Punch Man"],
+      "correct_answer": "Fullmetal Alchemist"
+    },
+    {
+      "question": "In 'Banished from the Heroes' Party,' the protagonist, Red, chooses a life of simplicity after leaving the hero's party. What is his new occupation?",
+      "options": ["Baker", "Blacksmith", "Innkeeper", "Alchemist"],
+      "correct_answer": "Innkeeper"
+    },
+    {
+      "question": "Who is the protagonist of 'Naruto'?",
+      "options": ["Ichigo Kurosaki", "Goku", "Luffy", "Naruto Uzumaki"],
+      "correct_answer": "Naruto Uzumaki"
+    },
+    {
+      "question": "In 'Attack on Titan,' what is the name of the main character?",
+      "options": ["Eren Yeager", "Levi Ackerman", "Mikasa Ackerman", "Armin Arlert"],
+      "correct_answer": "Eren Yeager"
+    },
+    {
+      "question": "What is the name of the main character in 'One Piece'?",
+      "options": ["Monkey D. Luffy", "Natsu Dragneel", "Gon Freecss", "Edward Elric"],
+      "correct_answer": "Monkey D. Luffy"
+    },
+    {
+      "question": "Who is known as the 'Saiyan Prince' in 'Dragon Ball'?",
+      "options": ["Vegeta", "Goku", "Gohan", "Piccolo"],
+      "correct_answer": "Vegeta"
+    },
+    {
+      "question": "In 'My Hero Academia,' what is the name of the protagonist with the power of One For All?",
+      "options": ["Katsuki Bakugo", "Shoto Todoroki", "Izuku Midoriya", "All Might"],
+      "correct_answer": "Izuku Midoriya"
+    },
+    {
+      "question": "What is the name of the main character in 'Fullmetal Alchemist'?",
+      "options": ["Roy Mustang", "Alphonse Elric", "Edward Elric", "Winry Rockbell"],
+      "correct_answer": "Edward Elric"
+    },
+    {
+      "question": "Who is the female lead in 'Sword Art Online'?",
+      "options": ["Kirito", "Asuna", "Eugeo", "Sinon"],
+      "correct_answer": "Asuna"
+    },
+    {
+      "question": "In 'Hunter x Hunter,' what is the name of the protagonist searching for his father?",
+      "options": ["Hisoka", "Killua Zoldyck", "Kurapika", "Gon Freecss"],
+      "correct_answer": "Gon Freecss"
+    },
+    {
+      "question": "What is the name of the main character in 'Demon Slayer'?",
+      "options": ["Tanjiro Kamado", "Zenitsu Agatsuma", "Inosuke Hashibira", "Nezuko Kamado"],
+      "correct_answer": "Tanjiro Kamado"
+    },
+    {
+      "question": "In 'One Punch Man,' who is the hero known for defeating opponents with a single punch?",
+      "options": ["Genos", "Saitama", "Mumen Rider", "Speed-o'-Sound Sonic"],
+      "correct_answer": "Saitama"
+    }
+]
+    
