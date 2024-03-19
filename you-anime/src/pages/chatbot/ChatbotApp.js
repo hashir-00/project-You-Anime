@@ -1,8 +1,9 @@
+import React from 'react';
 
 import './ChatbotApp.css';
 import ChatBot from '../../components/chatbot-Mistral/chat';
 
-// function ChatbotAp() {
+// function ChatbotApp() {
 //     const [userInput, setUserInput] = useState('');
 //     const [chatMessages, setChatMessages] = useState([]);
 
