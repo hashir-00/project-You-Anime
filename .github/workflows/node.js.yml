@@ -18,9 +18,12 @@ jobs:
    
     - uses: actions/checkout@v3
     - name: find the directories
-      working-directory: you-anime
       run : dir
-           npm install
+    
+    - run : dir
+    - name: Install dependencies
+      working-directory: ./you-anime
+      run: npm install
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
