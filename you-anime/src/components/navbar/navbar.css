@@ -32,3 +32,13 @@
     color: #54006d85; /* Change text color on hover */
   }
   
+  @media screen and (max-width: 420px){
+    .navbar ul {
+      text-align: center;
+      display: flex; /* Display the list items in a flex container */
+      flex-direction: row;
+    }
+    .navbar li {
+      margin: 0 .5rem; /* Reduce margin between list items */
+    }
+  }

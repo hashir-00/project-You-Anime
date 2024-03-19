@@ -3,8 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import InputControl, { InputControlPassword } from "../../components/InputControl/InputControl";
 import { auth } from "../../firebase/firebase";
-
 import styles from "./Login.module.css";
+
+let loggedIn = false;
 
 function Login() {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ function Login() {
     signInWithEmailAndPassword(auth, values.email, values.pass)
       .then(async (res) => {
         setSubmitButtonDisabled(false);
-        
+        loggedIn = true;
         navigate("/dashboard");
       })
       .catch((err) => {
@@ -44,8 +45,7 @@ function Login() {
       <div className={styles.innerBoxOne}>
         <h3 className={styles.heading}>Login</h3>
 
-        <InputControl
-         
+        <InputControl 
           onChange={(event) =>
             setValues((prev) => ({ ...prev, email: event.target.value }))
           }
@@ -89,3 +89,4 @@ function Login() {
 }
 
 export default Login;
+export { loggedIn };
