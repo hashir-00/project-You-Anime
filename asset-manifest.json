@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project-You-Anime/static/css/main.3651bea3.css",
-    "main.js": "/project-You-Anime/static/js/main.97eb03c7.js",
+    "main.css": "/project-You-Anime/static/css/main.98c165ac.css",
+    "main.js": "/project-You-Anime/static/js/main.93d0dba4.js",
     "static/media/cosplay.jpg": "/project-You-Anime/static/media/cosplay.400886317c5ca8c76df5.jpg",
     "static/media/signup.jpg": "/project-You-Anime/static/media/signup.7e35095ae285b6a645c3.jpg",
     "static/media/background.jpg": "/project-You-Anime/static/media/background.503984824d4378c8b7a5.jpg",
@@ -9,11 +9,11 @@
     "static/media/login.jpg": "/project-You-Anime/static/media/login.375a6c8f1a42177a03df.jpg",
     "static/media/chatbot.jpg": "/project-You-Anime/static/media/chatbot.d5c75caed2294533278b.jpg",
     "index.html": "/project-You-Anime/index.html",
-    "main.3651bea3.css.map": "/project-You-Anime/static/css/main.3651bea3.css.map",
-    "main.97eb03c7.js.map": "/project-You-Anime/static/js/main.97eb03c7.js.map"
+    "main.98c165ac.css.map": "/project-You-Anime/static/css/main.98c165ac.css.map",
+    "main.93d0dba4.js.map": "/project-You-Anime/static/js/main.93d0dba4.js.map"
   },
   "entrypoints": [
-    "static/css/main.3651bea3.css",
-    "static/js/main.97eb03c7.js"
+    "static/css/main.98c165ac.css",
+    "static/js/main.93d0dba4.js"
   ]
 }
