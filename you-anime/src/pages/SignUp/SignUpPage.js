@@ -43,9 +43,7 @@ function SignupPage() {
 
   return (
     <>
-    <Link to="/Home">
-      <button className={styles.Homebutton}>Back to Home</button>
-      </Link>
+  
     <div className={styles.container}>
       
       
@@ -83,17 +81,20 @@ function SignupPage() {
             Sign Up
           </button>
           <p>
-            Already have an account?{" "}
+            Already have an account?<br/>
             <span>
               <Link to="/login">Login</Link>
             </span>
           </p>
         </div>
+        <div className={styles.Homebutton}>  <Link to="/Home">
+    Back to Home
+     </Link></div>
       </div>
       <div className={styles.innerBoxTwo}>
         </div>
       </div>
-    
+     
     </div>
     </>
   );
