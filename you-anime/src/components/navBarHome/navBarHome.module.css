@@ -20,8 +20,9 @@
       text-align: center;
       display: flex; /* Display the list items in a flex container */
       flex-direction: column;
-  
-     
+    }
+    .navbarstart{
+      margin-top: .5rem;
     }
   }
   

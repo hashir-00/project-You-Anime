@@ -1,26 +1,38 @@
 
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
 
-  
-  .strtBtn {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 1rem;
-    cursor: pointer;
-    font-size: medium;
-    background-color:rgba(225, 21, 198, 0.3);
-  }
-  .backBtn {
-    position:relative;
-    left: 10%;
-    top: 6vh;
-    cursor: pointer;
-    font-size: medium;
+}
+ 
+ 
+.buttons{ 
+  width: 100%;
+ 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.buttons button{
+  background-color: #f845e3;
+  border-radius: 25px;
+  color: #ffffff;
+  font-size: medium;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.buttons button:disabled {
+  background-color: gray !important;
+}
 
-    background-color:rgba(225, 21, 198, 0.3);
-  }
+.buttons button:hover {
+  background-color: #9e31e7;
+}
   .messageBox {
-    font-size: medium;
+    font-size:small;
     width: fit-content;
     height: fit-content;
     background-color: #6547683e;
@@ -62,4 +74,17 @@
   }
 .goodluck{
     text-align: center;
+}
+
+@media screen and (max-width: 500px){
+  .buttons{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .buttons button{
+   padding: 0.5rem;
+  }
+
+  
 }

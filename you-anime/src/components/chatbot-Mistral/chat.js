@@ -58,7 +58,6 @@ function ChatBot() {
         top_p: 0.95,
         repetition_penalty: 1.0
       };
-  
       // eslint-disable-next-line no-unused-vars
       //https://hashir00.pythonanywhere.com/chat
       // eslint-disable-next-line no-unused-vars
@@ -82,9 +81,19 @@ function ChatBot() {
         setLoading(false);
       });
     
+    }  
+  }
+
+  const musicRecommendation= ()=>{
+    if (!message.trim() || message === "Please enter a valid message") {
+      // If the message is empty or contains only whitespace, do not send
+     return setMessage("Please enter a valid message");
     }
+    else {
+      
+    }
+
     
-   
   }
 
   return (

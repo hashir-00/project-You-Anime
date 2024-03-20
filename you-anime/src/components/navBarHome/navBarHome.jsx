@@ -11,10 +11,10 @@ const NavBarHome= ()=>{
                          <Link to="/Dashboard">Dashboard</Link>
                     </li>)}
                     
-                  
-                    <li>
+                  {!loggedIn && (  <li>
                         <Link to="/login">Login</Link>
-                    </li>         
+                    </li> )}
+                          
                     
                     <li>
                         <Link to="/memegallery">Meme gallery</Link>   

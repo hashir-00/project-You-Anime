@@ -33,6 +33,9 @@
   }
   
   @media screen and (max-width: 420px){
+    .navbar{
+     margin-top: 0.5rem;
+    }
     .navbar ul {
       text-align: center;
       display: flex; /* Display the list items in a flex container */
