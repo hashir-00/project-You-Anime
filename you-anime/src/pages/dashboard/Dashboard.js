@@ -38,7 +38,7 @@ const Dashboard = () => {
 
         <NavBar/>
     <div id="dashboard-username">
-      <p>Welcome , {user} </p>
+      <p id="username">Welcome  {user} </p>
         </div>
        
     <div className="dashboard-container">

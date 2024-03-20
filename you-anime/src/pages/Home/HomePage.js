@@ -6,7 +6,9 @@ import NavBarHome from "../../components/navBarHome/navBarHome";
 import LoadingPage from "../loadingPage/LoadingPage";
 import SpotifyPlayerComponent from "../../components/spotify_player/spotify_player";
 
-
+const getRandomIndex = (max) => {
+    return Math.floor(Math.random() * max);
+};
 
 const animeList = [
     { id: 1, title: "Naruto", description: "A story about a young ninja who seeks recognition from his peers and dreams of becoming the Hokage, the leader of his village." },
@@ -25,11 +27,43 @@ const animeList = [
 
 ];
 
+const musicList = [
+    "https://api.spotify.com/v1/tracks/4reAFBOJ56ZdM1g0oub5C8",
+    "https://api.spotify.com/v1/tracks/1HXRps6gmF8yMZPsJ6n9Zk",
+    "https://api.spotify.com/v1/tracks/3zLCX1TGMpsA67cW2pq6ut",
+    "https://api.spotify.com/v1/tracks/5eHmOGj5szF3Pm9fHWVwuq",
+    "https://api.spotify.com/v1/tracks/2BlDX1yfT0ea5wo0vjCKKa",
+    "https://api.spotify.com/v1/tracks/12ad0oPQaR6X6Jcoqz8rcz",
+    "https://api.spotify.com/v1/tracks/0cSkn2l67csUljEy0EEBPn",
+    "https://api.spotify.com/v1/tracks/1jRdam0Y2o2vVtvltJK0tH",
+    "https://api.spotify.com/v1/tracks/2cWXjk50iwkCaEesJUCm8f",
+    "https://api.spotify.com/v1/tracks/7ncPjJBktLEOpstY5JOUMK",
+    "https://api.spotify.com/v1/tracks/2qTBVFldq01eNa40hin4FV",
+    "https://api.spotify.com/v1/tracks/3Gj9gaVfc3HHyqcIFaSa70",
+    "https://api.spotify.com/v1/tracks/7M9lc2hHXKQobbHQ31Yg2v",
+    "https://api.spotify.com/v1/tracks/5RmtuRIe8FJg9FRegwCqzW",
+    "https://api.spotify.com/v1/tracks/7FpABRyv5TaZz0llkhjPgc",
+    "https://api.spotify.com/v1/tracks/1MKAHjp9mxM80u8K3rROKf",
+    "https://api.spotify.com/v1/tracks/4ESyGBnHsW6VJRIFFrZ6Vj",
+    "https://api.spotify.com/v1/tracks/2ifJEieMAeQqNM0edwhDqs",
+    "https://api.spotify.com/v1/tracks/7v8wKvNQQIxkugCFFjrkaO",
+    "https://api.spotify.com/v1/tracks/7tciSZq2IbazfaWU90mQwk"
+];   
 
+// let spotifySource = [];
+
+// function getSpotifyUrlSource(){
+//     musicList.map((music) => {
+//         spotifySource.push(music.split('/')[5]);
+//     });
+//     console.log("music",spotifySource);
+    
+// }
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [spotifySourceIndex, setSpotifySourceIndex] = useState(0);
 
     useEffect(() => {
         // Simulating loading data
@@ -41,8 +75,16 @@ const HomePage = () => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % animeList.length);
         }, 5000); // Change content every 5 seconds
 
-        return () => clearInterval(interval);
+        const spotifyInterval = setInterval(() => {
+            setSpotifySourceIndex((prevIndex) => (prevIndex + 1) % musicList.length);
+        }, 180000); // Change music source every 3 minutes (180000 milliseconds)
+
+        setSpotifySourceIndex(getRandomIndex(musicList.length));
+
+        return () =>{ clearInterval(interval);
+                    clearInterval(spotifyInterval);}
     }, []);
+
 
     return (
         <div >
@@ -65,8 +107,8 @@ const HomePage = () => {
                        
                     </div>
                     
-                )} <SpotifyPlayerComponent source="3CYfCp9XAHc69wtCKTwMaj" />
-               
+                )} <SpotifyPlayerComponent source={musicList[spotifySourceIndex].split('/')[5]} />
+
             </div>
             
         

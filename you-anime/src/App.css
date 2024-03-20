@@ -13,3 +13,11 @@ body{
     overflow-x: hidden;
     width: auto;
   }
+
+  @media screen and (max-width: 420px){
+    body{
+     height: max-content;
+     margin:0 auto;
+    }
+   
+  }
