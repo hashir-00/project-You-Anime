@@ -50,15 +50,15 @@ const musicList = [
     "https://api.spotify.com/v1/tracks/7tciSZq2IbazfaWU90mQwk"
 ];   
 
-let spotifySource = [];
+// let spotifySource = [];
 
-function getSpotifyUrlSource(){
-    musicList.map((music) => {
-        spotifySource.push(music.split('/')[5]);
-    });
-    console.log("music",spotifySource);
+// function getSpotifyUrlSource(){
+//     musicList.map((music) => {
+//         spotifySource.push(music.split('/')[5]);
+//     });
+//     console.log("music",spotifySource);
     
-}
+// }
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true);
