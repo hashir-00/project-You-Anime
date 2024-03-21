@@ -38,15 +38,18 @@ const Dashboard = () => {
 
         <NavBar/>
     <div id="dashboard-username">
-      <p>Welcome , {user} </p>
+      <p id="username">Welcome  {user} </p>
         </div>
        
     <div className="dashboard-container">
 
+    <div className='quiz'>  <Quiz/></div>
+    <div  className='Chatbot'> <Chatbot/>  </div>
+    <div  className='Cosplay'>  <Cosplay/></div>
+    
      
-      <Quiz/>
-      <Chatbot/>  
-      <Cosplay/>
+    
+
             </div>
        </div>
    

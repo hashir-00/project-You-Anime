@@ -12,6 +12,7 @@ You-anime brings personalized excitement to every anime enthusiast's screen."
 - [Contributing](#contributing)
 - [About Technology](#about-tech)
 - [About Deployment](#about-Deployment)
+- [CI-CD pipeline] (#CI-CD pipeline)
 - [License](#license)
 
 ## Getting Started
@@ -89,6 +90,17 @@ firebase has been utilised as the database for the user to store his own collect
 
 react is being used as the front end for the project and a flask server is used as the backend for the project.
 
+## CI-CD pipeline
+
+This project uses the github actions workflow to manage its CI-CD pipeline in regards to the build and deployment.
+
+To initiate a workflow go to the git repos action tab and select the workflow necessary for the project.
+(for this we have used node.js workflow)
+after it automatically creates the workflow file.commit the file to the branch and let github take care of the deployment.
+ 
+ `https://github.com/marketplace/actions/deploy-to-github-pages` page offers the yml code necessary for the workflow setup.
+
+ use `working-directory` to specify the path to the module files.
 
 ## about-Deployment
 

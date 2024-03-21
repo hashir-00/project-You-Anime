@@ -1,0 +1,39 @@
+.sidebarItems{
+  text-align: center;
+  display:grid;
+  flex-direction: column;
+  height: auto;
+    position: fixed;
+    left: 0;
+    
+    margin-left: 1rem;
+    width:auto;
+    max-width: 10rem; 
+    background-color:rgba(211, 19, 240, 0.5);
+    border-radius: 1rem;
+}
+.sidebarItems ul {
+    list-style-type: none;
+    padding: 0; /* Remove default padding */
+  
+    
+  }
+  
+  .sidebarItems ul li {
+    font-size: 1.2rem;
+    color: rgb(225, 225, 225);
+    padding: 1rem;
+    line-height: 2; /* Adjust line height for spacing between lines */
+  }
+  
+
+@media screen  and (max-width:600px){
+    .sidebarItems  {
+        display: none;
+    }
+    
+}
+
+li :hover{
+    color: springgreen;
+}

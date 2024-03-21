@@ -1,13 +1,60 @@
 
 
 .dashboard-container {
-   justify-content: space-evenly;
-    text-align: center;display: flex;
-    padding: 1rem 0 1rem 0;
-    min-height:50vh;
+    justify-content: center;
+    
+    display: flex;
+    flex-direction: row;
+  padding: 1rem;
+ 
+   width: fit-content;
+   margin: 0 auto;
+   height: 50lvh;
+ 
   }
   
-  #dashboard-username {
+  @media screen and (max-width: 750px){
+    .dashboard-container {
+      flex-direction: column;
+      margin: 0rem auto;
+      height: 50vh;
+   
+    }
+    .quiz{
+     
+      margin: 0 auto 1rem auto;
+  
+    }
+    .Chatbot{
+      margin: 0 auto 1rem auto;
+
+
+    }
+    .Cosplay{
+      margin: 0 auto;
+  
+    }
+    #username{
+      font-size: 1.5rem;
+    }
+    
+  }
+  
+  .quiz{
+    margin-right: 1rem;
+    height:100%;
+
+  }
+  .Chatbot{
+    margin-right: 1rem;
+    margin-left: 1rem;
+    height:100%;
+  }
+  .Cosplay{
+    margin-left: 1rem;
+    height:100%;  }
+
+  #username {
     
    padding: 1rem 0 1rem 0;
     font-size: 2rem;

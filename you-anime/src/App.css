@@ -7,6 +7,17 @@ body{
     font-family: 'Inter';
     font-size: 1.5rem;
     text-transform: uppercase;
-    min-height: 100vh;
+    max-height: 150vh;
+    min-height: 120vh;
     overflow-y: hidden;
+    overflow-x: hidden;
+    width: auto;
+  }
+
+  @media screen and (max-width: 420px){
+    body{
+     height: max-content;
+     margin:0 auto;
+    }
+   
   }

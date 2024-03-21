@@ -1,25 +1,30 @@
 .container {
     display: flex;
     flex-direction: column;
-    padding: 0.6rem;
- 
+    margin: 0 auto;
+    padding: .5rem;
+    width: 70%;
+    padding-top: 2rem;
+   
   }
   
   .container label {
-    font-weight: 700;
+
     font-size: 1rem;
     color: #313131;
 
   }
   
   .container input {
-    border-radius: 5px;
+    border-radius: 1rem;
     border: none;
     outline: none;
-    padding: 0.5rem;
+    padding: .5rem;
     color: #000;
     border-bottom: 2px solid #ccc; 
-
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
   }
   
   .container input:hover {

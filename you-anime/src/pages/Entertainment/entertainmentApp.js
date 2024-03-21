@@ -6,6 +6,7 @@ import { app, storage } from "../../firebase/firebase";
 import { v4 } from "uuid";
 import Modal from "./Modal";
 
+
 export default function EntertainmentApp() {
     const [imageUpload, setImageUpload] = useState(null);
     const [imageUploadName, setImageUploadName] = useState("");
@@ -160,6 +161,10 @@ export default function EntertainmentApp() {
               <button className="btn" onClick={() => removeFile()}>
                 Delete
               </button>
+              </div>
+        <div>
+           < h1>Entertainment</h1>
+    
             </div>
           </Modal>
         )}
