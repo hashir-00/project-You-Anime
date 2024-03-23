@@ -51,6 +51,7 @@ export default function EntertainmentApp() {
         setImageUploadName("");
         setImageUpload(null);
         setOpenUploadModal(false);
+        retrieveAllImages();
       });
     };
   
@@ -68,29 +69,31 @@ export default function EntertainmentApp() {
         .catch((error) => {
           console.error("Error deleting file:", error);
         });
+
     };
+    const retrieveAllImages=()=> listAll(imagesListRef)
+    .then((response) => {
+      const promises = response.items.map((item) =>
+        getDownloadURL(item).then((url) => {
+          return getMetadata(item).then((metadata) => ({
+            url,
+            description: metadata?.customMetadata?.description ?? "",
+          }));
+        })
+      );
+      Promise.all(promises).then((urls) => {
+        setImageUrls(urls);
+      });
+    })
+    .catch((error) => {
+      console.error("Error retrieving images:", error);
+    });
   
     useEffect(() => {
       setImageUrls([]);
-  
+      retrieveAllImages();
       // List all images from Firebase Storage
-      listAll(imagesListRef)
-        .then((response) => {
-          const promises = response.items.map((item) =>
-            getDownloadURL(item).then((url) => {
-              return getMetadata(item).then((metadata) => ({
-                url,
-                description: metadata?.customMetadata?.description ?? "",
-              }));
-            })
-          );
-          Promise.all(promises).then((urls) => {
-            setImageUrls(urls);
-          });
-        })
-        .catch((error) => {
-          console.error("Error retrieving images:", error);
-        });
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[] );
     
