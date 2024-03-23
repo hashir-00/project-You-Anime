@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './chat.module.css'; // Import CSS file
 import SideBar from '../sidebar_chatbot/sidebar';
+import SpotifyPlayerComponent from '../spotify_player/spotify_player';
 
 
 function ChatBot() {
   const [message, setMessage] = useState('');
+  const [emotion,setEmotion] = useState('');
   // eslint-disable-next-line no-unused-vars
   const [output, setOutput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
@@ -48,11 +50,12 @@ function ChatBot() {
       }
       else{ 
         setLoading(true);
+
         const requestData = {
         message: message,
         history: chatHistory, // Pass chat history with the request
         //try changing these values
-        system_prompt: "sad,happy,demotivated.disgust.determine the users emotion and respond the right word only",
+        system_prompt: "determine the users emotion and respond the right word only.your first word should be one of these emotions positive,negative,extreame negativity and neutral",
         temperature: 0.9,
         max_new_tokens: 256, // Max number of tokens to generate from the bot
         top_p: 0.95,
@@ -61,7 +64,7 @@ function ChatBot() {
       // eslint-disable-next-line no-unused-vars
       //https://hashir00.pythonanywhere.com/chat
       // eslint-disable-next-line no-unused-vars
-      const response = await fetch('https://hashir00.pythonanywhere.com/chat', {
+      const response = await fetch('  hashir00.pythonanywhere.com/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -71,6 +74,7 @@ function ChatBot() {
       .then(response => response.json())
       .then(data => {
         setOutput(data.output);
+        setEmotion(JSON.stringify(output.slice(0, output.indexOf('.'))));
         setChatHistory(prevHistory => [...prevHistory, { userMessage: message, botMessage: data.output }]);
         setMessage(''); // Clear the input field
       scrollToBottom(); // Scroll to the bottom of the chat container
@@ -84,17 +88,29 @@ function ChatBot() {
     }  
   }
 
-  const musicRecommendation= ()=>{
-    if (!message.trim() || message === "Please enter a valid message") {
-      // If the message is empty or contains only whitespace, do not send
-     return setMessage("Please enter a valid message");
-    }
-    else {
-      
-    }
+// const sendEmotion = async() => {
+//   const requestData = {
+//     message:message,
+//   }
+//   const response = await fetch(' http://127.0.0.1:5000/sentiment', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(requestData)
+//   }).then(response => response.json())
+//   .then(data => {
+//     setEmotion(data.emotion);
+//     console.log(data.emotion);
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//   })
 
     
-  }
+
+// }
+
 
   return (
     <>
@@ -132,6 +148,12 @@ function ChatBot() {
         <button onClick={clearChatHistory}>Clear Chat</button>
       </div>
     </div>
+
+    {emotion.length>0 && ( <div>
+      <p>Emotion: {emotion}</p>
+     <SpotifyPlayerComponent source={"1HXRps6gmF8yMZPsJ6n9Zk"} />
+    </div>)}
+   
     </>
   );
 }
