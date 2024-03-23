@@ -91,6 +91,7 @@ export default function EntertainmentApp() {
         .catch((error) => {
           console.error("Error retrieving images:", error);
         });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[] );
     
     return (<>
