@@ -28,10 +28,9 @@ const QuizDescription = () => {
           </div>
           <div className={styles.HowItWorks}>
           <p>How it works</p>
-          <p>0-5 : Newbie</p>
-          <p>6-10: Beginner</p>
-          <p>11-15: Intermediate</p>
-          <p>Above 15 : Expert </p>
+          <p>0-5 : Beginner</p>
+          <p>6-10: Intermediate</p>
+          <p>11-15: Expert</p>
           </div>
           <p id={styles.p}> 
            So take a breath and get your anime world building <br/>by clicking on Start Quiz button.<br/>

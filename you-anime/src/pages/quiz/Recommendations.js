@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from "./Recommendations.module.css";
 
 const Recommendations = () => {
   const [level, setLevel] = useState('');
@@ -33,11 +34,11 @@ const Recommendations = () => {
 
   return (
     <div>
-      <h2>{level} Recommendations</h2>
+      <h2>Recommendations</h2>
       <ul>
         {recommendations.map((recommendation, index) => (
           <li key={index}>
-            {recommendation.name} : <a href={recommendation.url}>MAL URLS</a>
+            <a href={recommendation.url}>{recommendation.name}</a>
           </li>
         ))}
       </ul>
