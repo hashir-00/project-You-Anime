@@ -1,15 +1,11 @@
-import { Helmet } from "react-helmet";
-import ContactUsApp from "./contactUsApp";
+function Contact(){
+  return (
+    <div className="contact">
+      <h1>Contact Us</h1>
+      <p>For any inquiries, please contact us at:</p>
+      <p>Email:</p>
+    </div>
 
-export default function ContactUsPage(){
-    return(
-        <div>
-             <Helmet>
-          <title>YouAnime-Contact Us</title>
-          <meta name="description" content="Contact Us" />
-        </Helmet>
-        <ContactUsApp/>
-        
-        </div>
-    )
+  );
 }
+export default Contact;
