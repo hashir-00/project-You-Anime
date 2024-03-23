@@ -12,16 +12,37 @@
     padding: 0;
     display: flex; /* Display the list items in a flex container */
 
+    justify-content: baseline;
+  }
+  .nav{
+    display: flex;
     justify-content: flex-end;
+    position: absolute;
+    right: 0;
+ 
+  }
+
+  #date {
+    font-weight: bold;
+ color: #e9e7e7;
+align-items: start;
+font-size: 18px; /* Increase font size */
+font-weight: bold; /* Make the font bold */
   }
   
-  @media screen and (max-width: 420px){
+  @media screen and (max-width: 680px){
+    .nav{
+      position: relative;
+      justify-content: center;
+      display: flex;
+    }
     .navbarstart ul {
       text-align: center;
       display: flex; /* Display the list items in a flex container */
       flex-direction: column;
-  
-     
+    }
+    .navbarstart{
+      margin-top: .5rem;
     }
   }
   

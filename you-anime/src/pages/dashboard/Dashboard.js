@@ -7,6 +7,7 @@ import './Dashboard.css';
 import { auth } from '../../firebase/firebase';
 import { Helmet } from 'react-helmet';
 import NavBar from '../../components/navbar/navbar';
+import dayjs from 'dayjs';
 
 
 
@@ -38,7 +39,9 @@ const Dashboard = () => {
 
         <NavBar/>
     <div id="dashboard-username">
+    <p id="date">{dayjs().format("dddd, MMMM D, YYYY")}</p>
       <p id="username">Welcome  {user} </p>
+      
         </div>
        
     <div className="dashboard-container">

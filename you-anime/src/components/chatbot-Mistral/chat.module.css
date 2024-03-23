@@ -3,7 +3,7 @@
 
 .container {
     width: 40%;
-    height: 50vh;
+    height: 70vh;
   display: flex;
   flex-direction: column;
     padding: 2rem;
@@ -15,6 +15,7 @@
     
   }
   
+
   .chatContainer {
    
  
@@ -25,11 +26,10 @@
     margin-top: 1rem;
     font-size: small;
   }
-@media screen and (max-width:980px)
+@media screen and (max-width:1380px)
 {
   .container{
     height: 60vh;
-   
   }
 
   .inputContainer {
@@ -40,6 +40,7 @@
     align-items: center;
    
   }
+  
   button{
     width: 8rem;
     text-align: center;
@@ -48,6 +49,16 @@
     display: flex;
     width: 100%;
   
+  }
+  .message{
+    font-size: 10px;
+  }
+  .userMessage {
+    font-size: .5rem;
+   
+  }
+  .botMessage{
+    font-size:0.5rem;
   }
 }
 
@@ -64,7 +75,7 @@
     color: #000000;
     display: flex;
     align-items: center; /* Align items vertically */
-    font-size: 1rem; /* Adjust font size */
+   
     padding: 0.5rem; /* Adjust padding */
     margin-bottom: 0.5rem; /* Add margin bottom for spacing between messages */
     width: fit-content;
@@ -77,7 +88,7 @@
   .botMessage {
     background-color: #e974ab;
     color: #151515;
-    font-size: 0.8rem; /* Adjust font size */
+   
     padding: 0.5rem; /* Adjust padding */
     margin-bottom: 0.5rem; /* Add margin bottom for spacing between messages */
     width:fit-content; /* Limit message width to 70% of container */
@@ -115,4 +126,28 @@
   
   button:hover {
     background-color: #47047b;
+  }
+.music{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+  #backTochatbot{
+
+    margin: 0 auto;
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    
+  }
+  #backTochatbot button{
+width: 10rem;
+  }
+
+  #emotion button  {
+
+   background-color: #09b1e97b;
   }

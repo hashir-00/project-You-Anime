@@ -6,8 +6,8 @@ const NavBar= ()=>{
     return(
         <div className="navbar">
              <nav>
-                <ul>
-                   
+                <ul> 
+                    
                     <li>
                         <Link to="/*">Home</Link>
                     </li>
