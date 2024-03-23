@@ -1,49 +1,70 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-const ChatbotApp = () => {
-  const [inputText, setInputText] = useState('');
-  const [outputText, setOutputText] = useState('');
+import './ChatbotApp.css';
+import ChatBot from '../../components/chatbot-Mistral/chat';
 
-  const handleInputChange = (event) => {
-    setInputText(event.target.value);
-  };
+// function ChatbotApp() {
+//     const [userInput, setUserInput] = useState('');
+//     const [chatMessages, setChatMessages] = useState([]);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+//     const sendMessage = async () => {
+//         if (userInput.trim() === '') return;
+//         setChatMessages([...chatMessages, { message: userInput, sender: 'user' }]);
+//         const response = await fetch('http://127.0.0.1:5000/chat', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/x-www-form-urlencoded'
+//             },
+//             body: `user_input=${encodeURIComponent(userInput)}`
+//         });
 
-    try {
-      // Make a request to the chatbot API
-      const response = await axios.post('/https://your-chatbot-api-url.com', {
-        input: inputText
-      });
+//         const data = await response.json();
+//         appendMessage(data.response);
+//         setUserInput('');
+//     };
 
-      // Update the output text with the response from the API
-      setOutputText(response.data.output);
-    } catch (error) {
-      console.error('Error fetching data from chatbot API:', error);
-    }
-  };
+//     const appendMessage = (message) => {
+//         setChatMessages(prevMessages => [...prevMessages, { message, sender: 'bot' }]);
+//     };
+    
+//     const clearChat = () => {
+//         setChatMessages([]);
+//     };
+//         return (
+//             <div className="chat-container">
+//             <div className="messages">
+//               {/* Display chat messages with sender info */}
+//               {chatMessages.map(({ message, sender }, index) => (
+//                 <div key={index} className={`message ${sender === 'bot' ? 'bot-message' : 'user-message'}`}>
+//                   {message}
+//                 </div>
+//               ))}
+//             </div>
+//             <div className="input-container">
+//               <input
+//                 type="text"
+//                 className="user-input"
+//                 placeholder="Type your message here..."
+//                 value={userInput}
+//                 onChange={(e) => setUserInput(e.target.value)}
+//               />
+//               <button className="send-button" onClick={sendMessage}>
+//                 Send
+//               </button>
+//               <button className="send-button" onClick={clearChat}>
+//                     Clear
+//                 </button>
+//             </div>
+//           </div>
+          
+//   );
+// }
 
-  return (
-    <div className="chatbot">
-      <h1>Chatbot</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Type your message..."
-          value={inputText}
-          onChange={handleInputChange}
-        />
-        <button type="submit">Send</button>
-      </form>
-      {outputText && (
-        <div className="output">
-          <p>{outputText}</p>
+function ChatbotApp(){
+    return(
+        <div>
+            <ChatBot/>
         </div>
-      )}
-    </div>
-  );
-};
-
+    )
+}
 export default ChatbotApp;

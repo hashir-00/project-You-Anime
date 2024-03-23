@@ -1,0 +1,142 @@
+.container {
+  display: flex;
+  flex-direction: row;
+
+
+  margin: 0 auto;
+  width: 100%;
+  height: 90vh;justify-content: center;
+  align-items: center;
+}
+
+.innerBoxWrapper {
+  display: flex;
+ margin: 0 auto;
+ max-width: 40rem;
+ flex-direction: row;
+ height: 80vh;
+}
+
+.innerBoxOne{
+  width: fit-content;
+  background-color: #fff;
+  width: 20rem;
+  border-radius: 1rem 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+
+}
+.innerBoxTwo {
+  background-image: url('/src/components/images/login.jpg') ;
+  background-size: cover; 
+  background-position: 50%; 
+   width:20rem;
+  background-color: #fff;
+  border-radius:  0 1rem 1rem 0;
+}
+@media screen and (max-width: 768px){
+  .innerBoxTwo{
+    display: none;
+  }
+  .innerBoxOne{
+    width: 100%;
+   background:url('/src/components/images/login.jpg') ;
+   background-position: 40%;
+    background-size: cover;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+ 
+}
+
+h3{
+  text-align: center;
+  letter-spacing: 0.5rem;
+}
+  
+  .footer {
+    display: flex;
+    flex-direction: column;
+ margin-top: 4rem;
+  }
+  
+  .footer .error {
+    font-weight: bold;
+    font-size: small;
+    color: #ff3300;
+    text-align: center;
+  }
+  .footer button {
+    outline: none;
+    border: none;
+    background-color: #c579c5;
+    color: #fff;
+    border-radius: 1rem;
+    font-weight: bold;
+    transition: 100ms;
+    cursor: pointer;
+    width: auto;
+    font-size: medium;
+    padding: 0.8rem;
+    margin: auto;}
+  
+  
+  
+  .footer button:disabled {
+    background-color: gray !important;
+  }
+  
+  .footer button:hover {
+    background-color: #aa2aff;
+   
+  }
+  
+  .footer p {
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    font-size: large;
+  }
+  
+  .footer p span a {
+    font-weight: bold;
+    color: #b663be;
+    letter-spacing: 0.2rem;
+    font-size: large;
+    text-decoration: none;
+  }
+
+  .Homebutton a{
+    text-decoration: none;
+    color: #fff;
+   }
+  .Homebutton{
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background-color: #c579c5;
+    color: #fff;
+    border-radius: 1rem;
+    font-weight: bold;
+    transition: 100ms;
+    cursor: pointer;
+    font-size: medium;
+    padding: 0.6rem;
+    margin: auto;}
+  
+  
+  .Homebutton:disabled {
+    background-color: gray !important;
+  }
+  
+  .Homebutton:hover {
+    background-color: #aa2aff;
+  }
+  .showPassword{
+    display: flex;
+    justify-content: center;
+    font-size: small;
+    color: #b663be;
+
+  }

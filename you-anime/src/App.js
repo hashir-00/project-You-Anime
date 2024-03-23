@@ -1,26 +1,43 @@
+
+
 import React from 'react';
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import Dashboard from "./pages/dashboard/Dashboard";
-import ChatbotApp from "./pages/chatbot/ChatbotApp";
-import Quiz from './pages/quiz/Quiz';
-import Cosplay from './pages/cosplay/cosplay';
-import ChatbotPage from './pages/chatbot/ChatbotPage';
-import NavBar from './components/navbar/navbar';
-import Footer from './components/footer/footer';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Dashboard from "./pages/dashboard/Dashboard.js";
+import ChatbotPage from './pages/chatbot/ChatbotPage.js';
+import Footer from './components/footer/footer.js';
+import CosplayPage from './pages/cosplay/CosplayPage.js';
+import QuizPage from './pages/quiz/QuizPage.js';
+import Home from './pages/Home/Home.js';
 import './App.css';
+import LoginPage from './pages/Login/LoginPage.js';
+import SignUp from './pages/SignUp/SignUp.js';
+import EntertainmentPage from './pages/Entertainment/entertainmentPage.js';
+import AboutUsPage from './pages/aboutUs/aboutUsPage.js';
+import ContactUsPage from './pages/contactUs/contactUsPage.js';
+import QuizDescription from './pages/quiz/QuizDescription.js';
+import QuizApp from './pages/quiz/QuizApp.js';
+
 
 export default function App() {
     return (
-        <div>
-            <BrowserRouter>
-            <NavBar/>
-                <Routes>
-                    <Route path="/" element={<Dashboard />} />
-                    <Route path="/chatbotPage" element={<ChatbotPage/>} />    
-                    <Route path="/quiz" element={<Quiz/>} />   
-                    <Route path="/cosplay" element={<Cosplay />} />       
-                </Routes>
-                <Footer/>
+        <div>{/* when it comes to deployment need to have the basename as the project repo name(/project-you-anime/)
+        else remove the base name property*/}
+            <BrowserRouter basename='/project-You-Anime'>
+                <Routes>         
+                    <Route path="/*" element={<Home/>} />{/* home page  */}
+                    <Route path="/Dashboard" element={<Dashboard/>} />{/* dashboard page */}
+                    <Route path="/ChatbotPage" element={<ChatbotPage/>} />{/* chatbot page */}  
+                    <Route path="/quizPage" element={<QuizPage/>} />   {/* quiz page */} 
+                    <Route path="/QuizApp" element={<QuizApp/>} />   {/* quiz page */} 
+                    <Route path="/QuizDescription" element={<QuizDescription/>} />   {/* quiz page */} 
+                    <Route path="/CosplayPage" element={<CosplayPage/>} />  {/* cosplay page */} 
+                    <Route path='signup' element={<SignUp/>} />  {/* signup page */}
+                   < Route path="/Login" element={<LoginPage />} /> {/* cosplay item */}
+                   < Route path="/AboutUs" element={<AboutUsPage/>} />
+                   < Route path="/ContactUs" element={<ContactUsPage/>} />
+                   < Route path="/memegallery" element={<EntertainmentPage/>} />
+                 </Routes>
+                 <Footer />
             </BrowserRouter>
         </div>
     );

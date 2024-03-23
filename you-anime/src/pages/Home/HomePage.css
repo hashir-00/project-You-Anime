@@ -1,0 +1,77 @@
+/* HomePage.css */
+
+.contain-HomePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.content {
+    text-align: center;
+    margin-top: 20px; /* Adjust margin top as needed */
+}
+
+.title {
+    font-size: 2rem;
+    color: #333;
+}
+
+
+
+.anime-list {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    /* HomePage.css */
+}
+.swipe-container {
+    position: relative;
+    height: 40vh;
+   background-color: rgba(81, 152, 227, 0.2);
+   border-radius: 3rem;
+    border: 1px solid rgb(98, 76, 154);
+    max-width: 50%; /* Set a maximum width if desired */
+    overflow: hidden;
+    margin: 0 auto; /* Center the swipe container horizontally */
+    margin-bottom: 1rem;
+}
+
+.anime-list {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.anime-card {
+    flex: 0 0 auto;
+    width: fit-content; /* Set the width of the anime card to occupy the entire swipe container */
+    border-radius: 8px;
+    padding: 20px;
+    max-height: fit-content;
+    text-align: center;
+    opacity: 0; /* Set default opacity for items */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.anime-card.active {
+    opacity: 1; /* Active item has full opacity */
+}
+
+.anime-card h2 {
+    margin-bottom: 10px;
+    color: #127368;
+}
+
+.anime-card p {
+    color: #0d4ee5;
+}
+
+@media screen and (max-width: 768px) {
+    .swipe-container {
+        max-width: 100%; /* Set a maximum width if desired */
+        font-size: large;
+        width: 20rem;
+        height: fit-content;
+    }
+    
+}

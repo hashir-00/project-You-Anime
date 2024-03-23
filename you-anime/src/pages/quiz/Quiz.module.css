@@ -1,0 +1,89 @@
+.progressLabel {
+  text-align: center;
+}
+
+.progressBar {
+  width: 40%;
+  background-color: grey;
+  border: 1px solid grey;
+  height: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.progressBar {
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 20px;
+  border-radius: 25px;
+}
+
+.progressIndicator {
+  height: 100%;
+  background-color: rgb(153, 30, 153);
+  position: absolute;
+  border-radius: inherit;
+  width: var(--progressPercentage);
+}
+
+.questionnaireContainer {
+  text-align: left;
+  width: 700px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 25px;
+  display: flex;
+}
+
+.submtBtn,
+.canclBtn {
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  color: white;
+  border-radius: 15px;
+  width: 10%;
+}
+
+.submtBtn {
+  background-color: green;
+  margin-left: 30%;
+}
+
+.canclBtn {
+  background-color: red;
+  margin-left: 20%;
+}
+.message {
+  background-color:rgba(99, 121, 245, 0.178);
+  border: 0.1rem solid #386bf7;
+  border-radius:3rem;
+  margin: 10rem auto auto auto;
+  width: 40%;
+  height: fit-content;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;  
+  
+}
+.message p{
+  color: rgb(153, 30, 153);
+}
+.message h4{
+ color: rgba(2, 6, 236, 0.5);
+}
+.backbutton {
+ text-align: center;
+ display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

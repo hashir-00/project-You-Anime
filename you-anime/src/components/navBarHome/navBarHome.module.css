@@ -1,0 +1,44 @@
+.navbarstart {
+    background-color: rgba(8, 7, 63, 0.1); /* Transparent background color of the navbarstart */
+    padding: 10px 0; /* Top and bottom padding */
+    box-shadow: 0 2px 4px rgb(88, 9, 162,1); /* Add a subtle shadow for depth */
+    border-radius: 1rem; /* Round the corners of the navbarstart */
+  }
+  
+  
+  .navbarstart ul {
+    list-style-type: none; /* Remove bullet points from the list */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display the list items in a flex container */
+
+    justify-content: flex-end;
+  }
+  
+  @media screen and (max-width: 420px){
+    .navbarstart ul {
+      text-align: center;
+      display: flex; /* Display the list items in a flex container */
+      flex-direction: column;
+  
+     
+    }
+  }
+  
+  .navbarstart li {
+    display: inline; /* Display list items horizontally */
+    margin: 0 15px; /* Margin between list items */
+  }
+  
+  .navbarstart a {
+    color: #fff; /* Text color of the links */
+    text-decoration: none; /* Remove underline from the links */
+    font-size: 18px; /* Increase font size */
+    font-weight: bold; /* Make the font bold */
+    transition: color 0.3s ease; /* Add smooth transition for color change */
+  }
+  
+  .navbarstart a:hover {
+    color: #54006d85; /* Change text color on hover */
+  }
+  

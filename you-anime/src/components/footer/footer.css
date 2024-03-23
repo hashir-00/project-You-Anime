@@ -1,24 +1,37 @@
 .footerComponent {
-  
    
-    text-align: center; /* Center the links */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0); /* Add a subtle shadow for depth */
     border-radius: 1rem; /* Round the corners of the navbar */
-    width: 100%;
-    position: fixed ;
+  text-align: center;
+    position: absolute;
+    margin: 0 auto; /* Center the navbar */
     bottom: 0;
+    width: 100%;
   
+
   }
   
   
   .footerComponent ul {
     list-style-type: none; /* Remove bullet points from the list */
- 
+    display: flex; /* Display the list items as a row */
+    justify-content: center; /* Center the items horizontally */
+    flex-direction: row;
+  }
+  
+  @media screen and (max-width: 420px){
+    .footerComponent ul {
+      flex-direction: column;
+      width: 20rem;
+      text-align: center;
+    }
+  
+    
   }
   
   .footerComponent li {
     display: inline; /* Display list items horizontally */
-    margin: 0 15px; /* Margin between list items */
+    margin: 0 1rem; /* Add space between the list items */
   }
   
   .footerComponent a {
@@ -30,6 +43,6 @@
   }
   
   .footerComponent a:hover {
-    color: #ffd700; /* Change text color on hover */
+    color: #006bed; /* Change text color on hover */
   }
   
