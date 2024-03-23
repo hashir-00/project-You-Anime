@@ -5,7 +5,7 @@ export default function AboutUsApp() {
 
     return(
         <div>
-            <h1>ABosaut us</h1>
+            <h1>ABosassut us</h1>
          
          
             </div>
