@@ -6,7 +6,7 @@ import MusicRecommender from '../musicRecommender/musicRecommender';
 
 function ChatBot() {
   const [message, setMessage] = useState('');
-  const [emotionState,setEmotionState] = useState('');
+  const [emotionState,setEmotionState] = useState("");
   // eslint-disable-next-line no-unused-vars
   const [output, setOutput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
@@ -57,7 +57,7 @@ function ChatBot() {
         message: message,
         history: chatHistory, // Pass chat history with the request
         //try changing these values
-        system_prompt: "determine the users emotion and respond the right word only.your first word should be one of these emotions positive,negative,extreame negativity and neutral",
+        system_prompt: "determine the users emotion and respond the right word only.your first word should be one of these emotions.positive,negative,extreame negative and neutral",
         temperature: 0.9,
         max_new_tokens: 256, // Max number of tokens to generate from the bot
         top_p: 0.95,
@@ -77,6 +77,7 @@ function ChatBot() {
       .then(data => {
         setOutput(data.output);
         setEmotionState(data.output.split(".")[0]);
+        console.log(data.output.split(".")[0]);
         setChatHistory(prevHistory => [...prevHistory, { userMessage: message, botMessage: data.output.split(".").slice(1).join(".") }]);
         setMessage(''); // Clear the input field
         scrollToBottom(); // Scroll to the bottom of the chat container

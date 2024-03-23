@@ -6,7 +6,7 @@ function MusicRecommender(emotion){
 
 
 
-    const userEmotion= JSON.stringify(emotion).split('"')[3];
+    const userEmotion= JSON.stringify(emotion).split('"')[3].toLocaleLowerCase().trim();
     const [tracks, setTracks] = useState([]);
     const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
 
@@ -93,6 +93,7 @@ const fetchDataCluster3 = async () => {
                
             <div className={Mstyles.musicRecommender}>
     <SpotifyPlayerComponent source={tracks[currentTrackIndex]?.url.split('/').pop()}/>
+    {console.log(userEmotion)}
     
                 </div>
 
