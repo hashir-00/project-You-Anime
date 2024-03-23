@@ -94,7 +94,7 @@ export default function EntertainmentApp() {
       retrieveAllImages();
       // List all images from Firebase Storage
     
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+   
     },[] );
     
     return (<>
