@@ -71,7 +71,7 @@ export default function EntertainmentApp() {
     };
   
     useEffect(() => {
-      setImageUrls([]);
+      setImageUrls();
   
       // List all images from Firebase Storage
       listAll(imagesListRef)
