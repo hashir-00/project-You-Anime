@@ -71,7 +71,7 @@ export default function EntertainmentApp() {
     };
   
     useEffect(() => {
-      setImageUrls();
+      setImageUrls([]);
   
       // List all images from Firebase Storage
       listAll(imagesListRef)
@@ -91,7 +91,7 @@ export default function EntertainmentApp() {
         .catch((error) => {
           console.error("Error retrieving images:", error);
         });
-    }, );
+    },[] );
     
     return (<>
     <div className={Styles.uploadbutton}><button className="btn" onClick={() => setOpenUploadModal(true)}>
