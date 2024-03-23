@@ -90,7 +90,7 @@ const fetchDataCluster3 = async () => {
     return(
         <>
             <div className={Mstyles.musicContainer}>
-                {console.log(userEmotion)}
+               
             <div className={Mstyles.musicRecommender}>
     <SpotifyPlayerComponent source={tracks[currentTrackIndex]?.url.split('/').pop()}/>
     
