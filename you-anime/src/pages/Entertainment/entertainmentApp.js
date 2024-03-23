@@ -1,7 +1,7 @@
 import Styles from "./Entertainment.module.css";
 import { useState, useEffect } from "react";
 import {ref,uploadBytes,getDownloadURL,listAll,deleteObject,updateMetadata,getMetadata,} from "firebase/storage";
-import { app, storage } from "../../firebase/firebase";
+import { storage } from "../../firebase/firebase";
 
 import { v4 } from "uuid";
 import Modal from "./Modal";
@@ -91,7 +91,7 @@ export default function EntertainmentApp() {
         .catch((error) => {
           console.error("Error retrieving images:", error);
         });
-    }, []);
+    }, );
     
     return (<>
     <div className={Styles.uploadbutton}><button className="btn" onClick={() => setOpenUploadModal(true)}>
