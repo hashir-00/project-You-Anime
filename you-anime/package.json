@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "@gradio/client": "^0.12.1",
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "tailwindcss": "^3.4.1"
   }
 }
