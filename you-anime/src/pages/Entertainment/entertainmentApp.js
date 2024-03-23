@@ -1,4 +1,4 @@
-import "./Entertainment.css";
+import Styles from "./Entertainment.module.css";
 import { useState, useEffect } from "react";
 import {ref,uploadBytes,getDownloadURL,listAll,deleteObject,updateMetadata,getMetadata,} from "firebase/storage";
 import { app, storage } from "../../firebase/firebase";
@@ -18,7 +18,7 @@ export default function EntertainmentApp() {
     const [openViewModal, setOpenViewModal] = useState(false);
     const [selectedImg, setSelectedImg] = useState(null);
   
-    const imagesListRef = ref(storage, "images/");//path error due to not having storage import and no images folder in firebase
+    const imagesListRef = ref(storage, "images");//path error due to not having storage import and no images folder in firebase
   
 
     const uploadFile = () => {
@@ -91,21 +91,23 @@ export default function EntertainmentApp() {
         .catch((error) => {
           console.error("Error retrieving images:", error);
         });
-    }, [imagesListRef]);
+    }, []);
     
-    return (
-        <div className="App">
-      <div className="main-container">
-        <div className="button-container">
-          <button className="btn" onClick={() => setOpenUploadModal(true)}>
+    return (<>
+    <div className={Styles.uploadbutton}><button className="btn" onClick={() => setOpenUploadModal(true)}>
             Upload Your Meme
           </button>
+          </div>
+        <div className={Styles.app}>
+      <div className={Styles.mainContainer}>
+        <div className={Styles.buttonContainer}>
+          
         </div>
         <Modal
           isOpen={openUploadModal}
           onClose={() => setOpenUploadModal(false)}
         >
-          <div className="vertical-stack">
+          <div className={Styles.verticalStack}>
             <button>
               select meme
               <input
@@ -132,7 +134,7 @@ export default function EntertainmentApp() {
             </button>
           </div>
         </Modal>
-        <div className="image-container">
+        <div className={Styles.imageContainer}>
           {imageUrls.map((image, i) => {
             return (
               <img
@@ -155,7 +157,7 @@ export default function EntertainmentApp() {
               setSelectedImg(null);
             }}
           >
-            <div className="vertical-stack">
+            <div className={Styles.verticalStack}>
               <img src={selectedImg.url} alt="" />
               <label>{selectedImg.description}</label>
               <button className="btn" onClick={() => removeFile()}>
@@ -163,13 +165,13 @@ export default function EntertainmentApp() {
               </button>
               </div>
         <div>
-           < h1>Entertainment</h1>
+       
     
             </div>
           </Modal>
         )}
       </div>
     </div>
-  
+    </>
     );
 }
