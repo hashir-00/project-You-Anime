@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './chat.module.css'; // Import CSS file
 import SideBar from '../sidebar_chatbot/sidebar';
-import SpotifyPlayerComponent from '../spotify_player/spotify_player';
+import MusicRecommender from '../musicRecommender/musicRecommender';
 
 
 function ChatBot() {
   const [message, setMessage] = useState('');
-  const [emotion,setEmotion] = useState('');
+  const [emotionState,setEmotionState] = useState('');
   // eslint-disable-next-line no-unused-vars
   const [output, setOutput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
   const chatContainerRef = useRef(null); // Ref for chat container
   const [loading, setLoading] = useState(false);
+  const[recommendMusic,setRecommendMusic] = useState(false);
   const [dots, setDots] = useState('');
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,7 +52,7 @@ function ChatBot() {
       }
       else{ 
         setLoading(true);
-
+       
         const requestData = {
         message: message,
         history: chatHistory, // Pass chat history with the request
@@ -64,7 +66,7 @@ function ChatBot() {
       // eslint-disable-next-line no-unused-vars
       //https://hashir00.pythonanywhere.com/chat
       // eslint-disable-next-line no-unused-vars
-      const response = await fetch('  hashir00.pythonanywhere.com/chat', {
+      const response = await fetch('https://hashir00.pythonanywhere.com/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -74,10 +76,10 @@ function ChatBot() {
       .then(response => response.json())
       .then(data => {
         setOutput(data.output);
-        setEmotion(JSON.stringify(output.slice(0, output.indexOf('.'))));
-        setChatHistory(prevHistory => [...prevHistory, { userMessage: message, botMessage: data.output }]);
+        setEmotionState(data.output.split(".")[0]);
+        setChatHistory(prevHistory => [...prevHistory, { userMessage: message, botMessage: data.output.split(".").slice(1).join(".") }]);
         setMessage(''); // Clear the input field
-      scrollToBottom(); // Scroll to the bottom of the chat container
+        scrollToBottom(); // Scroll to the bottom of the chat container
       })
       .catch(error => {
         console.error('Error:', error);
@@ -114,16 +116,13 @@ function ChatBot() {
 
   return (
     <>
-    <div >  </div>
-    
-   
-    <div className={styles.container}>
+    {!recommendMusic && ( <div className={styles.container}>
     <SideBar/>
       <div ref={chatContainerRef} className={styles.chatContainer}>
      
         {chatHistory.map((item, index) => (
           <React.Fragment key={index}>
-            <div className={styles.userMessage}>{item.userMessage}ff</div>
+            <div className={styles.userMessage}>{item.userMessage}</div>
             <div className={styles.botMessage} >{item.botMessage}</div>
           </React.Fragment>
         ))}
@@ -146,13 +145,32 @@ function ChatBot() {
         />
         <button onClick={sendMessage}>Send</button>
         <button onClick={clearChatHistory}>Clear Chat</button>
+        <div id={styles.emotion}>
+        <button onClick={()=>setRecommendMusic(true)}>Recommend Music</button>
       </div>
-    </div>
+ </div>
+    
 
-    {emotion.length>0 && ( <div>
-      <p>Emotion: {emotion}</p>
-     <SpotifyPlayerComponent source={"1HXRps6gmF8yMZPsJ6n9Zk"} />
     </div>)}
+        
+       {recommendMusic && (<>
+       {emotionState ?  <div className={styles.music}>
+        <div><MusicRecommender emotion={emotionState}/> </div>
+        <div id={styles.backTochatbot}><button  onClick={()=>setRecommendMusic(false)}>
+                       Go back to chatbot
+                    </button></div>
+        </div>:  <div id={styles.backTochatbot}> <h1>no emotion deteced</h1><button  onClick={()=>setRecommendMusic(false)}>
+                       Go back to chatbot
+                    </button></div>}
+       
+       </>
+       
+       )} 
+    
+   
+   
+
+    
    
     </>
   );
