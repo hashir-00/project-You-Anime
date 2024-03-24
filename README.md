@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-pre-processing of chatbot and anime music datataset
-=======
 # Project You-Anime
 
 "An interactive web application called You-anime, designed to enhance the anime viewing experience. 
@@ -15,7 +12,7 @@ You-anime brings personalized excitement to every anime enthusiast's screen."
 - [Contributing](#contributing)
 - [About Technology](#about-tech)
 - [About Deployment](#about-Deployment)
-- [CI-CD pipeline] (#CI-CD pipeline)
+- [CI-CD pipeline](#about-Deployment)
 - [License](#license)
 
 ## Getting Started
@@ -128,4 +125,3 @@ this page is deployed in github pages for  hosting services.
 the issue has been corrected with introducing a 404.html page in public folder and few tweeks in index.html. look at them yo get an idea
 
 
->>>>>>> b44894d2a4093932d8f5e4290fae9b0ac753ab7a

@@ -1,0 +1,13 @@
+h2{
+    text-align: center;
+}   
+li{
+    list-style-type: none;
+    text-align: center;
+}
+#button{
+justify-content: center;
+display: flex;
+align-items: center;
+width: 100%;
+}

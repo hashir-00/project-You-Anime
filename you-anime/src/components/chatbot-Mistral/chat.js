@@ -1,16 +1,56 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './chat.module.css'; // Import CSS file
-import SideBar from '../sidebar_chatbot/sidebar';
+
+import MusicRecommender from '../musicRecommender/musicRecommender';
 
 
 function ChatBot() {
   const [message, setMessage] = useState('');
+  const [emotionState,setEmotionState] = useState("");
   // eslint-disable-next-line no-unused-vars
   const [output, setOutput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
   const chatContainerRef = useRef(null); // Ref for chat container
   const [loading, setLoading] = useState(false);
+  const[recommendMusic,setRecommendMusic] = useState(false);
   const [dots, setDots] = useState('');
+  
+  function SideBar({ setEmotionState }) {
+    return (
+        <div className={styles.sidebarItems}>
+            <ul>
+                <li>
+                    <button onClick={() => setEmotionState('negative')}>
+                        Negative
+                    </button>
+                </li>
+                <li>
+                    <button onClick={() => setEmotionState('positive')}>
+                        Positive
+                    </button>
+                </li>
+                <li>
+                    <button onClick={() => setEmotionState('neutral')}>
+                        Neutral
+                    </button>
+                </li>
+                <li>
+                    <button onClick={() => setEmotionState('exneg')}>
+                        Extreme Negative
+                    </button>
+                </li>
+            </ul>
+        </div>
+    );
+}
+
+
+
+
+
+
+
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,7 +72,7 @@ function ChatBot() {
   }, []);
 
   const scrollToBottom = () => {
-    const chatContainer = document.querySelector('.chat-container');
+    const chatContainer = chatContainerRef.current;
     if (chatContainer) {
       chatContainer.scrollTop = chatContainer.scrollHeight;
     }
@@ -48,17 +88,17 @@ function ChatBot() {
       }
       else{ 
         setLoading(true);
+       
         const requestData = {
         message: message,
         history: chatHistory, // Pass chat history with the request
         //try changing these values
-        system_prompt: "sad,happy,demotivated.disgust.determine the users emotion and respond the right word only",
+        system_prompt: "determine the users emotion and respond positively.your first word should be one of these emotions.positive,negative,extreame negative as exneg and neutral",
         temperature: 0.9,
         max_new_tokens: 256, // Max number of tokens to generate from the bot
         top_p: 0.95,
         repetition_penalty: 1.0
       };
-  
       // eslint-disable-next-line no-unused-vars
       //https://hashir00.pythonanywhere.com/chat
       // eslint-disable-next-line no-unused-vars
@@ -72,9 +112,11 @@ function ChatBot() {
       .then(response => response.json())
       .then(data => {
         setOutput(data.output);
-        setChatHistory(prevHistory => [...prevHistory, { userMessage: message, botMessage: data.output }]);
+        setEmotionState(data.output.split(".")[0]);
+        console.log(data.output.split(".")[0]);
+        setChatHistory(prevHistory => [...prevHistory, { userMessage: message, botMessage: data.output.split(".").slice(1).join(".") }]);
         setMessage(''); // Clear the input field
-      scrollToBottom(); // Scroll to the bottom of the chat container
+        scrollToBottom(); // Scroll to the bottom of the chat container
       })
       .catch(error => {
         console.error('Error:', error);
@@ -82,23 +124,43 @@ function ChatBot() {
         setLoading(false);
       });
     
-    }
-    
-   
+    }  
   }
+
+// const sendEmotion = async() => {
+//   const requestData = {
+//     message:message,
+//   }
+//   const response = await fetch(' http://127.0.0.1:5000/sentiment', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(requestData)
+//   }).then(response => response.json())
+//   .then(data => {
+//     setEmotion(data.emotion);
+//     console.log(data.emotion);
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//   })
+
+    
+
+// }
+
 
   return (
     <>
-    <div >  </div>
-    
-   
-    <div className={styles.container}>
-    <SideBar/>
+
+    {!recommendMusic && ( <div className={styles.container}>
+  
       <div ref={chatContainerRef} className={styles.chatContainer}>
      
         {chatHistory.map((item, index) => (
           <React.Fragment key={index}>
-            <div className={styles.userMessage}>{item.userMessage}ff</div>
+            <div className={styles.userMessage}>{item.userMessage}</div>
             <div className={styles.botMessage} >{item.botMessage}</div>
           </React.Fragment>
         ))}
@@ -121,8 +183,35 @@ function ChatBot() {
         />
         <button onClick={sendMessage}>Send</button>
         <button onClick={clearChatHistory}>Clear Chat</button>
+        <div id={styles.emotion}>
+        <button onClick={()=>setRecommendMusic(true)}>Recommend Music</button>
       </div>
-    </div>
+ </div>
+    
+
+    </div>)}
+        
+       {recommendMusic && (<>
+        <SideBar setEmotionState={setEmotionState} />
+       {emotionState ?  <div className={styles.music}>
+          
+        <div><MusicRecommender emotion={emotionState}/> </div>
+        <div id={styles.backTochatbot}><button onClick={()=>{setRecommendMusic(false);setEmotionState(null);}} >
+                       Go back to chatbot
+                    </button></div>
+        </div>:  <div id={styles.backTochatbot}> <p id={styles.p}>no emotion deteced</p><button onClick={()=>setRecommendMusic(false)} >
+                       Go back to chatbot
+                    </button></div>}
+       
+       </>
+       
+       )} 
+    
+   
+   
+
+    
+   
     </>
   );
 }

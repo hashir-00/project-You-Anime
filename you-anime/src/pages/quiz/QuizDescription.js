@@ -13,10 +13,7 @@ const QuizDescription = () => {
 
  return (
     <>
-    <button className={styles.backBtn} onClick={back}>
-       Back
-      </button>
-    <div className={styles.messageBox}>
+    <div className={styles.container}> <div className={styles.messageBox}>
         <div className={styles.message}>
           <div className={styles.title}>TEST YOUR ANIME LEVEL</div>
           <div className={styles.head}>
@@ -41,9 +38,16 @@ const QuizDescription = () => {
    
 </div>
       </div>
-    <button className={styles.strtBtn} onClick={TakeQuiz}>
+      <div className={styles.buttons}>
+        
+      <div className={styles.buttonContainer}><button  onClick={TakeQuiz}>
         Start Quiz
-      </button>
+      </button></div> <div><button  onClick={back}>
+       Back
+      </button></div>
+      </div>
+    </div>
+   
     </>
  )   
 }
