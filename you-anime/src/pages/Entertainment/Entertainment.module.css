@@ -3,27 +3,27 @@
   overflow-y: scroll;
 }
 .uploadbutton{
-  text-align: center;
-   
+display: flex;
+flex-direction: row;
+justify-content: center;
+  margin-bottom: 1rem;
+   width: 100%;
 }
 
-.buttonContainer {
-    flex: 0 0 auto; /* Prevent element from growing */
-    padding: 10px; /* Add padding */
-    border-bottom: 1px solid #ddd; /* Add a border */
-    display: flex; /* Enable flexbox for button layout */
-    justify-content: center; /* Align buttons horizontally in the center */
-  }
+
   
   .imageContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
     gap: 4px; /* Add spacing between images */
+    border:  1px solid black;
+    height: 80vh;
   }
   img {
     width: 350px; /* Allow image to fill container width */
-    height: auto; /* Maintain aspect ratio */
+    height: 350px; /* Maintain aspect ratio */
     object-fit: cover; /* Resize proportionally to cover container */
+    margin: 0.5rem auto;
   }
   A
   .mainContainer {
@@ -39,14 +39,58 @@
     min-height: 300px;
   }
   
-  .btn {
+  #btn {
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 1rem;
     height: 50px;
     min-width: 100px;
     width: fit-content;
     color: white;
     background-color: 
-    rgb(149, 58, 205);
+    rgba(26, 134, 234, 0.482);
   }
   
+  #backbutton {
+    cursor: pointer;
+    border-radius: 1rem;
+    width: fit-content;
+    color: white;
+    background-color: 
+    rgb(234, 72, 215);
+  transition: 0.3s;
+  font-size:small;
+
+   }
+   #backbutton:hover {
+    background-color: rgb(149, 58, 205);
+  }
+@media screen and  (max-width: 700px){
+  .uploadbutton{
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: max-content;
+  margin-bottom: 2rem;
+  }
+  #btn{
+   display: flex;
+   
+  }
+  #backbutton{
+   display: flex;   
+  }
+  .imgs {
+
+    width: 100%;
+
+   display: flex;
+   flex-direction: column;
+  }
+  .imgs img{
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+}

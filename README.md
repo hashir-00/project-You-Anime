@@ -12,7 +12,7 @@ You-anime brings personalized excitement to every anime enthusiast's screen."
 - [Contributing](#contributing)
 - [About Technology](#about-tech)
 - [About Deployment](#about-Deployment)
-- [CI-CD pipeline] (#CI-CD pipeline)
+- [CI-CD pipeline](#about-Deployment)
 - [License](#license)
 
 ## Getting Started

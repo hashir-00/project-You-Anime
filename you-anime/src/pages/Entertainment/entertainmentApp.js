@@ -5,6 +5,7 @@ import { storage } from "../../firebase/firebase";
 
 import { v4 } from "uuid";
 import Modal from "./Modal";
+import { useNavigate } from "react-router-dom";
 
 
 export default function EntertainmentApp() {
@@ -12,6 +13,7 @@ export default function EntertainmentApp() {
     const [imageUploadName, setImageUploadName] = useState("");
     const [imageDescription, setImageDescription] = useState("");
     const [imageUrls, setImageUrls] = useState([]);
+    const navigate = useNavigate();
   
     //State for upload modal window
     const [openUploadModal, setOpenUploadModal] = useState(false);
@@ -97,16 +99,26 @@ export default function EntertainmentApp() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[] );
     
+    const RetrunToHome = () => {
+      navigate('/Home');
+    }
+  
     return (<>
-    <div className={Styles.uploadbutton}><button className="btn" onClick={() => setOpenUploadModal(true)}>
+
+    <div className={Styles.uploadbutton}>
+      <div>
+        <button id={Styles.btn} onClick={() => setOpenUploadModal(true)}>
             Upload Your Meme
-          </button>
-          </div>
+          </button></div>
+      <div>
+        <button  id={Styles.backbutton} onClick={RetrunToHome}>
+        Back to Home
+      </button>
+      </div> 
+    </div>
         <div className={Styles.app}>
       <div className={Styles.mainContainer}>
-        <div className={Styles.buttonContainer}>
-          
-        </div>
+     
         <Modal
           isOpen={openUploadModal}
           onClose={() => setOpenUploadModal(false)}
@@ -124,7 +136,9 @@ export default function EntertainmentApp() {
                 value={imageUploadName}
               />
             </button>
-            {imageUpload && <img src={URL.createObjectURL(imageUpload)} alt="meme" />}
+            <div className={Styles.imgs}>   <div > {imageUpload && <img src={URL.createObjectURL(imageUpload)} alt="meme" />}</div>
+           </div>
+         
             <input
               type="text"
               placeholder="description..."

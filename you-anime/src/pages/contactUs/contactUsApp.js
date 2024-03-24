@@ -1,8 +1,12 @@
 
-export default function ContactUsApp(){
-    return(
-            <div>
-                <h1>Contact Us</h1>
-            </div>
-    );
-}
+
+
+
+const ContactUsApp = () => {
+  return (
+    <div className="App">
+      <h1>contact Us</h1>
+    </div>
+  );
+};
+export default ContactUsApp;
