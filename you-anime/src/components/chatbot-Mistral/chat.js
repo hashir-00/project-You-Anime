@@ -102,7 +102,7 @@ function ChatBot() {
       // eslint-disable-next-line no-unused-vars
       //https://hashir00.pythonanywhere.com/chat
       // eslint-disable-next-line no-unused-vars
-      const response = await fetch('http://127.0.0.1:5000/chat', {
+      const response = await fetch('https://hashir00.pythonanywhere.com/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
