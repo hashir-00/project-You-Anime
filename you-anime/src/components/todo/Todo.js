@@ -12,3 +12,13 @@ const firebaseConfig = {
   measurementId:'G-WCPNHY3140'
 };
 
+// Initialize Firebase
+let app;
+if (!getApps().length) {
+  app = initializeApp(firebaseConfig);
+} else {
+  app = getApps()[0]; // if already initialized, use that one
+}
+
+const db = getFirestore(app);
+
