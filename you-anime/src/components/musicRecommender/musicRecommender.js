@@ -6,18 +6,18 @@ function MusicRecommender(emotion){
 
 
 
-    const userEmotion= JSON.stringify(emotion).split('"')[3];
+    const userEmotion= JSON.stringify(emotion).split('"')[3].toLocaleLowerCase().trim();
     const [tracks, setTracks] = useState([]);
     const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
 
     useEffect(() => {
-        if(userEmotion === 'positive'){
+        if(userEmotion.includes("positive")){
             fetchDataCluster0();}
-        else if(userEmotion === 'neutral'){
+        else if(userEmotion.includes( 'neutral')){
             fetchDataCluster1();}
-        else if(userEmotion === 'negative'){
+        else if(userEmotion.includes('negative')){
             fetchDataCluster2();}
-        else if(userEmotion === 'extreme negative'){
+        else if(userEmotion.includes('exneg')){
             fetchDataCluster3();
         }
         else{
@@ -93,6 +93,7 @@ const fetchDataCluster3 = async () => {
                
             <div className={Mstyles.musicRecommender}>
     <SpotifyPlayerComponent source={tracks[currentTrackIndex]?.url.split('/').pop()}/>
+  
     
                 </div>
 

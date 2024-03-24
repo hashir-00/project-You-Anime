@@ -18,6 +18,7 @@ import QuizDescription from './pages/quiz/QuizDescription.js';
 import QuizApp from './pages/quiz/QuizApp.js';
 
 
+
 export default function App() {
     return (
         <div>{/* when it comes to deployment need to have the basename as the project repo name(/project-you-anime/)
@@ -36,6 +37,7 @@ export default function App() {
                    < Route path="/AboutUs" element={<AboutUsPage/>} />
                    < Route path="/ContactUs" element={<ContactUsPage/>} />
                    < Route path="/memegallery" element={<EntertainmentPage/>} />
+               
                  </Routes>
                  <Footer />
             </BrowserRouter>

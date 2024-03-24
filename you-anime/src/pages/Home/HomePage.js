@@ -100,7 +100,7 @@ const HomePage = () => {
                             {animeList.map((anime, index) => (
                                 <div className={`anime-card ${index === currentIndex ? 'active' : ''}`} key={anime.id}>
                                     <h2>{anime.title}</h2>
-                                    <p>{anime.description}</p>
+                                    <p id="animeDescription">{anime.description}</p>
                                 </div>
                             ))}
                         </div>
