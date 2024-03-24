@@ -22,3 +22,23 @@ if (!getApps().length) {
 
 const db = getFirestore(app);
 
+function Todo(){
+  const [todos, setTodos] = useState([]);
+  const [todoInput, setTodoInput] = useState('');
+  const [editMode, setEditMode] = useState(null);
+  const [editText, setEditText] = useState('');
+
+  useEffect(() => {
+    // Fetch todos from Firestore
+    const fetchTodos = async () => {
+      const todosCollection = collection(db, 'Todos');
+      const todosSnapshot = await getDocs(todosCollection);
+      const todosData = todosSnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setTodos(todosData);
+    };
+
+    fetchTodos();
+  }, []);
