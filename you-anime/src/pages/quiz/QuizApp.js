@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState, useCallback } from 'react';
 import styles from './Quiz.module.css';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 const QuizApp = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -127,16 +127,24 @@ const QuizApp = () => {
   const showResults = () => {
 
   return (<>
+  <div className={styles.messageBox}>
   <div className={styles.message}><p>
   <h4>Results</h4>
   <p>Level: {level}</p>
   <p>Total Marks: {totalMarks}</p>
 </p>
+
+
 </div>
-<div  className={styles.backbutton}>
+  <div  className={styles.backbutton}>
   <button onClick={RetrunToHome}>
         Back to Dashboard
-      </button></div>
+      </button>
+      <button onClick={ToRecommendations}>
+     Recommendations
+      </button>
+      </div></div>  
+
 
 </>
       );
@@ -185,6 +193,11 @@ const QuizApp = () => {
   const RetrunToDescription = () => {
     navigate('/QuizPage');
   }
+
+  const ToRecommendations = () => {
+    localStorage.setItem('level', level);
+    navigate('/Recommendations');
+  };
   const RetrunToHome = () => {
     navigate('/Dashboard');
   }
