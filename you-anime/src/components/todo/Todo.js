@@ -44,8 +44,6 @@ function Todo(){
   }, []);
 
 
-
-
   const addTodo = async () => {
     if (todoInput.trim() !== '') {
       const todosCollection = collection(db, 'Todos');
