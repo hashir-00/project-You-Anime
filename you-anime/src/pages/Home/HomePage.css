@@ -65,13 +65,23 @@
 .anime-card p {
     color: #242c3d;
 }
+#animeDescription{
+    font-size:1.5rem ;
+}
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px ) {
     .swipe-container {
         max-width: 100%; /* Set a maximum width if desired */
-        font-size: large;
+        height: 40vh;
         width: 20rem;
-        height: fit-content;
+       
+        
+    }
+    #animeDescription{
+        font-size:1rem ;
+    }
+    .contain-HomePage{
+        height: 80vh;
     }
     
 }

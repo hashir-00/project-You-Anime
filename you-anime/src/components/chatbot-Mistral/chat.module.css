@@ -205,12 +205,12 @@ width: 10rem;
       color: springgreen;
   }
 
-  p{
+  #p{
     font-size: 4rem;
    color: #ffffff;
   }
   @media screen  and (max-width:1000px){
-    p{
+   #p{
       font-size: 2rem;
     }
   }

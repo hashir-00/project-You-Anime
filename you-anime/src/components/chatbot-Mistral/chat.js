@@ -199,7 +199,7 @@ function ChatBot() {
         <div id={styles.backTochatbot}><button onClick={()=>{setRecommendMusic(false);setEmotionState(null);}} >
                        Go back to chatbot
                     </button></div>
-        </div>:  <div id={styles.backTochatbot}> <p>no emotion deteced</p><button onClick={()=>setRecommendMusic(false)} >
+        </div>:  <div id={styles.backTochatbot}> <p id={styles.p}>no emotion deteced</p><button onClick={()=>setRecommendMusic(false)} >
                        Go back to chatbot
                     </button></div>}
        
