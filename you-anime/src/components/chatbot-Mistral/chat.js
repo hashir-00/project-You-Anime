@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './chat.module.css'; // Import CSS file
-import SideBar from '../sidebar_chatbot/sidebar';
+
 import MusicRecommender from '../musicRecommender/musicRecommender';
 
 
@@ -15,6 +15,42 @@ function ChatBot() {
   const[recommendMusic,setRecommendMusic] = useState(false);
   const [dots, setDots] = useState('');
   
+  function SideBar({ setEmotionState }) {
+    return (
+        <div className={styles.sidebarItems}>
+            <ul>
+                <li>
+                    <button onClick={() => setEmotionState('negative')}>
+                        Negative
+                    </button>
+                </li>
+                <li>
+                    <button onClick={() => setEmotionState('positive')}>
+                        Positive
+                    </button>
+                </li>
+                <li>
+                    <button onClick={() => setEmotionState('neutral')}>
+                        Neutral
+                    </button>
+                </li>
+                <li>
+                    <button onClick={() => setEmotionState('exneg')}>
+                        Extreme Negative
+                    </button>
+                </li>
+            </ul>
+        </div>
+    );
+}
+
+
+
+
+
+
+
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -36,7 +72,7 @@ function ChatBot() {
   }, []);
 
   const scrollToBottom = () => {
-    const chatContainer = document.querySelector('.chat-container');
+    const chatContainer = chatContainerRef.current;
     if (chatContainer) {
       chatContainer.scrollTop = chatContainer.scrollHeight;
     }
@@ -57,7 +93,7 @@ function ChatBot() {
         message: message,
         history: chatHistory, // Pass chat history with the request
         //try changing these values
-        system_prompt: "determine the users emotion and respond the right word only.your first word should be one of these emotions.positive,negative,extreame negative and neutral",
+        system_prompt: "determine the users emotion and respond positively.your first word should be one of these emotions.positive,negative,extreame negative as exneg and neutral",
         temperature: 0.9,
         max_new_tokens: 256, // Max number of tokens to generate from the bot
         top_p: 0.95,
@@ -66,7 +102,7 @@ function ChatBot() {
       // eslint-disable-next-line no-unused-vars
       //https://hashir00.pythonanywhere.com/chat
       // eslint-disable-next-line no-unused-vars
-      const response = await fetch('https://hashir00.pythonanywhere.com/chat', {
+      const response = await fetch('http://127.0.0.1:5000/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -117,8 +153,9 @@ function ChatBot() {
 
   return (
     <>
+
     {!recommendMusic && ( <div className={styles.container}>
-    <SideBar/>
+  
       <div ref={chatContainerRef} className={styles.chatContainer}>
      
         {chatHistory.map((item, index) => (
@@ -155,12 +192,14 @@ function ChatBot() {
     </div>)}
         
        {recommendMusic && (<>
+        <SideBar setEmotionState={setEmotionState} />
        {emotionState ?  <div className={styles.music}>
+          
         <div><MusicRecommender emotion={emotionState}/> </div>
-        <div id={styles.backTochatbot}><button  onClick={()=>setRecommendMusic(false)}>
+        <div id={styles.backTochatbot}><button onClick={()=>{setRecommendMusic(false);setEmotionState(null);}} >
                        Go back to chatbot
                     </button></div>
-        </div>:  <div id={styles.backTochatbot}> <h1>no emotion deteced</h1><button  onClick={()=>setRecommendMusic(false)}>
+        </div>:  <div id={styles.backTochatbot}> <p>no emotion deteced</p><button onClick={()=>setRecommendMusic(false)} >
                        Go back to chatbot
                     </button></div>}
        
