@@ -111,3 +111,21 @@ function Todo(){
                   value={editText}
                   onChange={e => setEditText(e.target.value)}
                 />
+                                  <button onClick={() => updateTodo(todo.id, editText)}>Save</button>
+                  <button onClick={() => setEditMode(null)}>Cancel</button>
+                </>
+              ) : (
+                <>
+                  {todo.text}
+                  <button onClick={() => setEditMode(todo.id)}>Edit</button>
+                  <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+  
+  export default Todo;
