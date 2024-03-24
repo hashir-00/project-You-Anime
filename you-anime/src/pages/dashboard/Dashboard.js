@@ -7,6 +7,7 @@ import './Dashboard.css';
 import { auth } from '../../firebase/firebase';
 import { Helmet } from 'react-helmet';
 import NavBar from '../../components/navbar/navbar';
+import Todo from '../../components/todo/Todo';
 
 
 
@@ -47,8 +48,7 @@ const Dashboard = () => {
     <div  className='Chatbot'> <Chatbot/>  </div>
     <div  className='Cosplay'>  <Cosplay/></div>
     
-     
-    
+    <Todo/>
 
             </div>
        </div>
