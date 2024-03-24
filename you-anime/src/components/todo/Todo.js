@@ -59,18 +59,18 @@ function Todo(){
     }
   };
 
-  // const deleteTodo = async id => {
-  //   if (!id) {
-  //     console.error('ID is undefined');
-  //     return;
-  //   }
+  const deleteTodo = async id => {
+    if (!id) {
+      console.error('ID is undefined');
+      return;
+    }
   
-  //   const todoRef = doc(db, 'Todos', id);
-  //   await deleteDoc(todoRef);
-  //   setTodos(todos.filter(todo => todo.id !== id));
-  //   setEditMode(null);
-  //   setEditText('');
-  // };
+    const todoRef = doc(db, 'Todos', id);
+    await deleteDoc(todoRef);
+    setTodos(todos.filter(todo => todo.id !== id));
+    setEditMode(null);
+    setEditText('');
+  };
 
   const updateTodo = async (id, newText) => {
     if (!id) {
