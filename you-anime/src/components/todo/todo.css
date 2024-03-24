@@ -37,3 +37,31 @@ button {
   background-color: #007bff;
   color: #fff;
 }
+
+button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li input[type="text"] {
+  width: calc(100% - 160px);
+}
+
+li button {
+  margin-left: auto;
+}
