@@ -42,3 +42,21 @@ function Todo(){
 
     fetchTodos();
   }, []);
+
+
+
+
+  const addTodo = async () => {
+    if (todoInput.trim() !== '') {
+      const todosCollection = collection(db, 'Todos');
+      const newTodo = {
+        text: todoInput,
+        completed: false
+      };
+      await addDoc(todosCollection, newTodo);
+      setTodoInput('');
+      setTodos([...todos, newTodo]);
+    }
+  };
+
+
