@@ -6,10 +6,8 @@ const NavBar= ()=>{
     return(
         <div className="navbar">
              <nav>
-                <ul>
-                    <li>
-                        <Link to="/Dashboard">Dashboard</Link>
-                    </li>
+                <ul> 
+                    
                     <li>
                         <Link to="/*">Home</Link>
                     </li>

@@ -1,0 +1,153 @@
+
+
+
+.container {
+    width: 40%;
+    height: 70vh;
+  display: flex;
+  flex-direction: column;
+    padding: 2rem;
+    margin: 1rem auto;
+    margin-top: 2rem; 
+    background-color:rgba(96, 183, 226, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+
+  .chatContainer {
+   
+ 
+    height: 20rem; /* Adjust height as needed */
+    overflow-y: scroll;
+    border-radius: 0.5rem;
+    border: 2.4px solid rgba(153, 238, 124, 0.5);
+    margin-top: 1rem;
+    font-size: small;
+  }
+@media screen and (max-width:1380px)
+{
+  .container{
+    height: 60vh;
+  }
+
+  .inputContainer {
+    height: 10vh; /* Adjust height as needed */
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  button{
+    width: 8rem;
+    text-align: center;
+  }
+  input[type="text"]{
+    display: flex;
+    width: 100%;
+  
+  }
+  .message{
+    font-size: 10px;
+  }
+  .userMessage {
+    font-size: .5rem;
+   
+  }
+  .botMessage{
+    font-size:0.5rem;
+  }
+}
+
+  .message {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    max-width: 70%;
+    
+  }
+  
+  .userMessage {
+    background-color: rgba(211, 19, 240, 0.213);
+    color: #000000;
+    display: flex;
+    align-items: center; /* Align items vertically */
+   
+    padding: 0.5rem; /* Adjust padding */
+    margin-bottom: 0.5rem; /* Add margin bottom for spacing between messages */
+    width: fit-content;
+    max-width: 60%; /* Limit message width to fit content */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    margin-left: auto; /* Push message to the right */
+  }
+  
+  
+  .botMessage {
+    background-color: #e974ab;
+    color: #151515;
+   
+    padding: 0.5rem; /* Adjust padding */
+    margin-bottom: 0.5rem; /* Add margin bottom for spacing between messages */
+    width:fit-content; /* Limit message width to 70% of container */
+    max-width: 60%;
+    border-radius: 10px; /* Add border radius for rounded corners */
+
+  }
+  
+  
+  .inputContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    padding: 1rem;
+    margin: .5rem;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  button {
+    padding: 1rem;
+    background-color: #910291;
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin: .2rem;
+    height: fit-content;
+    margin-top: 0.5rem;
+  }
+  
+  button:hover {
+    background-color: #47047b;
+  }
+.music{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+  #backTochatbot{
+
+    margin: 0 auto;
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    
+  }
+  #backTochatbot button{
+width: 10rem;
+  }
+
+  #emotion button  {
+
+   background-color: #09b1e97b;
+  }

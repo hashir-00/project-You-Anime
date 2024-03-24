@@ -1,9 +1,11 @@
 .navbar {
     background-color: rgba(139, 3, 185, 0.319); /* Transparent background color of the navbar */
-    padding: 10px 0; /* Top and bottom padding */
+    padding: 1rem; /* Top and bottom padding */
     text-align: center; /* Center the links */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
     border-radius: 1rem; /* Round the corners of the navbar */
+    width: fit-content;
+    margin: 0 auto; /* Center the navbar */
   }
   
   
@@ -30,3 +32,20 @@
     color: #54006d85; /* Change text color on hover */
   }
   
+  @media screen and (max-width: 420px){
+    .navbar{
+     margin-top: 0.5rem;
+    }
+    .navbar ul {
+      text-align: center;
+      display: flex; /* Display the list items in a flex container */
+      flex-direction: row;
+  
+    }
+    .navbar li {
+      margin: 0 .5rem; /* Reduce margin between list items */
+    }
+    .navbar {
+     width: 20rem;
+    }
+  }

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./Recommendations.module.css";
+import { useNavigate } from 'react-router-dom';
 
 const Recommendations = () => {
   const [level, setLevel] = useState('');
+  const navigate = useNavigate();
   const [recommendations, setRecommendations] = useState([]);
   useEffect(() => {
     const storedLevel = localStorage.getItem('level');
@@ -32,6 +34,9 @@ const Recommendations = () => {
     fetchData();
   }, [level]);
 
+  const RetrunToHome = () => {
+    navigate('/Dashboard');
+  }
   return (
     <div>
       <h2>Recommendations</h2>
@@ -42,6 +47,11 @@ const Recommendations = () => {
           </li>
         ))}
       </ul>
+      <div id={styles.button}> <button onClick={RetrunToHome}>
+        Back to Dashboard
+      </button></div>
+     
+
     </div>
   );
 };

@@ -64,26 +64,38 @@
 }
 
 .messageBox {
-  display: none;
-  padding: 20px;
-  width: 700px;
-  height: 250px;
-  background-color: #f1f1f1;
-  border: 1px solid #ddd;
+  width: 40%;
   border-radius: 25px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-
+  text-align: center;
+  justify-content: center;
+  display: flex;  
+  flex-direction: column;
 }
+
 
 .message {
-  text-align: center;
-  align-content: center;
-}
+  background-color:rgba(99, 121, 245, 0.178);
+  border: 0.1rem solid #386bf7;
+  border-radius:3rem;
+  margin: 0 auto;
+  width: 80%;
+  height: 30vh;
 
+
+  
+  
+}
+.message p{
+  color: rgb(153, 30, 153);
+}
+.message h4{
+ color: rgba(2, 6, 236, 0.5);
+}
 .RcmdBtn{
   display: flex;
   margin: 0 auto;

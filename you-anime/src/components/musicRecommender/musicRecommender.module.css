@@ -1,0 +1,36 @@
+.musicContainer{
+
+    height:50vh;
+     align-items: center;
+     display: flex ;
+     justify-content: center;
+     display: flex;
+     flex-direction: column;
+   }
+   .musicBtn{
+     width: auto;
+     font-size: smaller;
+     
+   }
+   .musicBtn button{
+     background-color: rgba(0, 88, 129, 0.3);
+   }
+   #prvbtn{
+     margin-right: 1rem;
+     padding: 0.8rem;
+     font-weight: bold;
+   }
+   #nxtbtn{
+     margin-left: 1rem;
+     padding: 0.8rem;
+     font-weight: bold;
+   }
+   #prvbtn:hover{
+     background-color:rgba(8, 112, 247, 0.3);
+     color: rgb(3, 27, 246);
+    
+   }
+   #nxtbtn:hover{
+     background-color:rgba(0, 255, 47, 0.3);
+     color: rgb(0, 244, 98);
+   }
