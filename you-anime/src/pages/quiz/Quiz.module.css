@@ -100,3 +100,21 @@
   display: flex;
   margin: 0 auto;
 }
+@media screen and (max-width: 768px) {
+  .messageBox{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  .message {
+    width:100%;
+    font-size: 10px;
+    height: 40vh;
+  }
+  .backbutton{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  
+}
