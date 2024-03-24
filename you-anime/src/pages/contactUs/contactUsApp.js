@@ -1,13 +1,12 @@
-import React from "react";
-import Contact from "./components/Contact";
-import "./app.css";
 
-function App() {
+
+
+
+const ContactUsApp = () => {
   return (
-    <div className="app">
-      <Contact />
+    <div className="App">
+      <h1>contact Us</h1>
     </div>
   );
-}
-
-export default App;
+};
+export default ContactUsApp;

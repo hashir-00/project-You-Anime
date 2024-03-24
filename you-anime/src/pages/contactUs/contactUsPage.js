@@ -1,11 +1,12 @@
-function Contact(){
-  return (
-    <div className="contact">
-      <h1>Contact Us</h1>
-      <p>For any inquiries, please contact us at:</p>
-      <p>Email:</p>
-    </div>
+import React from "react";
+import ContactUsApp from "./contactUsApp";
 
+function ContactUsPage() {
+  return (
+    <div className="app">
+      <ContactUsApp />
+    </div>
   );
 }
-export default Contact;
+
+export default ContactUsPage;
