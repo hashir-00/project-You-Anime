@@ -90,3 +90,24 @@ function Todo(){
     setEditMode(null);
     setEditText('');
   };
+
+  return (
+    <div className="container">
+      <h1>Todo App</h1>
+      <input
+        type="text"
+        value={todoInput}
+        onChange={e => setTodoInput(e.target.value)}
+        placeholder="Enter a new todo"
+      />
+      <button onClick={addTodo}>Add Todo</button>
+      <ul>
+        {todos.map(todo => (
+          <li key={todo.id}>
+            {editMode === todo.id ? (
+              <>
+                <input
+                  type="text"
+                  value={editText}
+                  onChange={e => setEditText(e.target.value)}
+                />
