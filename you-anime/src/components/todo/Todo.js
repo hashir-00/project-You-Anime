@@ -71,3 +71,22 @@ function Todo(){
   //   setEditMode(null);
   //   setEditText('');
   // };
+
+  const updateTodo = async (id, newText) => {
+    if (!id) {
+      console.error('ID is undefined');
+      return;
+    }
+  
+    const todoRef = doc(db, 'todos', id);
+    await setDoc(todoRef, { text: newText }, { merge: true });
+    const updatedTodos = todos.map(todo => {
+      if (todo.id === id) {
+        return { ...todo, text: newText };
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
+    setEditMode(null);
+    setEditText('');
+  };
