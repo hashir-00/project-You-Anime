@@ -25,8 +25,11 @@
       width: 20rem;
       text-align: center;
     }
-  
-    
+    .footerComponent li {
+   
+      font-size: 0.1rem; /* Increase font size */
+ 
+    }
   }
   
   .footerComponent li {
