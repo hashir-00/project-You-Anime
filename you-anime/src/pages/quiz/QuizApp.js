@@ -96,7 +96,7 @@ const QuizApp = () => {
     }
 
     return (
-      <div>
+      <div className={styles.questions}>
         <p>{currentQuestionIndex + 1}. {question.question}</p>
         {question.choices.map((choice, choiceIndex) => (
           <React.Fragment key={choiceIndex}>
@@ -216,12 +216,13 @@ const QuizApp = () => {
         {generateQuestionnaire(questions[currentQuestionIndex])}
      
       </div>
-      <button className={styles.submtBtn} onClick={submitAnswers} disabled={questionsCompleted}>
+      <div className={styles.btn}>  <button className={styles.submtBtn} onClick={submitAnswers} disabled={questionsCompleted}>
         Submit
       </button>
        <button className={styles.canclBtn} onClick={RetrunToDescription}>
         Cancel
-      </button>
+      </button></div>
+    
     
       </>
       )}

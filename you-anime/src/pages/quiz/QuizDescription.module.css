@@ -77,6 +77,10 @@
 }
 
 @media screen and (max-width: 500px){
+  .container{
+    height: 50vh;
+
+  }
   .buttons{
     flex-direction: column;
     justify-content: center;
@@ -84,6 +88,18 @@
   }
   .buttons button{
    padding: 0.5rem;
+  }
+  .HowItWorks p{
+    font-size: .51rem;
+  }
+  #p{
+    font-size: 0.5rem;
+  }
+  .head{
+    font-size: 0.51rem;
+  }
+  .goodluck{
+    font-size: 0.5rem;
   }
 
   
