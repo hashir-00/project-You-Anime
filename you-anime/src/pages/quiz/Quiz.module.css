@@ -51,16 +51,24 @@
 }
 
 .submtBtn {
-  margin-left: 30%;
+  
   cursor: pointer;
   font-size: medium;
   background-color:rgba(236, 15, 207, 0.4);
 }
 
 .canclBtn {
-  margin-left: 20%;
+  
   font-size: medium;
   background-color:rgba(0, 0, 0, 0.6);
+}
+.btn{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+ 
 }
 
 .messageBox {
@@ -96,11 +104,17 @@
 .message h4{
  color: rgba(2, 6, 236, 0.5);
 }
-.RcmdBtn{
-  display: flex;
-  margin: 0 auto;
-}
+
 @media screen and (max-width: 768px) {
+
+  .questionnaireContainer{
+    width: 80%;
+    height: fit-content;
+    font-size: small;
+  }
+  .questions p{
+    font-size:1rem ;
+  }
   .messageBox{
     width: 80%;
     display: flex;
@@ -116,5 +130,23 @@
     flex-direction: column;
     margin: 0 auto;
   }
-  
+  .backbutton button{
+    display: flex;
+    flex-direction: column;
+   
+   width: fit-content;
+   margin: 0.51rem auto;
+  }
+  .btn{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .btn button{
+    width: fit-content;
+    margin: 1rem;
+  }
 }

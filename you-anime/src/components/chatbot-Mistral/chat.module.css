@@ -34,7 +34,7 @@
   }
 
   .inputContainer {
-    height: 10vh; /* Adjust height as needed */
+    height: 20vh; /* Adjust height as needed */
     flex-direction: column;
     display: flex;
     justify-content: center;

@@ -38,16 +38,17 @@ const Recommendations = () => {
     navigate('/Dashboard');
   }
   return (
-    <div>
-      <h2>Recommendations</h2>
+    <div className={styles.container}>
+      <div className={styles.recommendations}>  <h3>Recommendations</h3>
       <ul>
         {recommendations.map((recommendation, index) => (
           <li key={index}>
             <a href={recommendation.url}>{recommendation.name}</a>
           </li>
         ))}
-      </ul>
-      <div id={styles.button}> <button onClick={RetrunToHome}>
+      </ul></div>
+    
+      <div className={styles.btn}> <button onClick={RetrunToHome}>
         Back to Dashboard
       </button></div>
      
