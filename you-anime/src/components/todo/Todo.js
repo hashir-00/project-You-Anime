@@ -1,26 +1,9 @@
-import { useState, useEffect } from 'react';
-import { initializeApp, getApps } from 'firebase/app';
-import { getFirestore, collection, getDocs , addDoc,doc,setDoc,deleteDoc } from 'firebase/firestore';
+import { useEffect, useState } from "react";
+import { addDoc, collection, deleteDoc, doc, getDocs, setDoc } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyDTMML-fs7VF__bm8vescWmNsFdAff0Cuw',
-  authDomain: 'auth-a541a.firebaseapp.com',
-  projectId: 'auth-a541a',
-  storageBucket: 'auth-a541a.appspot.com',
-  messagingSenderId: '251389327083',
-  appId: '1:251389327083:web:da1f576f9908fda425f0ae',
-  measurementId:'G-WCPNHY3140'
-};
 
-// Initialize Firebase
-let app;
-if (!getApps().length) {
-  app = initializeApp(firebaseConfig);
-} else {
-  app = getApps()[0]; // if already initialized, use that one
-}
 
-const db = getFirestore(app);
 
 function Todo(){
   const [todos, setTodos] = useState([]);
@@ -28,21 +11,22 @@ function Todo(){
   const [editMode, setEditMode] = useState(null);
   const [editText, setEditText] = useState('');
 
+
+  const fetchTodos = async () => {
+    const todosCollection = collection(db, 'Todos');
+    const todosSnapshot = await getDocs(todosCollection);
+    const todosData = todosSnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    setTodos(todosData);
+  };
   useEffect(() => {
     // Fetch todos from Firestore
-    const fetchTodos = async () => {
-      const todosCollection = collection(db, 'Todos');
-      const todosSnapshot = await getDocs(todosCollection);
-      const todosData = todosSnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-      setTodos(todosData);
-    };
+   
 
     fetchTodos();
-  }, []);
-
+  }, );
 
   const addTodo = async () => {
     if (todoInput.trim() !== '') {
@@ -54,7 +38,9 @@ function Todo(){
       await addDoc(todosCollection, newTodo);
       setTodoInput('');
       setTodos([...todos, newTodo]);
+      console.log("done");
     }
+
   };
 
   const deleteTodo = async id => {
@@ -76,7 +62,7 @@ function Todo(){
       return;
     }
   
-    const todoRef = doc(db, 'todos', id);
+    const todoRef = doc(db, 'Todos', id);
     await setDoc(todoRef, { text: newText }, { merge: true });
     const updatedTodos = todos.map(todo => {
       if (todo.id === id) {

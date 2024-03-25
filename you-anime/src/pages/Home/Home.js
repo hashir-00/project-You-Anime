@@ -3,6 +3,7 @@ import HomePage from "./HomePage";
 import { Helmet } from "react-helmet";
 
 
+
 const Home = () => {
   return(
     <div> 
@@ -10,7 +11,8 @@ const Home = () => {
     <title>YouAnime-Home</title>
     <meta name="description" content="Home" />
      </Helmet>
-    <HomePage/></div>
+    <HomePage/>
+   </div>
    
   );
 };
