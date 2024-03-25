@@ -20,6 +20,7 @@ const NavBar= ()=>{
                     <li>
                         <Link to="/CosplayPage">Cosplay</Link>
                     </li>
+                  
                 </ul>
             </nav>
         </div>
