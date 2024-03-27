@@ -20,13 +20,13 @@ export default function EntertainmentApp() {
     const [openViewModal, setOpenViewModal] = useState(false);
     const [selectedImg, setSelectedImg] = useState(null);
   
-    const imagesListRef = ref(storage, "images");//path error due to not having storage import and no images folder in firebase
+    const imagesListRef = ref(storage, "image/");//path error due to not having storage import and no images folder in firebase
   
 
     const uploadFile = () => {
       if (imageUpload == null) return; // Ensure there's an image to upload
   
-      const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+      const imageRef = ref(storage, `image/${imageUpload.name + v4()}`);
       uploadBytes(imageRef, imageUpload).then((snapshot) => {
         // Upon successful upload, update the metadata with the description
         const metadata = {
@@ -53,7 +53,8 @@ export default function EntertainmentApp() {
         setImageUploadName("");
         setImageUpload(null);
         setOpenUploadModal(false);
-        retrieveAllImages();
+
+        
       });
     };
   

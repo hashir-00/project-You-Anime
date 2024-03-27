@@ -1,6 +1,6 @@
 .app{
-  height: 80vh;
-  overflow-y: scroll;
+  height: 100vh;
+  
 }
 .uploadbutton{
 display: flex;
@@ -18,10 +18,11 @@ justify-content: center;
     gap: 4px; /* Add spacing between images */
     border:  1px solid black;
     height: 80vh;
+    overflow-y: scroll;
   }
   img {
-    width: 350px; /* Allow image to fill container width */
-    height: 350px; /* Maintain aspect ratio */
+    width: 300px; /* Allow image to fill container width */
+    height: 300px; /* Maintain aspect ratio */
     object-fit: cover; /* Resize proportionally to cover container */
     margin: 0.5rem auto;
   }
