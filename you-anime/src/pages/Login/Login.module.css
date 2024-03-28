@@ -34,6 +34,11 @@
   background-color: #fff;
   border-radius:  0 1rem 1rem 0;
 }
+.footer  img{
+  height: 2rem;
+  width: 2rem;
+
+}
 @media screen and (max-width: 768px){
   .innerBoxTwo{
     display: none;
@@ -59,7 +64,7 @@ h3{
   .footer {
     display: flex;
     flex-direction: column;
- margin-top: 4rem;
+ margin-top: 3rem;
   }
   
   .footer .error {

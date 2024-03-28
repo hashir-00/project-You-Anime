@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import InputControl, { InputControlPassword } from "../../components/InputControl/InputControl";
 import { auth } from "../../firebase/firebase";
 import styles from "./Login.module.css";
@@ -36,6 +36,19 @@ function Login() {
         setErrorMsg(err.message);
       });
   };
+
+  const googleSignIn =()=>{
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+    .then((result) => {
+      loggedIn = true;
+      navigate("/Dashboard");
+      
+    }).catch((error) => {
+      // Handle Errors here.
+      setErrorMsg(error.message);
+    });
+  }
   return (
     <div className={styles.container}>
       
@@ -72,6 +85,9 @@ function Login() {
           <button disabled={submitButtonDisabled} onClick={handleSubmission}>
             Login
           </button>
+
+            <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="google logo" onClick={googleSignIn}/>
+      
           <p>
            Dont have an account?{<br/>}
             <span>

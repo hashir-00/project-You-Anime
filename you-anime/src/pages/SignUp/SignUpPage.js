@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, updateProfile,} from "firebase/auth";
+import {  createUserWithEmailAndPassword,  updateProfile,} from "firebase/auth";
 
 import InputControl from "../../components/InputControl/InputControl";
 
@@ -24,7 +24,7 @@ function SignupPage() {
       return;
     }
     setErrorMsg("");
-
+    
     setSubmitButtonDisabled(true);
     createUserWithEmailAndPassword(auth, values.email, values.pass)
       .then(async (res) => {
@@ -40,6 +40,7 @@ function SignupPage() {
         setErrorMsg(err.message);
       });
   };
+ 
 
   return (
     <>
@@ -80,6 +81,7 @@ function SignupPage() {
           <button onClick={handleSubmission} disabled={submitButtonDisabled}>
             Sign Up
           </button>
+        
           <p>
             Already have an account?<br/>
             <span>
