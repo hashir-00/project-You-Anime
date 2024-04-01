@@ -60,11 +60,11 @@
   }
  
   .userMessage {
-    font-size: .3rem;
+    font-size: .5rem;
    
   }
   .botMessage{
-    font-size:0.3rem;
+    font-size:0.5rem;
   }
 }
 
