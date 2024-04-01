@@ -11,9 +11,9 @@ function MusicRecommender(emotion){
     const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
 
     useEffect(() => {
-        if(userEmotion.includes("positive")){
+        if(userEmotion.includes('neutral')){
             fetchDataCluster0();}
-        else if(userEmotion.includes( 'neutral')){
+        else if(userEmotion.includes( 'positive')){
             fetchDataCluster1();}
         else if(userEmotion.includes('negative')){
             fetchDataCluster2();}
