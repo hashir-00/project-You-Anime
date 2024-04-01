@@ -93,7 +93,7 @@ function ChatBot() {
         message: message,
         history: chatHistory, // Pass chat history with the request
         //try changing these values
-        system_prompt: "find whether his emotion state is negative,positive,neutral or extreme negative.your first word should be one of these four words.Help him overcome his emotions",
+        system_prompt: "find his emotion state.your first word should be one of these four words(negative,positive,neutral or extreme negative as exneg).Help him overcome his emotions",
         temperature: 0.9,
         max_new_tokens: 256, // Max number of tokens to generate from the bot
         top_p: 0.95,
